@@ -10,12 +10,25 @@
 ## 目录
 
 1. [核心原则](#1-核心原则)
+   - 1.1 依赖规则
+   - 1.2 SOLID 在 Python 中的体现
+   - 1.3 边界与上下文
+   - 1.4 事务边界与 Unit of Work
 2. [代码组织](#2-代码组织)
 3. [可测试性设计](#3-可测试性设计)
 4. [持续演进与重构](#4-持续演进与重构)
 5. [错误处理与边界防护](#5-错误处理与边界防护)
+   - 5.1 异常 vs 返回值
+   - 5.2 边界校验
+   - 5.3 可观测性（Observability）
 6. [配置与环境管理](#6-配置与环境管理)
 7. [工具链：让项目对 AI 编程友好](#7-工具链让项目对-ai-编程友好)
+   - 7.1 依赖管理（uv）
+   - 7.2 代码风格（PEP 8 + ruff）
+   - 7.3 类型标注 + 类型检查
+   - 7.4 让错误尽早暴露
+   - 7.5 Docstring：让 AI 读懂意图
+   - 7.6 CI 最小闭环
 
 ---
 
@@ -66,16 +79,18 @@ class OrderService:
 
 ```python
 # 好：定义抽象接口（Protocol）
+# 注意：涉及 I/O 的接口应该是异步的（async）
 from typing import Protocol
 
 class UserRepository(Protocol):
-    def get_by_id(self, user_id: int) -> User | None: ...
+    async def get_by_id(self, user_id: int) -> User | None: ...
 
 class ProductRepository(Protocol):
-    def get_by_id(self, product_id: int) -> Product | None: ...
+    async def get_by_id(self, product_id: int) -> Product | None: ...
+    async def update(self, product: Product) -> None: ...
 
 class OrderRepository(Protocol):
-    def save(self, order: Order) -> None: ...
+    async def add(self, order: Order) -> None: ...
 
 
 # 业务逻辑只依赖接口，不知道数据库的存在
@@ -85,25 +100,30 @@ class OrderService:
         user_repo: UserRepository,
         product_repo: ProductRepository,
         order_repo: OrderRepository,
+        uow: UnitOfWork,  # 事务由 UoW 统一管理
     ):
         self._user_repo = user_repo
         self._product_repo = product_repo
         self._order_repo = order_repo
+        self._uow = uow
 
-    def create_order(self, user_id: int, items: list[dict]) -> Order:
-        user = self._user_repo.get_by_id(user_id)
+    async def create_order(self, user_id: int, items: list[dict]) -> Order:
+        user = await self._user_repo.get_by_id(user_id)
         if not user:
             raise ValueError("用户不存在")
 
         order = Order(user_id=user_id, status="pending")
 
         for item in items:
-            product = self._product_repo.get_by_id(item["product_id"])
+            product = await self._product_repo.get_by_id(item["product_id"])
             if product.stock < item["quantity"]:
                 raise ValueError(f"库存不足: {product.name}")
             order.add_item(product, item["quantity"])
+            product.reduce_stock(item["quantity"])
+            await self._product_repo.update(product)  # 此时不 commit
 
-        self._order_repo.save(order)
+        await self._order_repo.add(order)  # 此时不 commit
+        await self._uow.commit()  # 统一提交，保证原子性
         return order
 ```
 
@@ -111,6 +131,8 @@ class OrderService:
 - 测试时传入假的 Repository（不需要真数据库）
 - 换数据库只需要写一个新的 Repository 实现
 - 业务逻辑完全不用改
+
+> **为什么要用 async**：在 2024+ 的 Python Web 开发（尤其是 FastAPI 生态）中，`async/await` 是标配。如果仓储层和应用服务层设计成同步，后期为了性能迁移到异步的成本极高（因为 async 具有传染性）。**纯业务逻辑**（如 `Order.add_item()`）保持同步即可，因为是纯计算；**涉及 I/O 的接口**（Repository、外部服务）应默认采用异步定义。
 
 ---
 
@@ -348,10 +370,74 @@ class OrderCreatedEvent:
 
 # 库存上下文订阅事件并处理
 class InventoryEventHandler:
-    def handle_order_created(self, event: OrderCreatedEvent) -> None:
+    async def handle_order_created(self, event: OrderCreatedEvent) -> None:
         # 扣减库存
         ...
 ```
+
+---
+
+### 1.4 事务边界与 Unit of Work
+
+**核心问题**：如果一个用例需要操作多个 Repository（如：扣库存 + 创建订单），每个 Repo 内部自动 commit 会导致数据不一致（扣了库存但订单创建失败）。
+
+**解决方案**：引入 **Unit of Work (UoW)** 模式，让 Service 层控制事务边界，而不是 Repository 层。
+
+```python
+from typing import Protocol
+from contextlib import asynccontextmanager
+
+# Unit of Work 接口
+class UnitOfWork(Protocol):
+    async def commit(self) -> None: ...
+    async def rollback(self) -> None: ...
+
+
+# SQLAlchemy 实现
+class SqlAlchemyUnitOfWork:
+    def __init__(self, session: AsyncSession):
+        self._session = session
+
+    async def commit(self) -> None:
+        await self._session.commit()
+
+    async def rollback(self) -> None:
+        await self._session.rollback()
+
+
+# 也可以用上下文管理器模式
+class UnitOfWorkContext(Protocol):
+    product_repo: ProductRepository
+    order_repo: OrderRepository
+    
+    async def __aenter__(self) -> "UnitOfWorkContext": ...
+    async def __aexit__(self, *args) -> None: ...
+    async def commit(self) -> None: ...
+
+
+# 使用上下文管理器风格
+class OrderService:
+    def __init__(self, uow_factory: Callable[[], UnitOfWorkContext]):
+        self._uow_factory = uow_factory
+
+    async def create_order(self, user_id: int, items: list[dict]) -> Order:
+        async with self._uow_factory() as uow:
+            # 所有操作在同一个事务中
+            product = await uow.product_repo.get(items[0]["product_id"])
+            order = Order(user_id=user_id)
+            
+            product.reduce_stock(items[0]["quantity"])
+            await uow.product_repo.update(product)  # 不 commit
+            await uow.order_repo.add(order)         # 不 commit
+            
+            await uow.commit()  # 一起提交，要么全成功，要么全回滚
+            return order
+```
+
+**关键原则**：
+- Repository 只负责数据访问，**不调用 commit**
+- Service 层通过 UoW 控制事务边界
+- 一个用例 = 一个事务
 
 ---
 
@@ -465,72 +551,87 @@ class OrderService:
 
 **Python 中的依赖注入实现**：
 
-最简单的方式：手动组装（适合小项目）
+**推荐方式：Composition Root（组合根）模式**
+
+在 `main.py` 或 `dependencies.py` 中**手动实例化和组装**所有依赖。这是最清晰、最利于 IDE 跳转、也最利于 AI 理解（上下文在同一文件）的方式。
 
 ```python
-# 在应用启动时组装依赖
-def create_order_service() -> OrderService:
-    repo = SqlAlchemyOrderRepository(session_factory)
-    payment = StripePayment(api_key=settings.stripe_key)
-    return OrderService(repo=repo, payment=payment)
+# src/my_project/dependencies.py
+# 组合根：所有依赖在这里组装，一目了然
 
-# 使用
-service = create_order_service()
+from my_project.infrastructure.database import create_async_session
+from my_project.infrastructure.repositories import (
+    SqlAlchemyOrderRepository,
+    SqlAlchemyProductRepository,
+)
+from my_project.infrastructure.payment import StripePayment
+from my_project.application.services import OrderService
+from my_project.config import settings
+
+
+def create_order_service(session: AsyncSession) -> OrderService:
+    """
+    组装 OrderService 的所有依赖。
+    
+    这种显式组装的好处：
+    1. 依赖关系一目了然，IDE 可直接跳转
+    2. 测试时可以传入不同的实现
+    3. AI 编程工具能准确理解依赖图
+    """
+    order_repo = SqlAlchemyOrderRepository(session)
+    product_repo = SqlAlchemyProductRepository(session)
+    payment = StripePayment(api_key=settings.stripe_api_key)
+    uow = SqlAlchemyUnitOfWork(session)
+    
+    return OrderService(
+        order_repo=order_repo,
+        product_repo=product_repo,
+        payment=payment,
+        uow=uow,
+    )
 ```
 
-使用容器（适合中大项目）：可以用 `dependency-injector` 库
-
-```python
-from dependency_injector import containers, providers
-
-class Container(containers.DeclarativeContainer):
-    config = providers.Configuration()
-
-    # 基础设施
-    db_session = providers.Singleton(create_session, url=config.database_url)
-    
-    # 仓储
-    order_repo = providers.Factory(
-        SqlAlchemyOrderRepository,
-        session=db_session,
-    )
-    
-    # 服务
-    order_service = providers.Factory(
-        OrderService,
-        repo=order_repo,
-    )
-```
+> **为什么不推荐 `dependency-injector` 等 DI 容器**：这类库在 Python 社区中有"过度设计"的嫌疑，特别是对于中小型项目。它们引入了大量样板代码和间接层，反而让代码更难理解。手动组装虽然看起来"原始"，但在 Python 中是最清晰的做法。
 
 **FastAPI 中的依赖注入**：
 
-FastAPI 有内置的依赖注入系统：
+FastAPI 原生 `Depends` 配合 `Annotated` 已经足够强大，不需要额外的 DI 框架：
 
 ```python
+from typing import Annotated
+from collections.abc import AsyncIterator
 from fastapi import Depends, FastAPI
 
 app = FastAPI()
 
-def get_db_session():
-    session = SessionLocal()
-    try:
+
+async def get_db_session() -> AsyncIterator[AsyncSession]:
+    async with async_session_maker() as session:
         yield session
-    finally:
-        session.close()
 
-def get_order_repo(session = Depends(get_db_session)) -> OrderRepository:
-    return SqlAlchemyOrderRepository(session)
 
-def get_order_service(repo = Depends(get_order_repo)) -> OrderService:
-    return OrderService(repo=repo)
+async def get_order_service(
+    session: Annotated[AsyncSession, Depends(get_db_session)],
+) -> OrderService:
+    return create_order_service(session)  # 复用组合根的工厂函数
+
+
+# 使用 Annotated 简化依赖声明
+OrderServiceDep = Annotated[OrderService, Depends(get_order_service)]
+
 
 @app.post("/orders")
-def create_order(
+async def create_order(
     data: CreateOrderRequest,
-    service: OrderService = Depends(get_order_service),
+    service: OrderServiceDep,
 ):
-    return service.create_order(data)
+    return await service.create_order(data)
 ```
+
+**关键原则**：
+- 优先使用手动组装（Composition Root）
+- 依赖关系应该显式、可追踪
+- 框架自带的 DI（如 FastAPI Depends）足够用，不需要额外引入 DI 库
 
 ---
 
@@ -832,23 +933,54 @@ def transform_user_data_for_export(user_data: UserData) -> ExportFormat:
 
 ### 5.1 异常 vs 返回值
 
-**用异常的场景**：
-- 真正的异常情况（程序员的错误、系统故障）
-- 调用方通常无法处理的错误
+**核心原则：坚持使用自定义异常体系**
+
+Python 的生态（ORM、框架、标准库）都是基于 Exception 的。**自定义异常体系**是 Python 中最地道（Idiomatic）的错误处理方式。
 
 ```python
-def get_user(user_id: int) -> User:
-    user = db.query(User).get(user_id)
+# 定义业务异常体系
+class AppError(Exception):
+    """应用层错误基类"""
+    pass
+
+class NotFoundError(AppError):
+    """资源不存在"""
+    pass
+
+class ValidationError(AppError):
+    """验证失败"""
+    pass
+
+class InsufficientStockError(AppError):
+    """库存不足"""
+    def __init__(self, product_name: str, requested: int, available: int):
+        self.product_name = product_name
+        self.requested = requested
+        self.available = available
+        super().__init__(f"库存不足: {product_name} (需要 {requested}, 仅剩 {available})")
+
+
+# 使用
+async def get_user(user_id: int) -> User:
+    user = await db.query(User).get(user_id)
     if user is None:
-        raise UserNotFoundError(f"用户不存在: {user_id}")
+        raise NotFoundError(f"用户不存在: {user_id}")
     return user
+
+
+async def create_order(self, product_id: int, quantity: int) -> Order:
+    product = await self._product_repo.get(product_id)
+    if product.stock < quantity:
+        raise InsufficientStockError(product.name, quantity, product.stock)
+    # ... 业务逻辑
 ```
 
-**用返回值的场景**：
-- 可预期的业务情况
-- 调用方需要根据结果做不同处理
+**关于 Result 模式的务实建议**：
+
+类似 Rust 的 `Result[T, E]` 模式虽然在函数式编程中很优雅，但在 Python 中**并非地道的写法**：
 
 ```python
+# Result 模式示例（谨慎使用）
 from dataclasses import dataclass
 from typing import TypeVar, Generic
 
@@ -864,28 +996,48 @@ class Err(Generic[E]):
     error: E
 
 Result = Ok[T] | Err[E]
+```
+
+**为什么在 Python 中慎用 Result 模式**：
+1. **与生态不兼容**：SQLAlchemy、Pydantic、FastAPI 等主流库都使用异常
+2. **增加认知负担**：代码中会充满 `match/case` 和拆包逻辑
+3. **传染性**：一旦使用，调用链上所有函数都要处理 Result
+4. **难以与第三方库统一**：第三方库抛异常，你返回 Result，风格混乱
+
+**折中方案**（如果确实想用）：
+- 仅在**纯验证函数**中返回 `T | None` 或 `bool`
+- **系统错误和意外情况**坚持抛异常
+
+```python
+# 折中：简单验证用返回值
+def is_valid_email(email: str) -> bool:
+    return "@" in email and "." in email.split("@")[1]
+
+def parse_positive_int(value: str) -> int | None:
+    try:
+        n = int(value)
+        return n if n > 0 else None
+    except ValueError:
+        return None
 
 
-# 使用
-def validate_email(email: str) -> Result[str, str]:
-    if "@" not in email:
-        return Err("邮箱格式不正确")
-    return Ok(email)
-
-
-# 调用方
-result = validate_email(user_input)
-match result:
-    case Ok(email):
-        print(f"有效邮箱: {email}")
-    case Err(error):
-        print(f"验证失败: {error}")
+# 业务错误坚持用异常
+async def transfer_money(from_id: int, to_id: int, amount: int) -> None:
+    if amount <= 0:
+        raise ValidationError("转账金额必须大于0")
+    
+    from_account = await self._account_repo.get(from_id)
+    if from_account.balance < amount:
+        raise InsufficientBalanceError(from_account.id, amount, from_account.balance)
+    
+    # ... 执行转账
 ```
 
 **实际建议**：
-- 基础设施层（数据库、网络）：抛异常
-- 领域层（业务规则验证）：可以用 Result 模式
-- 应用层：捕获异常，转换为合适的响应
+- **默认用异常**：除非团队有极强的函数式编程背景
+- **基础设施层**（数据库、网络）：抛异常
+- **应用层**：捕获异常，统一转换为 HTTP 响应（见 5.2）
+- **纯验证**：可以返回 `bool` 或 `T | None`，保持简单
 
 ### 5.2 边界校验
 
@@ -942,6 +1094,139 @@ async def app_error_handler(request: Request, exc: AppError):
         content={"code": exc.code, "message": exc.message},
     )
 ```
+
+### 5.3 可观测性（Observability）
+
+代码"易维护"的一个关键维度是**生产环境出了问题能看懂**。没有结构化日志，只有 traceback，无法应对复杂系统的排查。
+
+**核心原则**：使用 **结构化日志（Structured Logging）**，输出 JSON 格式，方便机器解析、日志平台聚合、以及 AI 分析。
+
+**推荐库**：`structlog`（或 `loguru`）
+
+```bash
+uv add structlog
+```
+
+**基础配置**：
+
+```python
+# src/my_project/logging.py
+import structlog
+
+def setup_logging(json_format: bool = True) -> None:
+    """
+    配置结构化日志。
+    
+    Args:
+        json_format: 生产环境用 True（JSON），本地开发可用 False（彩色输出）
+    """
+    processors = [
+        structlog.contextvars.merge_contextvars,  # 支持上下文变量
+        structlog.processors.add_log_level,
+        structlog.processors.TimeStamper(fmt="iso"),
+        structlog.processors.StackInfoRenderer(),
+    ]
+    
+    if json_format:
+        processors.append(structlog.processors.JSONRenderer())
+    else:
+        processors.append(structlog.dev.ConsoleRenderer())
+    
+    structlog.configure(
+        processors=processors,
+        wrapper_class=structlog.make_filtering_bound_logger(logging.INFO),
+        context_class=dict,
+        logger_factory=structlog.PrintLoggerFactory(),
+        cache_logger_on_first_use=True,
+    )
+```
+
+**在业务代码中使用**：
+
+```python
+import structlog
+
+logger = structlog.get_logger()
+
+
+class OrderService:
+    async def create_order(self, user_id: int, items: list[dict]) -> Order:
+        # 绑定请求级别的上下文（会自动附加到后续所有日志）
+        log = logger.bind(user_id=user_id, item_count=len(items))
+        
+        log.info("order_creation_started")
+        
+        try:
+            user = await self._user_repo.get_by_id(user_id)
+            if not user:
+                log.warning("user_not_found")
+                raise NotFoundError(f"用户不存在: {user_id}")
+            
+            order = Order(user_id=user_id, status="pending")
+            # ... 业务逻辑
+            
+            await self._order_repo.add(order)
+            await self._uow.commit()
+            
+            log.info("order_created", order_id=order.id, total=order.total)
+            return order
+            
+        except Exception as e:
+            log.error("order_creation_failed", error=str(e), error_type=type(e).__name__)
+            raise
+```
+
+**输出示例**（JSON 格式）：
+
+```json
+{"event": "order_creation_started", "user_id": 123, "item_count": 3, "level": "info", "timestamp": "2025-01-20T10:30:00Z"}
+{"event": "order_created", "user_id": 123, "item_count": 3, "order_id": "ord_abc123", "total": 29900, "level": "info", "timestamp": "2025-01-20T10:30:01Z"}
+```
+
+**请求级别的上下文追踪**（FastAPI 中间件）：
+
+```python
+import uuid
+from contextvars import ContextVar
+import structlog
+
+# 请求 ID 上下文
+request_id_ctx: ContextVar[str] = ContextVar("request_id", default="")
+
+@app.middleware("http")
+async def logging_middleware(request: Request, call_next):
+    request_id = request.headers.get("X-Request-ID", str(uuid.uuid4()))
+    request_id_ctx.set(request_id)
+    
+    # 绑定到 structlog 上下文
+    structlog.contextvars.clear_contextvars()
+    structlog.contextvars.bind_contextvars(
+        request_id=request_id,
+        path=request.url.path,
+        method=request.method,
+    )
+    
+    logger.info("request_started")
+    response = await call_next(request)
+    logger.info("request_completed", status_code=response.status_code)
+    
+    return response
+```
+
+**日志规范**：
+
+| 场景 | 日志级别 | 示例 |
+|-----|---------|------|
+| 业务流程关键节点 | INFO | `order_created`, `payment_processed` |
+| 可恢复的问题 | WARNING | `retry_attempt`, `cache_miss` |
+| 需要排查的错误 | ERROR | `payment_failed`, `external_api_error` |
+| 调试信息 | DEBUG | `query_executed`, `cache_hit` |
+
+**关键原则**：
+- **事件命名用 snake_case**：`order_created` 而不是 "Order created"
+- **携带结构化数据**：`order_id=123` 而不是 `f"order_id: {order_id}"`
+- **避免敏感信息**：不要记录密码、token、完整信用卡号等
+- **错误日志要带上下文**：记录 `error_type`、相关 ID，方便关联排查
 
 ---
 
@@ -1249,7 +1534,102 @@ uv run pytest --lf
 uv run ptw
 ```
 
-### 7.5 CI 最小闭环
+### 7.5 Docstring：让 AI 读懂意图
+
+AI 编程（Cursor/Copilot）不仅依赖类型，更依赖**语义上下文**。**Docstring 就是给 AI 的 Prompt**。
+
+**原则：意图优先的文档**
+
+不要写 "Adds a and b" 这种描述"做什么"的注释，要写"为什么"和"业务含义"。
+
+```python
+# 不好：描述了显而易见的事情
+def add(a: int, b: int) -> int:
+    """Adds a and b."""
+    return a + b
+
+
+# 好：描述业务意图，AI 理解后能正确维护
+def calculate_total_with_tax(subtotal: int, tax_rate: float) -> int:
+    """
+    计算含税总价。
+    
+    根据 2024 年税务规定，税率应用于税前金额。
+    金额单位为分（cents），避免浮点数精度问题。
+    
+    Args:
+        subtotal: 税前金额（单位：分）
+        tax_rate: 税率，如 0.13 表示 13%
+    
+    Returns:
+        含税总价（单位：分），向下取整
+    
+    Example:
+        >>> calculate_total_with_tax(10000, 0.13)
+        11300
+    """
+    return int(subtotal * (1 + tax_rate))
+```
+
+**核心业务逻辑必须写 Docstring**：
+
+```python
+class OrderService:
+    async def create_order(
+        self,
+        user_id: int,
+        items: list[OrderItemInput],
+        coupon_code: str | None = None,
+    ) -> Order:
+        """
+        创建订单。
+        
+        业务流程：
+        1. 验证用户存在且状态正常
+        2. 验证库存充足（会预扣库存）
+        3. 应用优惠券（如有）
+        4. 生成订单号并持久化
+        5. 发送订单创建事件（异步通知库存、营销等系统）
+        
+        注意：
+        - 库存在此处预扣，支付成功后正式扣减
+        - 优惠券在此处标记使用，支付失败后自动释放
+        
+        Raises:
+            NotFoundError: 用户不存在
+            InsufficientStockError: 库存不足
+            InvalidCouponError: 优惠券无效或已过期
+        """
+        ...
+```
+
+**显式导入（Explicit Imports）**：
+
+避免 `from module import *`，这不仅是代码风格问题，更是为了让 AI 准确分析依赖关系。
+
+```python
+# 不好：AI 无法知道 Order 从哪来
+from models import *
+
+def create_order() -> Order:
+    ...
+
+
+# 好：AI 能准确理解依赖
+from my_project.domain.entities import Order, OrderItem
+from my_project.domain.value_objects import Money, OrderStatus
+
+def create_order() -> Order:
+    ...
+```
+
+**关键原则**：
+- **Docstring 写意图**：描述"为什么"和业务规则，而非"做什么"
+- **显式导入**：让 AI 能追踪依赖关系
+- **命名自解释**：`calculate_tax_for_2024_regulation()` 比 `calc_tax()` 好
+- **Example 很有价值**：给 AI（和人类）展示预期行为
+
+### 7.6 CI 最小闭环
 
 GitHub Actions 示例（`.github/workflows/ci.yml`）：
 
@@ -1303,8 +1683,22 @@ jobs:
 
 1. **结构清晰**：分层组织，依赖指向内层
 2. **边界明确**：模块间通过接口通信，可独立变化
-3. **可测试**：依赖注入，副作用隔离
-4. **持续演进**：小步重构，测试护航
-5. **反馈及时**：lint + type + test，错误尽早暴露
+3. **异步优先**：I/O 接口（Repository、外部服务）默认 async，保持扩展性
+4. **事务一致**：用 Unit of Work 管理事务边界，避免数据不一致
+5. **可测试**：依赖注入（Composition Root），副作用隔离
+6. **可观测**：结构化日志（structlog），生产环境可排查
+7. **持续演进**：小步重构，测试护航
+8. **反馈及时**：lint + type + test，错误尽早暴露
+9. **AI 友好**：Docstring 写意图、显式导入、命名自解释
+
+**关键决策速查**：
+
+| 场景 | 推荐做法 |
+|-----|---------|
+| 错误处理 | 自定义异常体系（Pythonic），慎用 Result 模式 |
+| 依赖注入 | 手动组装（Composition Root），FastAPI 用原生 Depends |
+| 日志 | structlog 结构化日志，JSON 格式 |
+| I/O 接口 | 默认 async def |
+| 事务管理 | Service 层控制，Repository 不 commit |
 
 工具是手段，原则是目的。选对工具，坚持原则，项目才能长期健康。
