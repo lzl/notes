@@ -704,12 +704,12 @@ class ProcessOrderUseCase:
         self._repo = repo
         self._notifier = notifier
 
-    def execute(self, order_id: str) -> None:
-        order = self._repo.get(order_id)
+    async def execute(self, order_id: str) -> None:
+        order = await self._repo.get(order_id)
         order.discount = calculate_order_discount(order.total)  # 调用纯函数
         order.status = "processed"
-        self._repo.save(order)
-        self._notifier.notify(order.user, "订单已处理")
+        await self._repo.save(order)
+        await self._notifier.notify(order.user, "订单已处理")
 ```
 
 **原则 3：依赖注入，方便替换**
@@ -722,31 +722,31 @@ class FakeOrderRepository:
     def __init__(self):
         self._orders: dict[str, Order] = {}
 
-    def get(self, order_id: str) -> Order:
+    async def get(self, order_id: str) -> Order:
         return self._orders[order_id]
 
-    def save(self, order: Order) -> None:
+    async def save(self, order: Order) -> None:
         self._orders[order.id] = order
 
 class FakeNotifier:
     def __init__(self):
         self.notifications: list[tuple] = []
 
-    def notify(self, user: User, message: str) -> None:
+    async def notify(self, user: User, message: str) -> None:
         self.notifications.append((user, message))
 
 
 # 测试
-def test_process_order():
+async def test_process_order():
     repo = FakeOrderRepository()
     repo._orders["order-1"] = Order(id="order-1", total=2000, status="pending")
     
     notifier = FakeNotifier()
     
     use_case = ProcessOrderUseCase(repo=repo, notifier=notifier)
-    use_case.execute("order-1")
+    await use_case.execute("order-1")
     
-    order = repo.get("order-1")
+    order = await repo.get("order-1")
     assert order.status == "processed"
     assert order.discount == 200
     assert len(notifier.notifications) == 1
@@ -839,6 +839,8 @@ class User:
 
 
 # 之后：提取 Address 类
+from dataclasses import dataclass
+
 @dataclass
 class Address:
     street: str
@@ -1065,6 +1067,12 @@ class CreateUserUseCase:
         )
 ```
 
+> **提示**：Pydantic v2 默认允许隐式类型转换（如 `"18"` → `18`）。对于严格的边界校验，可启用 strict 模式：
+> ```python
+> model_config = ConfigDict(strict=True)
+> ```
+> 这能让类型错误在入口处立即暴露，而非在下游引发难以追踪的问题。
+
 **统一错误响应**（FastAPI 示例）：
 
 ```python
@@ -1111,6 +1119,8 @@ uv add structlog
 
 ```python
 # src/my_project/logging.py
+import logging
+
 import structlog
 
 def setup_logging(json_format: bool = True) -> None:
@@ -1537,6 +1547,8 @@ uv run ptw
 ### 7.5 Docstring：让 AI 读懂意图
 
 AI 编程（Cursor/Copilot）不仅依赖类型，更依赖**语义上下文**。**Docstring 就是给 AI 的 Prompt**。
+
+> **推荐风格**：Google Style（`Args:`, `Returns:`, `Example:`）。这种格式结构清晰，主流 AI 编程工具（Cursor/Copilot）解析效果最佳。
 
 **原则：意图优先的文档**
 
