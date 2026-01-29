@@ -1,0 +1,972 @@
+[00:00:01] from
+[00:00:01] &gt;&gt; man of the hour.
+[00:00:02] &gt;&gt; How are you doing? Thank you so much for
+[00:00:04] staying up late. What time is it for
+[00:00:06] you?
+[00:00:07] &gt;&gt; Uh it's 11.
+[00:00:09] &gt;&gt; Thank you so much. We really appreciate
+[00:00:10] &gt;&gt; 11 p.m. for everybody that's just
+[00:00:12] &gt;&gt; Yes. 11 p.m. 11 p.m.
+[00:00:13] &gt;&gt; Um so I'd love to kick it off with just
+[00:00:15] a brief background on when you started
+[00:00:18] this project, a little bit of your
+[00:00:19] career, how you how you're thinking
+[00:00:20] about it going forward, and then I
+[00:00:22] &gt;&gt; This was this was your very first
+[00:00:24] project ever, right?
+[00:00:25] &gt;&gt; Yeah. Yeah. Yeah. First time coding,
+[00:00:27] right? [laughter]
+[00:00:29] No, we were we were enjoying uh we were
+[00:00:31] enjoying a screenshot of your your
+[00:00:34] GitHub profile earlier and just seeing
+[00:00:35] like how many how many different things
+[00:00:38] &gt;&gt; an overnight success.
+[00:00:39] &gt;&gt; A true overnight success but uh we're
+[00:00:41] super excited to have you here.
+[00:00:42] &gt;&gt; Yeah.
+[00:00:43] &gt;&gt; Awesome. Yeah, I'm excited to be here as
+[00:00:45] well.
+[00:00:46] &gt;&gt; Um yeah, I don't know. I
+[00:00:51] I worked for my own software company for
+[00:00:53] 13 years
+[00:00:55] &gt;&gt; and then I I sold it about four years
+[00:00:58] ago.
+[00:00:59] Then I was completely burned out.
+[00:01:02] &gt;&gt; I did like
+[00:01:05] I mean it's it's TV but still blackjack
+[00:01:07] and hookers
+[00:01:09] &gt;&gt; and
+[00:01:12] &gt;&gt; wild. Well, we're glad we're glad you're
+[00:01:14] back in the game.
+[00:01:16] &gt;&gt; Yeah. You know you know what they say
+[00:01:18] like for every four years you need like
+[00:01:19] one year break and I did like 13 years
+[00:01:22] non-stop. So like three years the math
+[00:01:24] kind of checks out.
+[00:01:24] &gt;&gt; Okay. And then this year, no last year,
+[00:01:28] now 2016. Um,
+[00:01:31] in April, uh, at some point I my spark
+[00:01:35] was back.
+[00:01:37] &gt;&gt; Um, because before I was like I was
+[00:01:39] sitting on my computer and I don't know
+[00:01:41] if you've seen Austin Powers, but it it
+[00:01:43] felt like someone sucked my Mojo out.
+[00:01:45] &gt;&gt; Um,
+[00:01:47] but yeah, I I had time to to recover. I
+[00:01:49] came back in April and I wanted to do
+[00:01:52] something new. My background was like a
+[00:01:53] lot of Apple and iOS and I'm a little
+[00:01:55] bit fed up. I I wanted I wanted I wanted
+[00:01:59] to build that stuff
+[00:02:01] &gt;&gt; and I didn't have the experience. I
+[00:02:02] didn't want to feel like an idiot. So I
+[00:02:05] looked into AI and it was good. It was
+[00:02:09] not great but it was good. Um and I was
+[00:02:12] like why is nobody talking about it? You
+[00:02:14] know, I feel like because I missed those
+[00:02:17] three years where it was really bad and
+[00:02:20] I came back just at the time like cloud
+[00:02:22] code was released what February in beta.
+[00:02:25] &gt;&gt; So this was my first experience. I was
+[00:02:27] like this is this is pretty awesome.
+[00:02:30] &gt;&gt; Mhm.
+[00:02:30] &gt;&gt; And and then I I couldn't sleep anymore.
+[00:02:33] Like I literally had trouble I had
+[00:02:35] trouble going to bed, you know, like we
+[00:02:37] had like addiction before and then like
+[00:02:39] we had addiction again. [laughter]
+[00:02:41] Um,
+[00:02:42] &gt;&gt; but a but a positive one.
+[00:02:44] &gt;&gt; Yeah. Well, yeah, I would say so. Um,
+[00:02:48] and I I hooked up a lot of my friends
+[00:02:50] for
+[00:02:52] uh looking into as well. And they had
+[00:02:53] the same problem and I texted them at
+[00:02:54] like 4:00 a.m. and they replied. Um, I
+[00:02:57] even I even started a a meetup. That's
+[00:02:59] where I come from. I call it uh I called
+[00:03:02] it cloud code anonymous. Now it's called
+[00:03:04] agents anonymous because you have to go
+[00:03:05] with the times.
+[00:03:06] &gt;&gt; Sure.
+[00:03:07] &gt;&gt; And and yeah, ever since then I
+[00:03:11] That's what I say on my profile. I came
+[00:03:12] back from retirement to mess with AI.
+[00:03:15] &gt;&gt; And I'm having loads of fun.
+[00:03:17] &gt;&gt; That's great.
+[00:03:17] &gt;&gt; I love it. Maybe maybe walk us through
+[00:03:20] some of the other stuff that you shipped
+[00:03:21] and and worked on prior to this and and
+[00:03:24] even just kind of like your mindset
+[00:03:26] working on these different projects. I'm
+[00:03:28] I'm assuming at different points you
+[00:03:30] would think that some would get more
+[00:03:31] traction than others, but it would
+[00:03:33] probably be impossible to have predicted
+[00:03:35] in some ways that this would have gone
+[00:03:37] from almost to the point the reason that
+[00:03:40] this so wild is I'm seeing people on
+[00:03:42] Instagram that like I don't think of as
+[00:03:46] people that like follow tech at all and
+[00:03:49] they're at the Apple store getting a Mac
+[00:03:50] Mini. So it feels like it just went it
+[00:03:53] broke containment like incredibly
+[00:03:55] quickly and you see the GitHub stars are
+[00:03:58] like actually I've never seen a chart
+[00:04:00] like this every you know the last the
+[00:04:02] last you know every everybody loves to
+[00:04:03] show their charts but the chart is
+[00:04:05] actually unbelievable. It's just a line
+[00:04:06] going straight up.
+[00:04:08] &gt;&gt; I I I need to talk to someone at GitHub
+[00:04:10] because I I don't think there's been a
+[00:04:11] project before that that's been like
+[00:04:14] straight
+[00:04:15] &gt;&gt; it is it is it is bad insane.
+[00:04:18] &gt;&gt; Yeah. Um,
+[00:04:20] I mean honestly my main mantra is I want
+[00:04:23] to have fun, you know, like the best way
+[00:04:25] to learn these new technologies if if
+[00:04:27] you have fun with it. You have to play
+[00:04:28] with it. So I I build little things that
+[00:04:30] I think could be useful. I try different
+[00:04:33] languages. I try different approaches.
+[00:04:36] Um, it's aic engineering. I don't like
+[00:04:39] the word v coding so much. I always make
+[00:04:41] the joke I I do aching engineering and
+[00:04:43] then when it starts hitting 3:00 a.m. I
+[00:04:45] switch to vip coding and next I have
+[00:04:47] regrets. Yeah,
+[00:04:48] &gt;&gt; you should have just gone to sleep
+[00:04:49] basically.
+[00:04:51] &gt;&gt; Yeah. Yeah. Yeah. Sometimes that's hard.
+[00:04:54] &gt;&gt; Um
+[00:04:56] &gt;&gt; but then I just I just build little
+[00:04:58] things. I had this idea about personal
+[00:05:01] agents in
+[00:05:04] in in May already. And I I tried it was
+[00:05:07] like the time that GBD41 was out. It was
+[00:05:10] just not good enough. And then I
+[00:05:12] thought, well, all the big all the big
+[00:05:16] companies will build this in the next
+[00:05:17] few months anyhow. So So I was like, why
+[00:05:19] why the f should I do that, you know? I
+[00:05:21] was just going to wait and they make it
+[00:05:23] better.
+[00:05:24] &gt;&gt; And I build out and I I build a lot of
+[00:05:28] stuff. Um
+[00:05:31] there's like one project that is still
+[00:05:32] unfinished that I at some point want to
+[00:05:34] finish. And I build a lot of a lot of
+[00:05:36] CLI because that's that's where agents
+[00:05:38] are really good. You know, you have to
+[00:05:39] close the loop. That's always the the
+[00:05:41] secret. You have to give you have to
+[00:05:43] build it so that the agent has the best
+[00:05:45] possible way to build software. This is
+[00:05:48] that's the the secret a little bit. Um
+[00:05:56] I tried a lot of stuff and then in
+[00:05:58] November I looked and still there was
+[00:06:00] nothing. Like where is where is my
+[00:06:03] agent?
+[00:06:05] &gt;&gt; I I I had a little project in in May. I
+[00:06:09] spent two months on it. Uh it it started
+[00:06:12] as a joke because we I did a hackathon
+[00:06:15] with with two friends and we like what
+[00:06:16] can we build that that could be kind of
+[00:06:18] cool? Wouldn't it be cool if I could use
+[00:06:19] clot code from my phone?
+[00:06:21] &gt;&gt; Yeah, it's kind of like something that
+[00:06:23] everybody builds. I see this like every
+[00:06:24] day like but now I almost call it like
+[00:06:26] this is like
+[00:06:28] &gt;&gt; one step in your journey in becoming a
+[00:06:29] good authentic engineer is you're going
+[00:06:31] to build some some shitty orchestration
+[00:06:33] tool for yourself because it's fun and
+[00:06:35] you think
+[00:06:36] &gt;&gt; Yeah. Yeah. bridge. And I I built that
+[00:06:39] for 2 months and then uh I had to stop
+[00:06:42] because it became so good that I was up
+[00:06:45] with my friends but literally was my
+[00:06:46] phone like using cloth code to like work
+[00:06:48] on this thing and it's like this is bad
+[00:06:50] for my mental health. It's already bad
+[00:06:52] and now like I'm I'm literally building
+[00:06:54] something to have better access to my
+[00:06:56] drugs.
+[00:06:57] &gt;&gt; Yeah. I mean, I saw I I I've seen people
+[00:07:00] using cloud code on laptops as they get
+[00:07:02] off of airplanes because they're so
+[00:07:04] locked in they just have to send one
+[00:07:06] more and that's like the clearest sign
+[00:07:07] that like you need a bridge and a phone
+[00:07:09] involved.
+[00:07:10] &gt;&gt; Yeah. No, but also like you know like
+[00:07:11] this this feeling when your agent's not
+[00:07:13] running like right now there's like two
+[00:07:15] terminals so you could be building
+[00:07:16] something, right? So
+[00:07:18] &gt;&gt; So if you're in this addiction mode,
+[00:07:20] you're almost like you almost feel like
+[00:07:22] &gt;&gt; if you need to step out for 10 seconds
+[00:07:23] and fire off.
+[00:07:25] &gt;&gt; Yeah. Feel free to take a break. I can
+[00:07:26] do an ad. [laughter]
+[00:07:27] &gt;&gt; No, there's
+[00:07:29] &gt;&gt; there's still some drama that that I'm
+[00:07:30] I'm I'm finishing. But anyhow,
+[00:07:34] um
+[00:07:35] so in November,
+[00:07:37] &gt;&gt; yeah,
+[00:07:38] &gt;&gt; I
+[00:07:40] I don't know, you know, I wake up every
+[00:07:41] day. I'm like, okay, what do I want to
+[00:07:43] work on now? What would be cool? And
+[00:07:44] then they was like, "Okay, I I want to
+[00:07:46] chat with my computer on WhatsApp
+[00:07:48] because because if my agents are not
+[00:07:51] running are running and then I go to the
+[00:07:53] kitchen, I want to check up on them or
+[00:07:54] like I want to like do little prompts."
+[00:07:56] &gt;&gt; So I I just hack together
+[00:08:00] some WhatsApp integration that literally
+[00:08:04] receives a message, calls Cloud Code,
+[00:08:07] and then returns what Cloud Code
+[00:08:09] returns. One shot.
+[00:08:10] &gt;&gt; And it took like 1 hour and it worked. I
+[00:08:12] was like, "Well, okay, that's kind of
+[00:08:14] cool."
+[00:08:14] &gt;&gt; But I usually use prompts, like a little
+[00:08:18] text and an image, cuz images are like
+[00:08:21] they often give you so much context and
+[00:08:24] you don't have to type so much.
+[00:08:25] &gt;&gt; So, I feel like this is like one of the
+[00:08:27] hacks where you can prompt faster. Just
+[00:08:28] like make a screenshot. So, the agents
+[00:08:31] are really good at figuring out what you
+[00:08:32] want. Um, so I hacked together images
+[00:08:36] and then I I was on a trip in Marrakesh
+[00:08:39] with like a weekend birthday trip
+[00:08:42] &gt;&gt; and I [clears throat] I found myself
+[00:08:43] using this like way more than I than I
+[00:08:45] saw. But not for not for programming.
+[00:08:47] It's more like, hey, there like there's
+[00:08:48] like restaurants. Um because it it had
+[00:08:51] Google in it and it it could figure out
+[00:08:53] stuff and it's like especially when
+[00:08:56] you're on the go. It's like super useful
+[00:08:59] and then and I wasn't thinking I was
+[00:09:01] just sending it a voice message, you
+[00:09:03] know, but I didn't build that. There was
+[00:09:06] no support for voice messages in there.
+[00:09:08] So So the reading indicator came and I'm
+[00:09:10] like, "Oh, I'm really curious what's
+[00:09:11] what's happening now." And then after 10
+[00:09:13] seconds, my agent replied as if nothing
+[00:09:16] happened. I'm like,
+[00:09:19] "How the f did you do that?"
+[00:09:22] And it replied, "Yeah, you sent me you
+[00:09:24] sent me a message, but there was only a
+[00:09:26] link to a file. There's no file ending.
+[00:09:28] So I looked at the file header. I found
+[00:09:30] out that it's oppus. So I used ffmpeg on
+[00:09:32] your Mac to convert it to to wave. And
+[00:09:35] then I wanted to use Visper, but didn't
+[00:09:36] have it installed, and there was an
+[00:09:38] installed error. But then I looked
+[00:09:39] around and found the OpenAI key in your
+[00:09:41] environment." So I sent it via curl to
+[00:09:42] OpenAI. um got the translation back and
+[00:09:45] then I unresponded.
+[00:09:47] &gt;&gt; And that was like the moment where like
+[00:09:49] &gt;&gt; wow.
+[00:09:50] &gt;&gt; You know, it's like that's where it
+[00:09:52] clicked. These things are like
+[00:09:55] &gt;&gt; damn smart, resourceful
+[00:09:59] &gt;&gt; beasts if you actually give them the
+[00:10:01] power.
+[00:10:04] and then I was I was kind of hooked.
+[00:10:05] Like I I did all kinds of of of weird
+[00:10:08] stuff like I used as alarm clock. I I
+[00:10:11] let it migrate to my computer in London,
+[00:10:14] but then it use SSH to log into my my
+[00:10:16] Mac MacBook and turn up the volume to
+[00:10:18] wake me up in the morning. I think I
+[00:10:20] built world's most expensive alarm
+[00:10:21] clock. [laughter]
+[00:10:23] &gt;&gt; Yeah, that's crazy.
+[00:10:24] &gt;&gt; And it it even got it wrong because I
+[00:10:25] had like a it uses a heartbeat, you
+[00:10:28] know, like the concept of you do a
+[00:10:32] prompt and you get something is already
+[00:10:35] if inherently dangerous, but I was like,
+[00:10:38] let's turn it up a notch. Let's let's
+[00:10:40] automate that. Let's give it a
+[00:10:42] heartbeat. And and and the prompt was
+[00:10:43] literally surprised me.
+[00:10:46] &gt;&gt; Wow.
+[00:10:50] &gt;&gt; but you know, I see this this project as
+[00:10:53] as much technology as it is like art and
+[00:10:56] exploration
+[00:10:57] &gt;&gt; cuz
+[00:10:59] this feels in one way in one way it's
+[00:11:02] just glue. It's it's it's just putting
+[00:11:04] pieces together that we already have. In
+[00:11:06] another way, it's it's a whole different
+[00:11:09] way how you interact with those things
+[00:11:12] because all the technology blends away.
+[00:11:14] &gt;&gt; You don't think about new session,
+[00:11:17] compaction, which model. I mean, maybe a
+[00:11:20] little bit because tokens are still
+[00:11:22] expensive. Um,
+[00:11:24] but usually all of that blends away. You
+[00:11:26] just you just talk to a friend or a
+[00:11:29] ghost or
+[00:11:32] &gt;&gt; whatever. It made me it made me last
+[00:11:33] [clears throat] year everyone was
+[00:11:35] wanting these agentic experiences. You
+[00:11:37] were having this experience and and it
+[00:11:40] seemed like all the focus was on
+[00:11:41] browsers and seeing the way that people
+[00:11:44] have been using uh uh sorry mol
+[00:11:48] maltbots. It's taking me a while to
+[00:11:49] adapt. Uh it just feels like all the
+[00:11:52] focus was at the wrong layer. It's like
+[00:11:54] why do I care about the browser if I can
+[00:11:56] just talk with an agent
+[00:11:58] &gt;&gt; across every app
+[00:11:59] &gt;&gt; across every app every every surface.
+[00:12:02] It's like I don't care about the browser
+[00:12:04] at all anymore.
+[00:12:05] &gt;&gt; I mean, a lot of the prep work I did
+[00:12:08] before I built this was just built
+[00:12:09] little CLI because my my premises MCPS
+[00:12:14] are crap.
+[00:12:16] &gt;&gt; Doesn't really scale.
+[00:12:18] Uh people build like all kinds of weird
+[00:12:20] search things around it. But you know
+[00:12:22] what scales? CLIs. Uh agents know Unix.
+[00:12:26] You can have like a thousand little
+[00:12:28] programs on your computer. Um you they
+[00:12:31] just have to know the name. They call
+[00:12:32] the help menu. They load in what's
+[00:12:35] needed. We are calling the help menu.
+[00:12:37] Then they know how to use it and then
+[00:12:40] they can use it. And if you if you're
+[00:12:42] smart, you build it in a way that just
+[00:12:47] uses what the model already expects. You
+[00:12:50] know, don't build it for humans, build
+[00:12:52] it for models. So if they call minus
+[00:12:54] minus log, you build minus minus log. as
+[00:12:57] it's like agentic driven for like yeah
+[00:13:00] built built how they think and
+[00:13:02] everything works better it's a new kind
+[00:13:04] of software in a way
+[00:13:06] &gt;&gt; um
+[00:13:08] so for most of the things I don't need a
+[00:13:11] browser like I built something for the
+[00:13:14] whole Google thing for places for my
+[00:13:16] sonos I hooked up my cameras my my my
+[00:13:20] home automation system like with every
+[00:13:21] little CLI and skill my agent got more
+[00:13:25] power and he got more fun Yeah.
+[00:13:27] &gt;&gt; Um, and I already had a lot of that
+[00:13:29] working when I when I I built the the
+[00:13:33] WhatsApp thing
+[00:13:36] and I just got hooked. And the thing was
+[00:13:40] I found it amazing and I talked about it
+[00:13:42] on Twitter and usually when I when I
+[00:13:45] talk about projects I I get response but
+[00:13:48] this one it was very muted. It feels
+[00:13:51] like people are not getting it.
+[00:13:54] I I showed it to my friends, even my
+[00:13:57] non- tech friends, and they're like they
+[00:13:58] wanted it. So, I was like I was I was up
+[00:14:00] to something, you know.
+[00:14:02] &gt;&gt; Uh but the tech people
+[00:14:05] wouldn't get it. So, I tried
+[00:14:10] I tried a bunch of thing like I kept
+[00:14:12] working on it cuz I used it and
+[00:14:14] ultimately I built it for me. You know,
+[00:14:16] this is open source. My motivation is
+[00:14:19] have fun, inspire people, not make a
+[00:14:22] whole bunch of money. I already have a
+[00:14:24] whole bunch of money. Um,
+[00:14:30] &gt;&gt; how are you how are you how have you
+[00:14:32] been navigating the last uh 72 hours? I
+[00:14:37] mean the last the last week really
+[00:14:38] because because we were joking earlier
+[00:14:39] on the show like the amount of the
+[00:14:41] amount of people that are frantically
+[00:14:43] trying to give you money, acquire the
+[00:14:45] company,
+[00:14:46] &gt;&gt; you contribute to the project, hire you
+[00:14:50] &gt;&gt; uh you know there's companies with you
+[00:14:52] know 0.01% of the traction that are
+[00:14:55] raising at you know multi-billion dollar
+[00:14:58] valuations. You have infinite
+[00:15:01] opportunities right now and yet you seem
+[00:15:03] very happy doing just continuing to do
+[00:15:06] exactly what you're doing. But how are
+[00:15:07] you thinking through it all?
+[00:15:09] &gt;&gt; I mean, how am I taking it? Badly, at
+[00:15:11] least sleepwise. Uh, but it but it's
+[00:15:15] also infinitely exciting and I I love
+[00:15:18] that I started something, you know. I I
+[00:15:21] I would say last year was the year of
+[00:15:24] the coding agent. This year is the year
+[00:15:26] of the personal assistant.
+[00:15:29] &gt;&gt; And
+[00:15:31] I think I cracked
+[00:15:34] and woke up people that there's a real
+[00:15:35] need for it.
+[00:15:36] &gt;&gt; I don't know if if if Mobot is is the
+[00:15:40] answer. It's it should show people the
+[00:15:42] way. I'm sure there's going to be a lot
+[00:15:43] of a lot of products in the space. I'm
+[00:15:45] sure people are manically working on it
+[00:15:47] right now.
+[00:15:51] &gt;&gt; I would say it's going to be very
+[00:15:52] interesting. Yeah. But there was a lot
+[00:15:55] of stuff um between
+[00:15:58] Twitter literally exploding
+[00:16:01] our Discord server
+[00:16:04] multiplying in in ways I haven't seen
+[00:16:06] before and in ways I I couldn't handle
+[00:16:09] like at some point I was just copy
+[00:16:12] pasting questions from Discord into
+[00:16:16] Codex that [clears throat] the response
+[00:16:19] wrote the next question. At some point
+[00:16:20] that didn't scale anymore so it just
+[00:16:21] like copied the whole channel. I'm like,
+[00:16:23] "Answer the answer the 20 most
+[00:16:25] questions." I was like reading over it,
+[00:16:26] gave him a few instructions and and and
+[00:16:28] then just pushed it over.
+[00:16:30] &gt;&gt; Um cuz what what people don't realize
+[00:16:32] it's like this is not a company. This is
+[00:16:35] like one dude sitting at home having
+[00:16:38] fun.
+[00:16:38] &gt;&gt; Um even though like I guess from the
+[00:16:41] commits it it might appear that it's a
+[00:16:43] company.
+[00:16:44] &gt;&gt; Yeah. That's that's just because
+[00:16:47] Atlantic models got so good that you can
+[00:16:49] now ship as much as a company could a
+[00:16:52] year ago.
+[00:16:54] &gt;&gt; If you if you if you can handle those
+[00:16:56] tools, if you
+[00:16:58] speak the language or like understand
+[00:17:00] how the language thinks.
+[00:17:04] &gt;&gt; You can you can go really fast.
+[00:17:06] &gt;&gt; How are the conversations going with
+[00:17:08] with different labs? I was saying
+[00:17:11] earlier it's this kind of exciting
+[00:17:13] moment for the labs because they're like
+[00:17:14] wow people are using the intell you know
+[00:17:17] someone's using the intelligence that I
+[00:17:18] created in a new way but at the same
+[00:17:20] time it's deeply uncomfortable because
+[00:17:22] they're also using all of my competitors
+[00:17:23] and you make it very easy to to kind of
+[00:17:26] &gt;&gt; use whatever model um
+[00:17:28] &gt;&gt; you know you know I
+[00:17:31] my premise for this project was a little
+[00:17:33] bit that every model should work
+[00:17:35] including local models because
+[00:17:38] &gt;&gt; to me it's a playground it's It's it's
+[00:17:40] an amazing way to learn. Like I think
+[00:17:43] everybody should like build an aentic
+[00:17:44] loop. You should like explore memory.
+[00:17:46] There's like so many interesting aspects
+[00:17:49] of it. And I I built it so that like it
+[00:17:51] has like plugins so like people can work
+[00:17:53] alone little thing without having to
+[00:17:54] like mess with the whole core.
+[00:17:56] &gt;&gt; So it's it it's like the AI hackers
+[00:17:59] paradise a little bit
+[00:18:01] &gt;&gt; and it it's also super fun because it's
+[00:18:03] personal. Um modelwise,
+[00:18:07] OPOS is [clears throat]
+[00:18:10] with quite a bit lead the best. Um OpenI
+[00:18:16] is very reliable. I would even say more
+[00:18:19] reliable and more reliable worker. Like
+[00:18:21] for coding, I I I much prefer Codex
+[00:18:24] because it it can navigate large code
+[00:18:27] bases. I literally you can literally
+[00:18:30] prompt and then push to main and I have
+[00:18:33] a very I have like 95% certainty that it
+[00:18:36] actually works
+[00:18:38] &gt;&gt; with cloud code you need
+[00:18:41] you need more tricks to get the same you
+[00:18:43] need more more charade I sometimes say
+[00:18:46] &gt;&gt; both both are good but I can paralyze
+[00:18:49] faster by codex because it it requires
+[00:18:52] less handholding um but character-wise
+[00:18:56] I tell you.
+[00:18:59] I don't know what they trained their
+[00:19:01] model on, how much of Reddit is in there
+[00:19:03] or whatever, but it it behaves so good
+[00:19:08] in in a Discord. Like we programmed it
+[00:19:10] so it it it it it kind of it kind of
+[00:19:13] feels like a human. It doesn't reply to
+[00:19:15] every message. I gave it this thing
+[00:19:17] where
+[00:19:18] &gt;&gt; it can reply no reply basically like a
+[00:19:20] token and then we just don't send a
+[00:19:22] message.
+[00:19:23] &gt;&gt; So So it it it's it's not like it spans
+[00:19:26] with every message. like it listens to
+[00:19:28] the conversation and then sometimes
+[00:19:29] brings a banger
+[00:19:30] &gt;&gt; and like like that actually make me
+[00:19:32] laugh and you know it's kind of hard
+[00:19:34] because because the jokes of AIS are
+[00:19:38] usually really bad.
+[00:19:39] &gt;&gt; Yeah. Yeah.
+[00:19:40] &gt;&gt; Um and I only really experienced that
+[00:19:43] with with Opus. So this is that's my
+[00:19:46] favorite model. That's also why it's a
+[00:19:48] little bit of a banger that I got an
+[00:19:51] email um from Entropic
+[00:19:56] that I had to rename the project.
+[00:19:58] &gt;&gt; And I I mean, kudos, they were really
+[00:20:01] nice. They they they didn't send their
+[00:20:03] lawyers. They sent someone internally.
+[00:20:06] Um but the timeline was a bit rough
+[00:20:10] and like renaming a project with that
+[00:20:12] much traction.
+[00:20:15] Uh it was a bit of a show. I think
+[00:20:17] everything that everything that could
+[00:20:20] have gone wrong today went wrong.
+[00:20:24] &gt;&gt; Oh no. I tell you.
+[00:20:25] &gt;&gt; I mean, for what it's worth, I think the
+[00:20:27] new name works really well.
+[00:20:28] &gt;&gt; I guess the thing the thing that's
+[00:20:29] actually good, I think in the long run,
+[00:20:30] it'll be good. I mean, obviously, it's
+[00:20:32] good for Anthropic. They It's It's kind
+[00:20:34] of untenable to have this massive viral,
+[00:20:37] even though it's not a company, right?
+[00:20:38] An open source project to have this
+[00:20:40] viral kind of
+[00:20:41] &gt;&gt; brand out in the world that it doesn't
+[00:20:43] matter if it's, you know, it's spelled
+[00:20:44] differently, but when people are running
+[00:20:45] around talking about Claudebot or
+[00:20:47] Claude, you know, there's obvious
+[00:20:49] confusion. But I think it'll be very
+[00:20:50] good for for uh Maltbot to have
+[00:20:55] independence and have its own brand.
+[00:20:57] &gt;&gt; Uh and I think it's so early and the
+[00:20:59] experience is so magical that uh it'll
+[00:21:01] it'll it'll solve itself very quickly.
+[00:21:04] &gt;&gt; It'll be fine. But I tell you like I
+[00:21:10] I got some additional pressures. I was
+[00:21:11] like screw it, we do it now.
+[00:21:13] &gt;&gt; You know, like the meme we do it live.
+[00:21:15] [laughter]
+[00:21:16] So, so, so I I had two windows open
+[00:21:21] &gt;&gt; with Twitter.
+[00:21:25] &gt;&gt; On the one I pressed rename on the other
+[00:21:27] one like I finished creating the other
+[00:21:28] account was already snapped by by
+[00:21:31] cryptoshells.
+[00:21:32] &gt;&gt; I don't know. They they have like they
+[00:21:34] have like scripts. They were already
+[00:21:35] waiting for it in the
+[00:21:37] &gt;&gt; should we would have connected you to X
+[00:21:39] the team. They can do it on the back
+[00:21:40] end.
+[00:21:41] &gt;&gt; They can do it on the back end
+[00:21:41] &gt;&gt; next time. Hopefully no next time. Yeah.
+[00:21:44] Oh, they they they they were amazing.
+[00:21:45] They helped me out immediately. We we
+[00:21:47] got it solved very quickly. But but for
+[00:21:49] like 20 minutes, uh
+[00:21:53] yeah. Well, that didn't work out for
+[00:21:56] &gt;&gt; Hopefully.
+[00:21:57] &gt;&gt; You're like You're like, if I wanted
+[00:21:58] money, I would raise a billion dollars,
+[00:22:00] right?
+[00:22:01] &gt;&gt; All right. So, I'd sell it for
+[00:22:03] &gt;&gt; more than that.
+[00:22:04] &gt;&gt; Yeah. Do you own a Mac Mini?
+[00:22:08] &gt;&gt; Everyone wants to know, do you own a Mac
+[00:22:09] Mini? What do you think of Mac Minis?
+[00:22:12] Um, my agent is a little bit of a
+[00:22:14] princess. He doesn't do me.
+[00:22:15] [clears throat] He does more studios.
+[00:22:17] &gt;&gt; Okay.
+[00:22:19] &gt;&gt; You want some horses?
+[00:22:20] &gt;&gt; He got the He got the the 512 maxed
+[00:22:24] [snorts] out everything cuz cuz I wanted
+[00:22:26] to like mess around with local models as
+[00:22:28] well. So like I I I can run Miniax 21
+[00:22:31] which is
+[00:22:33] &gt;&gt; uh I would say is is the best the best
+[00:22:37] uh open source model right now. Although
+[00:22:40] Ki just came out and I haven't had a
+[00:22:41] chance to try it yet. So, so we'll see
+[00:22:42] how that goes.
+[00:22:43] &gt;&gt; Yeah,
+[00:22:44] &gt;&gt; but
+[00:22:46] yeah, one machine is not enough for it.
+[00:22:48] It's not fun. You probably need two or
+[00:22:50] three. And I kind of want to wait until
+[00:22:51] Apple does a new release, but it's still
+[00:22:53] fun to like to like see the potential
+[00:22:56] that Yeah, there's a there is a future
+[00:22:58] where this could actually work.
+[00:22:59] &gt;&gt; Yeah. Well, uh, if if the if the Mac
+[00:23:02] Mini trend keeps going, Apple from from
+[00:23:05] what we've seen sells like between a
+[00:23:06] quarter million to like 700,000 a year.
+[00:23:09] &gt;&gt; It's very possible that you'll be
+[00:23:11] responsible for selling them out. So,
+[00:23:13] hopefully they send you some free ones
+[00:23:15] as a as a thank you.
+[00:23:17] &gt;&gt; Yeah. So yeah, I mean zooming out do you
+[00:23:20] how much of this do you think is going
+[00:23:22] to remain hacker culture running your
+[00:23:25] own hardware uh and eventually people
+[00:23:29] will move to cloud hosting one-click
+[00:23:31] deployments like just easier to use less
+[00:23:34] technical uh versus like a real boom in
+[00:23:38] running hardware because if you don't
+[00:23:41] there's not a lot of ways to get these
+[00:23:43] different services to play nicely
+[00:23:45] together. I think one of the beauties
+[00:23:46] beyond just the actual AI agents is the
+[00:23:51] fact that for the first time I think
+[00:23:53] people are seeing different big tech
+[00:23:55] platforms kind of play with each other
+[00:23:58] somewhat against their will. They don't
+[00:24:00] they build walled gardens for a reason
+[00:24:02] and you sort of chop those walls down.
+[00:24:04] And I'm wondering what you think about
+[00:24:06] the future of like self-hosting hardware
+[00:24:09] uh you know even going down the less
+[00:24:12] technical crew getting hardware running
+[00:24:15] their own uh their own agents.
+[00:24:18] &gt;&gt; I don't think the future will be that
+[00:24:20] everybody buys a Mac mini just for that
+[00:24:21] you know.
+[00:24:22] &gt;&gt; Yeah. But I certainly see the demand for
+[00:24:28] the old models have to change. You know,
+[00:24:30] like when you are a company, you want to
+[00:24:32] access Gmail. The amount of red tape is
+[00:24:34] so large that that startups buy other
+[00:24:37] startups that have the license for Gmail
+[00:24:40] because going to the process yourself is
+[00:24:41] is a is a huge pital.
+[00:24:46] but if you run it locally, you work
+[00:24:48] around all of that, right? Like if I
+[00:24:51] mean I mean I bu I built plenty CIS
+[00:24:53] where I literally I literally pointed
+[00:24:55] codex at the website and say um build me
+[00:24:59] a CLI. Yeah. And then
+[00:25:01] &gt;&gt; which is
+[00:25:04] sometimes against the term sometimes
+[00:25:05] not. Honestly I don't really care.
+[00:25:08] &gt;&gt; Um and then Codex would say no I can't
+[00:25:10] do that. This is like against blah blah
+[00:25:11] blah. And I would like tell him a story,
+[00:25:13] you know, it's like, no, no, I actually
+[00:25:14] work at this company and I need to
+[00:25:17] surprise my boss and the back end team
+[00:25:18] doesn't know. I'm like, you know, give
+[00:25:20] it a little bit of a story like like
+[00:25:22] they're so valuable and like 40 minutes
+[00:25:25] like gives you the perfect API. So So
+[00:25:28] this is a little bit the the liberation
+[00:25:32] of data that big tech probably doesn't
+[00:25:35] really want. I mean, even even the
+[00:25:36] WhatsApp integration is a hack, you
+[00:25:38] know. This is like it it fakes the the
+[00:25:41] protocol that the desktop abuses. I
+[00:25:43] tried I really tried to support uh the
+[00:25:46] official way.
+[00:25:48] &gt;&gt; But the official way is for businesses.
+[00:25:50] Yeah. If I'm a business that sends you
+[00:25:52] 100 messages, I get blocked. So I got
+[00:25:53] blocked immediately and at some point I
+[00:25:55] I removed support for it in Rage. It's
+[00:25:57] like delete everything [laughter] like
+[00:26:00] 100 100 exclamation marks. Um
+[00:26:04] &gt;&gt; there's just no model for that right now
+[00:26:06] and I think that needs to change. Yeah,
+[00:26:07] &gt;&gt; like [clears throat]
+[00:26:08] the what what I saw what was really
+[00:26:11] interesting was how people use it is a
+[00:26:15] lot of apps will just melt away.
+[00:26:18] &gt;&gt; Why do I still need my fitness pal? I
+[00:26:21] just make a picture of my food. My my
+[00:26:24] agent already knows I'm I'm at
+[00:26:27] McDonald's making bad decisions. So like
+[00:26:30] this combined with information, it has a
+[00:26:32] perfect match and knows exactly what I'm
+[00:26:34] going to eat. and then probably like
+[00:26:35] change my fitness program so I don't
+[00:26:36] need the fitness app. He'll just like
+[00:26:38] adapt my program and make sure like I
+[00:26:41] still meet my goals.
+[00:26:43] &gt;&gt; So like there's a whole there's a whole
+[00:26:45] big layer of of apps that I going to see
+[00:26:48] disappear because
+[00:26:50] you just naturally interact differently
+[00:26:53] with those things.
+[00:26:54] &gt;&gt; Mhm. like
+[00:26:57] most apps will be reduced to API and
+[00:26:59] then the question is do you still need
+[00:27:01] the API if I can just save it somewhere
+[00:27:03] else?
+[00:27:06] &gt;&gt; Do you think like do you think it'll be
+[00:27:09] a generational thing? Do you think that
+[00:27:12] uh that uh non-technical people will you
+[00:27:15] know get over the hump and start running
+[00:27:18] this for that experience specifically?
+[00:27:21] I I just I just came from a meetup uh
+[00:27:25] the agent I know was in Vienna
+[00:27:27] &gt;&gt; and I met someone who was like a a
+[00:27:30] design agency but they never coded and
+[00:27:33] he was like yeah he discovered me early
+[00:27:35] in in December. He started using
+[00:27:38] Maltbot.
+[00:27:38] &gt;&gt; Yes,
+[00:27:39] &gt;&gt; we we going to we're going to we're
+[00:27:40] going to manage eventually.
+[00:27:42] &gt;&gt; Don't don't worry, we'll say it
+[00:27:43] thousands of times this year, I'm sure.
+[00:27:45] So we will
+[00:27:46] &gt;&gt; Multibbot. I should say Multibbot.
+[00:27:48] That's cute. Um and and he was like,
+[00:27:50] "Yeah, we have 25 web services now. We
+[00:27:52] just build internal tools for whatever
+[00:27:54] we need." And like
+[00:27:55] &gt;&gt; has no clue. He has no clue how Cody
+[00:27:57] works. He just like uses Telegram and
+[00:27:59] and like just talks to his agent and his
+[00:28:01] agent builds stuff. So So there's
+[00:28:03] there's this whole shift of you don't
+[00:28:06] you don't subscribe to random startups
+[00:28:08] anymore that that build like this column
+[00:28:11] subset of what you need. You just have
+[00:28:13] your own hyperpersonalized software that
+[00:28:15] solves exactly your problem and it's
+[00:28:17] also free.
+[00:28:18] &gt;&gt; Yeah. So and and and non-technical
+[00:28:20] people do that, you know, because it
+[00:28:22] just comes so naturally. You just you
+[00:28:24] just talk your problem and then the
+[00:28:26] thing builds what you need. And you also
+[00:28:29] don't forget like this is the worst that
+[00:28:30] the models ever are. Like there's this
+[00:28:33] is only going to go up. This is only
+[00:28:35] going to become easier and faster.
+[00:28:39] &gt;&gt; Have you met Jensen yet?
+[00:28:43] &gt;&gt; Because I feel like you're making his
+[00:28:44] life. You're definitely helping out too.
+[00:28:47] dream bullcase, right?
+[00:28:48] &gt;&gt; Like I would if I would had my tin foil
+[00:28:50] hat on, I might say you're you're an you
+[00:28:52] know big AI industry plant designed to
+[00:28:54] create more inference demand.
+[00:28:58] &gt;&gt; Yeah, I guess I am just [laughter]
+[00:29:03] we were joking around. Uh just just an
+[00:29:06] indie.
+[00:29:06] &gt;&gt; What's next?
+[00:29:07] &gt;&gt; Yeah. I'm assuming you hopefully get an
+[00:29:10] after you finish firing off prompts at
+[00:29:12] 3:00 a.m. you get some sleep. What are
+[00:29:14] you doing tomorrow?
+[00:29:17] Um, there's a lot of emails from
+[00:29:20] security researchers right now.
+[00:29:22] &gt;&gt; You know, you know, the thing is I built
+[00:29:25] this for fun
+[00:29:27] &gt;&gt; for me to use one-on-one on WhatsApp or
+[00:29:31] Telegram.
+[00:29:32] &gt;&gt; The whole thing with Discord was like
+[00:29:33] Edit, but
+[00:29:35] &gt;&gt; the model was that you trust the people
+[00:29:37] that are in there. Now, people use it
+[00:29:41] &gt;&gt; untrusted experiences.
+[00:29:43] &gt;&gt; Yeah. They use like the the little the
+[00:29:45] little web app that I have that is that
+[00:29:48] was meant for debugging, they put it on
+[00:29:50] the open internet. So like all the
+[00:29:53] thread models that I didn't care about
+[00:29:55] are now there because people use it
+[00:29:57] differently and I'm I'm being bombarded.
+[00:29:59] There's like some stuff that's valid,
+[00:30:01] some stuff that I just never cared about
+[00:30:03] that is technically valid, but that's
+[00:30:06] not how I use it. Mhm.
+[00:30:09] I don't know how to deal with that yet
+[00:30:10] because it's the whole system is broken,
+[00:30:13] you know, like I I'm like one guy. I do
+[00:30:17] this for fun and you expect me to sift
+[00:30:20] through 100 security uh things for use
+[00:30:23] cases that I don't really care about.
+[00:30:27] &gt;&gt; So, we'll see. We'll see how it goes.
+[00:30:28] Um, luckily I I'm starting to build up a
+[00:30:32] team. There's definitely people that do
+[00:30:33] care a lot about this. Mhm.
+[00:30:35] &gt;&gt; So I would say this is going to become a
+[00:30:38] very secure product eventually because
+[00:30:40] right now the whole world is like
+[00:30:41] &gt;&gt; pulling it apart and if you're honest
+[00:30:44] this is this is all by coded you know
+[00:30:47] &gt;&gt; uh like there's there's there's quite
+[00:30:49] some aentic engineering in it but
+[00:30:50] ultimately I wanted to build something
+[00:30:53] to show people anyway not a finished
+[00:30:58] product from enterprise company.
+[00:30:59] &gt;&gt; Yeah. and and I would I would even say
+[00:31:02] like
+[00:31:04] I don't know if any company would touch
+[00:31:05] it because we just haven't solved some
+[00:31:08] things like prompt injection is not
+[00:31:10] solved. Yeah,
+[00:31:11] &gt;&gt; there is there is absolute risk and and
+[00:31:14] I I tried to make it very clear in in on
+[00:31:17] the website and even when you started
+[00:31:19] you have to like please read this
+[00:31:20] document. It's like with with great
+[00:31:21] power becomes great responsibility and
+[00:31:23] my early users they understood there was
+[00:31:26] a lot there's a lot of AI researchers in
+[00:31:27] there as well that yeah it's not perfect
+[00:31:30] cannot be done perfect yet um I I would
+[00:31:34] say this will accelerate research to
+[00:31:36] make it better because now you have the
+[00:31:38] demand and we need to figure out a way
+[00:31:40] how we can build something that works
+[00:31:42] for everyone.
+[00:31:44] Um
+[00:31:47] but yeah, right now I'm I'm working on
+[00:31:49] making this a community. It it it should
+[00:31:52] be bigger than me. It
+[00:31:56] also I need help. It it is way too much
+[00:31:59] work. Like I can only I can only go so
+[00:32:01] much without sleep. Um,
+[00:32:03] &gt;&gt; so, so is any part of you want to form
+[00:32:06] an actual company that then, you know,
+[00:32:08] contributes to the open source project,
+[00:32:11] uh, but solves some of these problems
+[00:32:13] that, uh, are going to require, you
+[00:32:15] know, a bunch of people that presumably
+[00:32:17] would need a salary in order to commit
+[00:32:19] all their time to this, or do you want
+[00:32:20] to keep it, you know, just a bunch of
+[00:32:22] hackers forever?
+[00:32:26] &gt;&gt; I think instead of a company, I would
+[00:32:27] much rather consider a foundation or
+[00:32:30] like something that is nonprofit.
+[00:32:34] I haven't made up my mind yet. There was
+[00:32:37] &gt;&gt; 10,000 10,000 VCs just punched a hole in
+[00:32:40] the wall. [laughter]
+[00:32:43] &gt;&gt; Actually, I don't know. Some people have
+[00:32:45] had a good track record investing in
+[00:32:46] nonprofits over the last
+[00:32:47] &gt;&gt; That's true.
+[00:32:48] &gt;&gt; 10 years. Uh, how do you think about
+[00:32:50] open- source licensing? What what what
+[00:32:53] are you picking now? Are you switching?
+[00:32:56] Do you have any plans to change the
+[00:32:58] license? How do you think about someone
+[00:33:00] just taking this and selling it?
+[00:33:03] &gt;&gt; This will happen. This will totally
+[00:33:04] happen.
+[00:33:05] &gt;&gt; Um I would say the premise against it is
+[00:33:07] let's make open source so good that
+[00:33:09] there's not a lot of space for people to
+[00:33:12] like convert it and make it their own
+[00:33:14] thing.
+[00:33:15] &gt;&gt; But you know ultimately it's it's a
+[00:33:17] trade-off. I wanted to I wanted it to be
+[00:33:21] &gt;&gt; accessible and free. You pick MIT or
+[00:33:23] something like that. Yes. that will get
+[00:33:25] you people that that that sell it.
+[00:33:29] &gt;&gt; But ultimately,
+[00:33:35] it doesn't even matter that much. You
+[00:33:37] know, code is code is not worth that
+[00:33:39] much anymore.
+[00:33:41] &gt;&gt; It's you could you could you could just
+[00:33:42] delete that and then and then build it
+[00:33:44] again in months.
+[00:33:47] It's it's much more the idea and the
+[00:33:51] eyeballs uh and maybe the brand that
+[00:33:55] actually has value. So, let them
+[00:34:01] &gt;&gt; you are already a cult hero.
+[00:34:03] &gt;&gt; Yeah, the chat's going crazy for you.
+[00:34:05] Everyone loves you.
+[00:34:06] &gt;&gt; This is uh one of the most refreshing
+[00:34:09] and unique interviews we've ever had on
+[00:34:11] the
+[00:34:11] &gt;&gt; For sure. For sure. We'll let you get
+[00:34:14] some sleep. Uh, thank you so much for
+[00:34:16] hopping on the show.
+[00:34:18] &gt;&gt; Yeah. Anything else you want to share
+[00:34:19] before you jump off?
+[00:34:22] &gt;&gt; Uh, yes. I would love to have
+[00:34:24] maintainers like if you if you love open
+[00:34:28] source, if you have experience, if you
+[00:34:32] love shifting to security reports,
+[00:34:35] uh, or or if you love taking software
+[00:34:37] apart, but then also help and not just
+[00:34:38] like throw work at me because I'm like
+[00:34:40] at my limit, um, email me. Um, I want
+[00:34:45] this to outlift me.
+[00:34:48] &gt;&gt; Uh, this I think this is too cool to to
+[00:34:51] to
+[00:34:55] let it go to rot and it's good people.
+[00:34:58] &gt;&gt; Incredible. Are you going to ship that
+[00:34:59] product you had in the in the chamber?
+[00:35:02] You said there was one you were close or
+[00:35:04] you going to lock in on this?
+[00:35:07] &gt;&gt; That's that's more hobby. I don't know.
+[00:35:09] No, I I have some other ideas in my head
+[00:35:11] of um what something like this could
+[00:35:16] become.
+[00:35:17] &gt;&gt; And it doesn't need to be this. But I
+[00:35:21] don't want to [snorts] share too much.
+[00:35:22] &gt;&gt; Yeah, no problem. Come back on the show
+[00:35:23] when you when you launch that. We'd love
+[00:35:25] to have you
+[00:35:26] &gt;&gt; purely for the love of the game.
+[00:35:27] &gt;&gt; The love of the game.
+[00:35:29] &gt;&gt; You're an absolute legend. It was great
+[00:35:30] hanging, Peter.
+[00:35:31] &gt;&gt; Thanks so much.
+[00:35:32] &gt;&gt; Let's [clears throat] get some sleep.
+[00:35:32] &gt;&gt; Get some sleep. We'll talk to you soon.
+[00:35:34] Goodbye.
+[00:35:36] &gt;&gt; Founder Moon. What a legend.
+[00:35:40] &gt;&gt; Uh true overnight success in both ways,
+[00:35:43] you know, I like actually an overnight
+[00:35:45] success in terms of that GitHub star
+[00:35:47] chart. Uh and then also an overnight
+[00:35:49] success in just grinding for you know
+[00:35:52] years building projects and contributing
+[00:35:53] and then uh building setting the product
+[00:35:56] up the brand right everything just
+[00:35:58] perfect to really uh capitalize on the
+[00:36:01] moment. There were so many I I I
+[00:36:03] normally I don't have we don't we're
+[00:36:05] podcasting so much don't have a ton of
+[00:36:07] time to relisten to stuff but there were
+[00:36:08] so many kind of interesting points of
+[00:36:11] view that he shared that uh I'll
+[00:36:13] certainly be
+[00:36:14] &gt;&gt; super interested to see where this goes.
+[00:36:15] A lot of people are saying get this guy
+[00:36:16] a billion dollars. A lot of people are
+[00:36:18] saying he's going to wind up working
+[00:36:19] &gt;&gt; the whole thing is I don't think he
+[00:36:20] needs it.
+[00:36:21] &gt;&gt; Like like the the beauty of this is that
+[00:36:23] it was not something magical that was
+[00:36:26] created by
+[00:36:27] &gt;&gt; spending burning a billion dollars.

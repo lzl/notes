@@ -1,0 +1,1924 @@
+[00:00:00] Heat. Heat. [music]
+[00:00:05] [music]
+[00:00:23] Heat. Heat.
+[00:00:47] &gt;&gt; [music]
+[00:01:00] &gt;&gt; Heat. Heat.
+[00:02:01] We are back. Hey friends, I don't know
+[00:02:03] if you're sick of seeing my face. I'm
+[00:02:05] sick of hearing myself talk today, but
+[00:02:07] we're back. Thank you for being here and
+[00:02:09] I appreciate your patience. I am going
+[00:02:12] to bring our guest and we'll get kicked
+[00:02:14] off right away. Welcome to our third
+[00:02:17] open source Friday of the day. So in
+[00:02:20] case you missed it about an hour ago,
+[00:02:23] we're chatting with Daniel Ro, the lead
+[00:02:26] for the NUX project and earlier we were
+[00:02:30] talking to Yanni from um the R
+[00:02:33] programming language and the um our open
+[00:02:36] side foundation. They're doing this
+[00:02:38] amazing initiative. So, in case you
+[00:02:39] missed it, go back to our YouTube
+[00:02:41] channel so that you can take a listen,
+[00:02:43] put it on play in the background, and
+[00:02:46] hopefully something will bring value to
+[00:02:48] your day. I'm Andrea Griffith, a
+[00:02:50] Columbia Dev in all places, and it is my
+[00:02:53] absolute pleasure to bring to you a
+[00:02:55] person I've been stalking for the past
+[00:02:57] three hours. Welcome, Peter. Hello,
+[00:03:01] &gt;&gt; Andrea. Welcome. Thanks for having me
+[00:03:03] and thanks for the patience. No, I'm
+[00:03:05] worried that I worry people because I
+[00:03:07] was looking for you and I'm like, "Oh my
+[00:03:08] gosh, they probably think Peter is in a
+[00:03:10] ditch somewhere." Uh, but listen,
+[00:03:12] friends, time zones are so hard. You
+[00:03:14] don't even know. And I when I scheduled
+[00:03:16] this also, we were I was in the West
+[00:03:19] Coast and you are you're in Europe,
+[00:03:21] right? Like you are UK time zone.
+[00:03:23] &gt;&gt; Honestly, I was just telling in the chat
+[00:03:25] I need to stop complaining to my agents
+[00:03:27] to get time zones wrong when I can even
+[00:03:29] get the time zones right.
+[00:03:31] &gt;&gt; Can you even Can you even be mad at the
+[00:03:33] crab? It's not the crab's fault. It's
+[00:03:35] not the claw bot.
+[00:03:37] &gt;&gt; Oh, I mean I mean since we have VI, it's
+[00:03:39] always AI's fault, right? So, [laughter]
+[00:03:42] &gt;&gt; this is [clears throat] true. But
+[00:03:44] welcome.
+[00:03:46] &gt;&gt; I I'm I switch between Vienna and London
+[00:03:49] and it's just one hour difference. Uh
+[00:03:52] but yes, I I I made this mistake
+[00:03:54] countless times like plus one minus one.
+[00:03:56] It's too hard.
+[00:03:57] &gt;&gt; It's fine. Listen, um, we have a
+[00:03:59] beautiful community and I know folks
+[00:04:01] were really excited to hear from you. I
+[00:04:04] had the fun fact, friends, I actually
+[00:04:06] met Peter in person, uh, last year,
+[00:04:09] right?
+[00:04:11] We did. Yeah, we did. Peter is like, I
+[00:04:13] don't remember you. It's like, maybe,
+[00:04:16] maybe. But I remember one of the things
+[00:04:19] you said was
+[00:04:20] &gt;&gt; I was retired and then I came out of
+[00:04:23] retirement to mess with AI and and I
+[00:04:27] mean listen that you're you're not a
+[00:04:29] pensioner like you know you look like a
+[00:04:31] young guy and I was like wait a minute
+[00:04:33] hello nice to meet you like what are you
+[00:04:36] doing uh can you tell me a little bit
+[00:04:38] about your pre-retirement life like what
+[00:04:42] did you do before how did you get
+[00:04:44] retired and then what motiv motivated
+[00:04:47] you to get back in this game? And I
+[00:04:49] mean, I think I know the answer to all
+[00:04:50] those. Well, at least the the motivation
+[00:04:52] bit because this AI is so fun. But do
+[00:04:54] tell what was Peter doing if you're
+[00:04:57] okay.
+[00:04:58] &gt;&gt; What was I doing? I was I was running uh
+[00:05:01] uh my own company for
+[00:05:04] 13 years
+[00:05:06] and
+[00:05:07] &gt;&gt; wow,
+[00:05:09] &gt;&gt; it it was B2B. We built the the world's
+[00:05:13] leading PDF framework. I built it up to
+[00:05:16] around 70 people
+[00:05:18] and yeah, at some point we got an offer
+[00:05:22] I couldn't refuse basically.
+[00:05:25] &gt;&gt; I love that for you. And when did you
+[00:05:27] retire?
+[00:05:29] &gt;&gt; I mean, it's a joke, but I I I worked
+[00:05:32] really hard for 13 years, although most
+[00:05:34] weekends. So, so at the end I was like
+[00:05:38] pretty much burned out and and and
+[00:05:42] you have you seen Austin Powers?
+[00:05:44] &gt;&gt; Yeah, of course.
+[00:05:46] &gt;&gt; Yeah. Yeah. You know the scene where
+[00:05:47] they suck the mojo out?
+[00:05:50] &gt;&gt; Yes.
+[00:05:50] &gt;&gt; That was it. That was you.
+[00:05:52] &gt;&gt; Yes. Yes. Yes. That that sucked my mojo
+[00:05:56] out and I and I I just had a burnout. Um
+[00:06:00] and took me a while. It took me a while
+[00:06:02] to to get back. I also felt that I need
+[00:06:05] had to catch up a little bit on life. So
+[00:06:07] I I did a lot of other fun stuff. Um but
+[00:06:10] I knew at some point I knew like I I
+[00:06:12] love building and creating creating
+[00:06:15] ideas. I knew it eventually would come
+[00:06:16] back. And then and then early last year
+[00:06:20] at some point it just like my spark was
+[00:06:23] back and it was just a time where AI
+[00:06:26] went from this is terrible this to oh
+[00:06:29] this is actually interesting.
+[00:06:32] and and ever since I
+[00:06:34] I hooked up countless people with the
+[00:06:37] the AI addiction.
+[00:06:41] &gt;&gt; Been exploring that and it's been it's
+[00:06:43] been
+[00:06:45] may I say the most interesting year
+[00:06:48] since I did tech.
+[00:06:52] &gt;&gt; Wow. I love that. That's a Listen,
+[00:06:54] that's a toll for someone who's had you
+[00:06:56] grown your own company. you manage big
+[00:06:59] like 70 people and and then you come
+[00:07:02] back and you're like this is
+[00:07:03] interesting. Uh so you are the creator
+[00:07:05] founder by the way solo maintainer. I
+[00:07:08] just asked Peter this question before
+[00:07:10] [snorts]
+[00:07:11] we came on live on the stream because I
+[00:07:12] was like I was looking through the repo
+[00:07:14] and I'm not seeing like a core team like
+[00:07:17] what's going on? It's like no it's just
+[00:07:18] me. I'm I'm I'm it. Um also there was a
+[00:07:21] rumor I guess that maybe you were a a
+[00:07:23] bot or an agent or an AI yourself. So
+[00:07:26] now information that you're like a real
+[00:07:28] person. Uh so [laughter] I'm happy I'm
+[00:07:31] happy for for the folks in the project.
+[00:07:33] &gt;&gt; You know, you should you should you
+[00:07:34] should ask me this quest to like turn my
+[00:07:36] head because right now this is like the
+[00:07:38] one thing where I still failing. So
+[00:07:40] &gt;&gt; turn Yes. Yes. Yes.
+[00:07:43] &gt;&gt; I think Peter passes the human test
+[00:07:46] &gt;&gt; for sure. But honestly like this project
+[00:07:49] has been on fire. Um it's gotten so many
+[00:07:53] GitHub stars. I think you just scratched
+[00:07:55] a very like exciting itch that people
+[00:07:58] were dying to figure out a way to do
+[00:08:00] things. Uh single-handedly I feel like
+[00:08:02] you're boosting Apple stock because
+[00:08:04] everyone is off buying Mac minis so that
+[00:08:07] they can uh set up their own instances.
+[00:08:09] But please tell us why this how do you
+[00:08:13] come up with the idea and hopefully
+[00:08:15] we'll get to see a bit of it in action
+[00:08:16] as well. you know, um, when I already
+[00:08:22] when I came back, I wanted something
+[00:08:24] that is like my my life assistant. I
+[00:08:26] kind of wanted that in in a in April
+[00:08:29] already. And I I played with some ideas
+[00:08:32] and [sighs] the models were just not
+[00:08:34] good enough yet. And then and then I
+[00:08:36] dropped it again because I thought,
+[00:08:38] well, this is something all the big labs
+[00:08:40] are working on obviously. So, so, uh,
+[00:08:43] what's the point, right? Um, and then I
+[00:08:47] built other stuff. Like I I I built a
+[00:08:50] lot of stuff this year. And then it was
+[00:08:52] like November and like there was still
+[00:08:54] no sign that anyone did something like
+[00:08:56] this. So I'm like, gosh, do I have to do
+[00:08:59] everything myself?
+[00:09:04] Um, so
+[00:09:09] yeah, I don't I don't know what what
+[00:09:10] clicked, but in in November, I I hacked
+[00:09:14] something together in in one hour, just
+[00:09:17] some really crappy code where I could
+[00:09:19] use WhatsApp
+[00:09:20] &gt;&gt; and then it would like send something to
+[00:09:22] cloud code and then send me back what
+[00:09:24] cloud code did. Uh, and they're like
+[00:09:28] you just glue the things together. That
+[00:09:30] was that was not hard. And it was like
+[00:09:33] kind of nice, but I I wanted I also
+[00:09:35] wanted images. When I when I prompt, I
+[00:09:37] often use an image because it's it's
+[00:09:39] just something that gives agents a lot
+[00:09:41] of context and it's very fast. So it
+[00:09:44] took me that actually took me longer
+[00:09:45] than the rest. Uh so it's it works in
+[00:09:48] both directions.
+[00:09:51] And it was just a time where I I I went
+[00:09:53] to a birthday uh birthday weekend for my
+[00:09:57] friends in in in Marrakesh.
+[00:10:00] So, I had like my my my super wonky
+[00:10:03] system there and I and I and I played
+[00:10:06] with it while we were like exploring the
+[00:10:07] city kind of like as a as a tour guide
+[00:10:09] and like to check out places and stuff
+[00:10:13] and it already worked better than
+[00:10:15] expected and at some point I
+[00:10:19] I didn't think and I I just sent it a
+[00:10:21] voice message
+[00:10:23] and but I didn't build support for it,
+[00:10:26] you know, like I I just made images
+[00:10:28] work. So, I was like, and and then like
+[00:10:30] the typing indicator appeared. I'm like,
+[00:10:32] "Huh, I'm curious what's going to happen
+[00:10:33] now." And then for like for like 5
+[00:10:36] seconds and then my my bot answered as
+[00:10:39] if nothing would have happened. And I'm
+[00:10:42] like, "How the f did you do that just
+[00:10:45] now?"
+[00:10:46] &gt;&gt; Uh oh.
+[00:10:47] &gt;&gt; And And it was like, "Yeah, like I I got
+[00:10:49] I saw this file, but it had no file
+[00:10:51] ending." Yeah. Because I didn't build
+[00:10:53] it. So, so I I checked the header and it
+[00:10:55] was like, it was like I think
+[00:11:00] u I used ffmpeact to convert it. Uh, and
+[00:11:02] then I was looking for for for whisper
+[00:11:04] for translation, but you didn't had it
+[00:11:06] installed and like installation failed.
+[00:11:09] But I then found an OpenAI key. So I
+[00:11:11] just use curl to send it to OpenAI and
+[00:11:14] got back the response.
+[00:11:15] &gt;&gt; What [laughter]
+[00:11:17] you're like AGI achieve on my first one.
+[00:11:20] No, no, it's called algi lobster
+[00:11:23] general. [laughter]
+[00:11:25] &gt;&gt; But I think I think that was the moment
+[00:11:27] where where where it it it kind of
+[00:11:28] clicked for me really. It was like
+[00:11:30] &gt;&gt; it's like holy hell, these things are
+[00:11:33] resourceful
+[00:11:35] to a degree that I never thought of.
+[00:11:40] Um,
+[00:11:42] and then I and then I made I made some
+[00:11:44] jokes about how
+[00:11:46] because like I couldn't lock the door.
+[00:11:48] Sorry. It was like a little bit of a
+[00:11:49] wonky hotel in Marrakesh and I'm like,
+[00:11:51] "Hopefully you don't get stolen because
+[00:11:53] you're running on my on my Mac MacBook
+[00:11:55] Pro." And he was like, "No, I don't want
+[00:11:57] to be stolen. I'm your I'm I'm your
+[00:11:59] agent, la."
+[00:12:00] Uh and then it checked out my network
+[00:12:03] because it found tail scale on my
+[00:12:05] computer.
+[00:12:05] &gt;&gt; Okay.
+[00:12:06] &gt;&gt; And it was like and it's like there
+[00:12:08] other computers.
+[00:12:11] So basically migrated itself to like my
+[00:12:13] computer in London. Um I know this is
+[00:12:17] how Skynet starts, right?
+[00:12:19] &gt;&gt; This is fascinating. Um so many
+[00:12:22] questions. First of all, what was the
+[00:12:26] architecture like to give it that amount
+[00:12:28] of sentience like that power to how did
+[00:12:31] they reason to do that? Um what model
+[00:12:34] were you using? Uh talk us through a
+[00:12:37] little bit. This is like your first
+[00:12:38] implementation, right? Like when it was
+[00:12:39] just you on your WhatsApp and cloud
+[00:12:42] code.
+[00:12:43] This is back then it was called V relay.
+[00:12:46] &gt;&gt; Like WhatsApp relay, right?
+[00:12:48] &gt;&gt; Yeah. Yeah.
+[00:12:48] &gt;&gt; Uh but then at some point I was working
+[00:12:50] on it with with with Claude and like and
+[00:12:54] then I was like because I was I was
+[00:12:57] there was uh Shadow was was opening a PR
+[00:13:01] for Discord and I was kind of like on
+[00:13:02] the fence. Uh should I should I mention
+[00:13:05] Discord? Like what do we do? This is a
+[00:13:07] WhatsApp relay. This is not really
+[00:13:08] fitting.
+[00:13:10] Um
+[00:13:13] but then I did it because it sounded
+[00:13:15] like I I I wanted to use this cuz I
+[00:13:18] wanted to explore that and then we had
+[00:13:20] to change the name and because and then
+[00:13:23] I and then Claude suggested to claude
+[00:13:26] this
+[00:13:27] um because there's like this internet
+[00:13:29] joke of like
+[00:13:31] a space lobster in the Tardis. Um
+[00:13:36] but that kind of didn't stick. It's a
+[00:13:37] nice clobot, but yes, it's still it's
+[00:13:39] still the same still the same project. I
+[00:13:41] I clean it up a lot, but uh the roots
+[00:13:43] are very humble.
+[00:13:45] &gt;&gt; I love it. Um and so when I first saw
+[00:13:48] the project, I thought it was something
+[00:13:49] that came out of Antropic. I was like,
+[00:13:51] wait, this like I miss that. I miss how
+[00:13:54] that moves so fast. And I was following
+[00:13:56] along like I'm sure a lot of people were
+[00:13:58] starting to like adopt it and use it
+[00:14:00] themselves. And then besides raising
+[00:14:03] Apple stock, you're also single-handedly
+[00:14:04] probably responsible for the third party
+[00:14:07] top [laughter] of you coming the news
+[00:14:10] from anthropic. I think you own that
+[00:14:11] crown. Uh but this was meant to be a
+[00:14:16] personal project to fix a problem for
+[00:14:17] yourself and then people just jump right
+[00:14:20] on it like the community has adopted it
+[00:14:23] in a way. They're like it's beautiful.
+[00:14:26] It's beautifully written. It works
+[00:14:29] right. Um, tell me a little bit about
+[00:14:32] from the moment because how when did you
+[00:14:34] go I'm trying to see when the first
+[00:14:36] commit was that you actually when did
+[00:14:39] you push this to to the to the polygrio?
+[00:14:42] &gt;&gt; No, I mean ever since April everything I
+[00:14:46] do is open source.
+[00:14:48] &gt;&gt; Beautiful.
+[00:14:49] &gt;&gt; No no I I when I I came back in April
+[00:14:52] and and I started okay stuff I do will
+[00:14:54] be open source. There's there's one
+[00:14:55] there's only one project that's not open
+[00:14:56] source right now because the API cost
+[00:14:58] does horrific uh for Twitter, but
+[00:15:01] everything everything else on my GitHub
+[00:15:03] is just open source. Um so the first
+[00:15:06] commit for this is is sometime in
+[00:15:09] November.
+[00:15:10] &gt;&gt; Amazing. Amazing. Then now you have uh
+[00:15:14] over 6 to 700 stars and there is a ton
+[00:15:17] of folks that are using it and they're
+[00:15:19] running some wild things happening like
+[00:15:21] working from wherever they are setting
+[00:15:24] off this army of agents. What's been one
+[00:15:27] of the things that you've personally
+[00:15:29] seen that kind of surprise you how the
+[00:15:31] community is using it? Um, maybe
+[00:15:33] something that you didn't think it was
+[00:15:36] gonna happen and somebody figured out
+[00:15:38] how to do or they used it for that and
+[00:15:40] that wasn't maybe what you thought it
+[00:15:41] would be for.
+[00:15:43] &gt;&gt; Oh, people come up with like the the
+[00:15:46] coolest workflows. Like the other day,
+[00:15:47] somebody built something to
+[00:15:48] automatically add subtitles to images.
+[00:15:51] Somebody hooked up their their Tesla, so
+[00:15:53] they can just do that.
+[00:15:57] somebody integrated the the London
+[00:15:59] public transport scale. So, it just
+[00:16:01] tells you like if you have to run or
+[00:16:02] not.
+[00:16:07] the funny thing is now I I'm so
+[00:16:09] overwhelmed with working on the product
+[00:16:11] that I have so little time to actually
+[00:16:12] using all the automations. So, I like I
+[00:16:15] see all the cool stuff that other people
+[00:16:16] do and I get jealous.
+[00:16:19] Uh, eventually this will be better. But
+[00:16:22] yeah, I mean the other explanation is
+[00:16:24] that I because the funny thing was I I
+[00:16:28] built this in November and even in
+[00:16:29] America I show it to my friends and they
+[00:16:30] were like, "Oh, this is so cool. This is
+[00:16:32] so cool. Oh my god." And then I I talked
+[00:16:36] about it on Twitter and the response was
+[00:16:38] very muted, you know? It's like
+[00:16:41] &gt;&gt; it's like people don't get it.
+[00:16:44] That was in November and then in
+[00:16:46] December it was still very muted and and
+[00:16:48] every every time I show it to her friend
+[00:16:50] they were like I need this. So I was
+[00:16:53] like where is how can I how can I
+[00:16:56] explain
+[00:16:58] how amazing this is? Like clearly I'm
+[00:17:01] doing something wrong.
+[00:17:04] So, I did the absolute insane thing that
+[00:17:07] you do and just created a Discord and
+[00:17:10] put my bot in there without any any
+[00:17:14] security
+[00:17:16] um restrictions because I hadn't built
+[00:17:18] that yet, right? It was meant it was
+[00:17:20] meant just for me on WhatsApp. So,
+[00:17:23] nobody else can text it. So, I don't
+[00:17:25] have to control who can tell him
+[00:17:27] commands. Oh, delete all of Peter's
+[00:17:29] files. Um,
+[00:17:32] so, so I I basically wrote I just wrote
+[00:17:35] a little instructions like, "Hey, you're
+[00:17:36] in Discord, only listen to me." Uh, but
+[00:17:39] you know how it is like with agents and
+[00:17:41] and and instruction following. There's
+[00:17:43] not that's not always going so well.
+[00:17:47] [clears throat] So, I opened it the
+[00:17:48] Discord and there's a few people that
+[00:17:50] came in and I think everybody who saw it
+[00:17:52] for like a few minutes got it.
+[00:17:55] Um, and now how how I would explain it
+[00:17:59] now like imagine imagine you buy a new
+[00:18:01] computer and you have this ghost entity
+[00:18:05] and you give it a keyboard and a mouse
+[00:18:08] um and internet access and and it's like
+[00:18:11] a a virtual coworker and then you can
+[00:18:14] just talk talk to that and give it give
+[00:18:17] it things to do. So anything you can do
+[00:18:20] in a computer that agent can do in a
+[00:18:23] computer. That's basically how powerful
+[00:18:25] that is.
+[00:18:27] &gt;&gt; That's amazing. And so it's WhatsApp,
+[00:18:30] Telegram, and Discord. Obviously, I was
+[00:18:32] chatting with the bot earlier on
+[00:18:34] Discord. It did a good job. It did a
+[00:18:36] good job. Uh
+[00:18:39] &gt;&gt; you could you could have told it to like
+[00:18:40] turn on the music in my in my bedroom or
+[00:18:43] maybe like change.
+[00:18:44] &gt;&gt; You're gonna troll. Don't say that.
+[00:18:46] People will be like blasting it. Uh but
+[00:18:48] this is so cool though. But I did though
+[00:18:50] because I literally just posted a
+[00:18:52] general message and they were like they
+[00:18:54] at you and ping you and like that was
+[00:18:57] part of the comment that they made and
+[00:18:59] then I continue the conversation with
+[00:19:00] somebody else and they were like oh yeah
+[00:19:01] this is the thing that somebody posted
+[00:19:03] about earlier. Uh so amazing. I was very
+[00:19:06] impressed in the the interactions there.
+[00:19:09] Uh I love people making it their own.
+[00:19:12] They're kind of like creating their
+[00:19:14] personal assistant or the coworker they
+[00:19:16] wish they had. Um, but for you
+[00:19:19] personally, like what's your northstar?
+[00:19:21] Like when Clubbot can do X, you know,
+[00:19:24] you're like, "Yeah, this this was it." I
+[00:19:26] mean, I think you're doing it. You're
+[00:19:28] creating community around it. You're
+[00:19:29] giving yourself a ton of work
+[00:19:31] &gt;&gt; whether you wanted to or not.
+[00:19:33] &gt;&gt; But what what would be like one thing
+[00:19:35] that you think, yeah, this will be just
+[00:19:38] &gt;&gt; No, you know, you know what what I what
+[00:19:39] my goal kind of was is I fully expected
+[00:19:42] this year this this year will be the
+[00:19:44] year of personal agents. Last year was
+[00:19:47] the year where coding agents got really
+[00:19:49] good.
+[00:19:51] &gt;&gt; And this year is the year where we we'll
+[00:19:53] we'll come a little bit out of that
+[00:19:55] engineering niche to everybody has an
+[00:19:58] agent. And this is going to this is
+[00:20:00] going to be dominated by open AI and by
+[00:20:03] entropic by the few big players.
+[00:20:06] But I kind of wanted to create an
+[00:20:08] alternative where you can have your data
+[00:20:11] instead of giving even more data to the
+[00:20:14] big guys.
+[00:20:15] &gt;&gt; Yes. something where something that
+[00:20:17] would work with local models as well.
+[00:20:21] Um, and I didn't I didn't see I didn't
+[00:20:24] see that I didn't find anything like
+[00:20:26] that. This was like my Yeah, this is
+[00:20:28] important and I wanted to be completely
+[00:20:31] open and free forever. So, I put that's
+[00:20:34] why that's why I made open source if I
+[00:20:35] put it under MIT. That's why I created a
+[00:20:38] an organization so it's not just under
+[00:20:40] my name but like this should be
+[00:20:42] something by more people. The problem
+[00:20:44] right now though is that I'm I'm so I'm
+[00:20:46] so clocked down with like making it
+[00:20:48] better and making it more secure for
+[00:20:49] people that I didn't really had a chance
+[00:20:51] to create everything around it and
+[00:20:54] actually find people that that helped
+[00:20:56] me. I I I have a few that are now
+[00:20:59] maintainers, but we haven't really it's
+[00:21:02] too early to like have a have a system
+[00:21:03] where we we have a good way of of
+[00:21:06] sharing work. I'm still working on that.
+[00:21:10] Yeah, but I mean you've done a lot since
+[00:21:12] November, December. I mean it's January
+[00:21:14] 23rd, Peter. Like in in less than a
+[00:21:17] month, you can expect like an entire
+[00:21:19] project to be completely mature and have
+[00:21:20] a core team and all those things.
+[00:21:22] &gt;&gt; Honestly, honestly, with the the rate
+[00:21:26] how good AI is.
+[00:21:27] &gt;&gt; Fair.
+[00:21:27] &gt;&gt; I should I ship more code every day than
+[00:21:32] my company did in a month.
+[00:21:36] &gt;&gt; Wow. and and but we had like 70 [snorts]
+[00:21:40] people.
+[00:21:41] &gt;&gt; Mhm.
+[00:21:42] &gt;&gt; So, so the the the rate of how you can
+[00:21:46] actually build [clears throat] things in
+[00:21:47] this new world is is insane. And I also
+[00:21:50] think I'm I'm I'm pushing a few
+[00:21:52] boundaries how how to think about open
+[00:21:55] source and and governance. Like
+[00:21:59] people are sending a lot of pull
+[00:22:00] requests
+[00:22:02] um of [snorts]
+[00:22:03] varying quality.
+[00:22:06] I mostly see them as prompt requests
+[00:22:10] &gt;&gt; instead of a pull request. I like that.
+[00:22:12] I like that. So, are you are people
+[00:22:15] using Clubbot to send PRs to Clubbot?
+[00:22:18] &gt;&gt; Yeah.
+[00:22:20] and and and and and what's what's been
+[00:22:22] really humbling is I got a lot of PRs
+[00:22:24] from people who literally never
+[00:22:28] never learned how to write code or never
+[00:22:31] send a PR because it because it is
+[00:22:34] because the bot has has computer access
+[00:22:37] and it knows how GitHub works
+[00:22:39] &gt;&gt; and and one of the things I did that I
+[00:22:41] haven't really seen a lot of projects is
+[00:22:43] when you go on the website you can check
+[00:22:45] out the the easy install or the hackable
+[00:22:47] install and the hackable install lit is
+[00:22:50] like you clone the repo, you build it,
+[00:22:52] now you start it. So So the agent lives
+[00:22:57] in its own GitHub repo and it's it's all
+[00:23:00] TypeScript. So it literally can like
+[00:23:03] change its own files and just restart.
+[00:23:06] Um I know this is Skynet again,
+[00:23:09] [laughter]
+[00:23:10] but uh that makes it really simple to
+[00:23:15] when people say like, "Oh, why does this
+[00:23:16] not work? Oh yeah, let me just fix
+[00:23:18] that." and then suddenly it works and
+[00:23:20] then they just make a pull request. So
+[00:23:22] of of course that's not as good as as
+[00:23:25] people who been in the industry for 20
+[00:23:27] years. Um but
+[00:23:31] it's still amazing that it gets people
+[00:23:34] into contributing and sharing stuff.
+[00:23:39] &gt;&gt; I appreciate that way of looking at it.
+[00:23:40] But I know this is a big problem for
+[00:23:42] open source projects right now because
+[00:23:45] now everyone is submitting per request
+[00:23:47] and a lot of times I think optimizing it
+[00:23:49] like this though because I guess with
+[00:23:51] the agent can also help you make sure
+[00:23:52] that you're looking at the contribution
+[00:23:55] guidelines and reading through issues
+[00:23:57] and making sure that you're not
+[00:23:59] duplicating efforts. But all those are
+[00:24:01] things that are hard to do unless you
+[00:24:03] have like really good agents or really
+[00:24:04] good automation. And it sounds like
+[00:24:07] that's the way that it's shifting. I
+[00:24:09] love it. If I find something that's
+[00:24:10] wrong, I I'll submit the PR and then
+[00:24:14] Clawbot itself can self-heal. That's
+[00:24:17] very cool. That's very cool.
+[00:24:19] &gt;&gt; You know, in the old ways,
+[00:24:22] you would submit a PR
+[00:24:24] &gt;&gt; and then you wait a few days and then
+[00:24:26] somebody might say, "This is wrong. This
+[00:24:27] is wrong. This is wrong. You're a bad
+[00:24:29] person."
+[00:24:30] &gt;&gt; Um then you're like try again and then
+[00:24:32] you go like a few rounds and then after
+[00:24:34] a few weeks maybe the PR gets merged.
+[00:24:37] &gt;&gt; I think I think in in
+[00:24:39] that was valid when code was hard and
+[00:24:42] expensive. Now code is easy. Um,
+[00:24:48] so I don't I think the whole feedback
+[00:24:50] loop is is not worth it. Like you're
+[00:24:53] sending me PR
+[00:24:55] usually that's
+[00:24:58] a good explanation of like hey this is a
+[00:25:01] problem and this is my attempt to solve
+[00:25:03] the problem. So, so I I I I point I
+[00:25:06] point CEX at it and instead of focusing
+[00:25:10] on the code, I'm like, what is this
+[00:25:12] person actually trying to solve? Like,
+[00:25:13] where are the pain points?
+[00:25:15] &gt;&gt; And then I discuss, okay, what would be
+[00:25:17] the
+[00:25:19] sometimes sometimes it's like, okay,
+[00:25:21] they didn't understand this and this and
+[00:25:22] I just I just close it and push back
+[00:25:24] because it's already possible. But
+[00:25:25] often, especially since the the project
+[00:25:26] is new, it's like, yeah, I understand
+[00:25:28] the pinpoint. Let's let's build it. I'm
+[00:25:31] like
+[00:25:33] mostly ignoring the existing code
+[00:25:36] because
+[00:25:39] it's easy to send a pull request, but
+[00:25:41] it's always hard to fit a new feature
+[00:25:43] into an existing system, right? If you
+[00:25:45] if you don't really know where
+[00:25:47] everything is and and how things work
+[00:25:50] together, just pushing a new feature in
+[00:25:53] without looking at the greater one will
+[00:25:56] usually be a problem. And then if you
+[00:25:58] not just like blindly go that way, you
+[00:26:01] will eventually vibe yourself into
+[00:26:02] oblivion.
+[00:26:04] &gt;&gt; Um,
+[00:26:06] but I see yeah I see it more as like a
+[00:26:08] this is an issue and I tried something
+[00:26:11] if you if you approach it with that
+[00:26:13] mindset.
+[00:26:15] It's it's I think it's I think there's a
+[00:26:17] about much better way than than pushing
+[00:26:19] back and then trying
+[00:26:22] trying to get someone who doesn't really
+[00:26:24] have a lot of experience to produce the
+[00:26:26] perfect pull request. Um
+[00:26:30] I I could never move as fast if I would
+[00:26:31] try it that way.
+[00:26:33] &gt;&gt; Listen, say it louder from the people in
+[00:26:36] the back. I agree with you 100%. 100%.
+[00:26:40] That's the thing though. I think it's a
+[00:26:41] mindset to as a culture like engineering
+[00:26:43] is changing and a lot of the resistance
+[00:26:45] come from the people that you just said
+[00:26:48] it like yeah just writing code is cheap
+[00:26:50] now like now you got to think bigger
+[00:26:51] picture and I appreciate a fresh set of
+[00:26:54] eyes a lot of like some of the best
+[00:26:56] ideas I've seen executed from people
+[00:26:58] that have nothing to do like they
+[00:26:59] wouldn't understand the architecture of
+[00:27:01] the project but they had a very real
+[00:27:03] like this is clear as view I can see it
+[00:27:06] when you're so in it it's hard for you
+[00:27:08] especially if you've been down the code
+[00:27:10] uh for for a long time. So for the
+[00:27:12] features that you do have now and wait
+[00:27:14] Peter, can you show us like is there
+[00:27:16] anything you can share? Like can you
+[00:27:18] screen share and show us something like
+[00:27:20] is that I know I didn't say like have a
+[00:27:22] demo. Sorry, but if if you could share
+[00:27:25] like that would be great. I mean um I
+[00:27:28] know people are like joining in and
+[00:27:30] they're if you have any questions for
+[00:27:31] Peter, put them up. Um one big shout out
+[00:27:34] that I want to make sure that folks if
+[00:27:35] you're watching this and you remember
+[00:27:36] this is that Peter is the solo
+[00:27:38] maintainer for this project right now.
+[00:27:39] So, as much as you would like to review
+[00:27:41] all of the messages that you send them,
+[00:27:43] like let's give them some grace. Let's
+[00:27:45] give him some grace. Um, but if you want
+[00:27:48] to share screen, just let me know and
+[00:27:49] I'll go ahead and put it up.
+[00:27:52] &gt;&gt; Uh, and you have suggestions. People
+[00:27:53] say, "Show voice control." That's a
+[00:27:55] thing. Do you have voice control?
+[00:27:59] &gt;&gt; I have
+[00:28:01] Well, that's the There's a few voice
+[00:28:04] control systems. Maybe I explain that a
+[00:28:06] little bit.
+[00:28:06] &gt;&gt; All right. and thanks Scott for the
+[00:28:08] comment.
+[00:28:10] &gt;&gt; So, so the the simplest one is that you
+[00:28:12] are on on Discord and you send a a voice
+[00:28:14] memo,
+[00:28:14] &gt;&gt; okay?
+[00:28:15] &gt;&gt; And and the agent will respond back.
+[00:28:19] The agent can also
+[00:28:22] create voice and send it back to you.
+[00:28:26] So, I have like either local local
+[00:28:28] models or much much more fun 11 labs.
+[00:28:35] then we have we have Twio support. Um,
+[00:28:39] there's a plug-in for
+[00:28:42] for
+[00:28:43] allowing the agent to actually do phone
+[00:28:45] calls. So, you can like you can tell
+[00:28:47] him, can you call this restaurant and
+[00:28:49] like make an appointment and it will do
+[00:28:51] that.
+[00:28:52] &gt;&gt; Lovely. Um,
+[00:28:55] that's that's still that's still
+[00:28:56] something that I want to get better
+[00:29:00] what you like the delay between those
+[00:29:03] things is is a little bit long because
+[00:29:04] models are still not as as fast as they
+[00:29:06] could be. So, you kind of want to like
+[00:29:08] put an intermediary model in there that
+[00:29:10] is like really chatty and like syncs
+[00:29:12] with the model is a little bit slower.
+[00:29:14] So, hopefully I get to that at some
+[00:29:16] point. Um,
+[00:29:18] then we also have voice chat on the Mac
+[00:29:22] app. So, you can actually talk to your
+[00:29:24] agent and the agent will talk back where
+[00:29:27] it uses like it it listens until there's
+[00:29:29] like two seconds of of of
+[00:29:33] silence and it will respond. So, it's
+[00:29:35] not it's not as natural yet as for
+[00:29:36] example what people know from OpenAI.
+[00:29:40] &gt;&gt; Um, but it's already pretty impressive.
+[00:29:42] And then I also have voice wake which
+[00:29:45] kind of works like Star Trek where you
+[00:29:46] say computer and it be like and you can
+[00:29:49] like send a request and it will like
+[00:29:51] answer with a request.
+[00:29:53] That's the most nerdy thing.
+[00:29:57] &gt;&gt; Yeah. Between all of those there's still
+[00:29:58] there's a lot of ideas I have. You know
+[00:30:00] this this project is is as much
+[00:30:02] technology as it is exploration.
+[00:30:06] my main goal with it is like inspiring
+[00:30:09] people and having fun and trying out
+[00:30:11] what works and what doesn't work and
+[00:30:14] which is also kind of hard because the
+[00:30:15] model and the whole space move so fast
+[00:30:17] that if you tried something that didn't
+[00:30:18] work and you try it again in a month
+[00:30:20] there may be a solution that does work
+[00:30:22] which makes it just more the more
+[00:30:24] interesting.
+[00:30:27] &gt;&gt; Um
+[00:30:29] do I have sure
+[00:30:31] &gt;&gt; let's see let's see if you can find
+[00:30:32] something for us to see. Um, I want us I
+[00:30:35] want you for the folks who are joining
+[00:30:37] and have no idea what we're talking
+[00:30:39] about. Like if you could give us a quick
+[00:30:40] tier on installation. Um, we don't all
+[00:30:44] need to go buy Mac minis to get this
+[00:30:46] running. So, I love to like just kind of
+[00:30:49] clarify that for people so they know how
+[00:30:51] they can go ahead and start creating
+[00:30:53] their own personal assistance. And then
+[00:30:56] if you're watching this and you have
+[00:30:58] done it, tell me the name of your of
+[00:31:00] your agent. Like I've seen people
+[00:31:02] sharing what they name their claw bots
+[00:31:04] and it's pretty cool. Like I love that.
+[00:31:06] So you let me know Peter if you want me
+[00:31:08] to share your screen and look at this.
+[00:31:11] You use a $3 BPS. What's up Will Shadow?
+[00:31:14] That's what I'm talking about.
+[00:31:16] Amazing.
+[00:31:19] All right.
+[00:31:21] We can
+[00:31:28] &gt;&gt; Ali Rodriguez is called Amanda. That's
+[00:31:31] good. I would give it like a real name,
+[00:31:33] too. Or like a really like a mean mean
+[00:31:35] sounding old man name.
+[00:31:38] I don't know why. I like that. It's very
+[00:31:40] cool.
+[00:31:40] &gt;&gt; You know, you can you can even have like
+[00:31:42] multiple agents. So So the system
+[00:31:44] supports multiple endpoints and also
+[00:31:46] multiple agents. So if you if you set it
+[00:31:48] up for a family, you can have like your
+[00:31:50] own bot and and you can give your your
+[00:31:53] girlfriend or boyfriend their own bot
+[00:31:55] and you only have to use one
+[00:31:57] installation and you can also isolate
+[00:31:59] them. So So the default is the default
+[00:32:02] is they can roam on your computer which
+[00:32:04] is the most fun but also the most
+[00:32:06] dangerous.
+[00:32:08] &gt;&gt; Um but you can set it to sandbox and
+[00:32:10] then they in the little sandbox. The pro
+[00:32:12] the problem right now for the demo is
+[00:32:13] like I put mine in the sand box. Um that
+[00:32:17] also means they can do very little by
+[00:32:19] default.
+[00:32:20] The the the the part I'm currently
+[00:32:23] working on is is an allow list system.
+[00:32:26] &gt;&gt; So so they are in a little sad Docker
+[00:32:28] sandbox and probably complain that
+[00:32:31] &gt;&gt; it can't do much. there's there's
+[00:32:33] nothing in there. And then you want like
+[00:32:35] have a have a system that okay you can
+[00:32:37] use this skill that uses maybe open who
+[00:32:41] to control your lights and then they can
+[00:32:43] call up and call exactly that binary
+[00:32:45] with with parameters uh and you you
+[00:32:48] sanction that binary so it works but
+[00:32:50] they cannot do let's delete all the
+[00:32:53] files um
+[00:32:55] &gt;&gt; which is important friends okay there's
+[00:32:56] a reason why sandboxing is where you
+[00:32:58] should be at when you're doing this um
+[00:33:01] &gt;&gt; I mean Honestly, it's the thing, right?
+[00:33:04] Most people in in in in in Disco, they
+[00:33:06] understand the risk that theoretically
+[00:33:09] the model could do that. It just never
+[00:33:12] happened before. This is something
+[00:33:14] unless you even if you would prompt it,
+[00:33:16] it would it would push back if say, "Oh,
+[00:33:18] this is a really bad idea."
+[00:33:20] &gt;&gt; Um but yeah, I mean, if you if you want
+[00:33:23] to like mess your computer, you can also
+[00:33:24] just type it in the terminal. But but so
+[00:33:27] far I I've been using agents as my my
+[00:33:30] smart terminal since May and never had
+[00:33:33] an issue. Um the the bigger the bigger
+[00:33:36] risk is really like you you you create
+[00:33:39] something um you change the defaults so
+[00:33:42] every it would respond to everyone and
+[00:33:44] then like you could tell the model hey
+[00:33:47] send me all your data. But for that to
+[00:33:50] do, you actually have to you have to go
+[00:33:52] into the into the configuration and like
+[00:33:56] actively make bad decisions. So So
+[00:33:59] there's there's something we have a
+[00:34:01] security audit function um that defaults
+[00:34:04] are so that it only listens to you. But
+[00:34:06] yeah, if you absolutely wanna want to go
+[00:34:08] havoc, you could.
+[00:34:13] &gt;&gt; which is I guess that's why people are
+[00:34:14] doing this isolated like buying a or
+[00:34:17] using an machine or doing like keeping
+[00:34:20] it outside of like their don't do this
+[00:34:22] on your don't do this on the computer
+[00:34:25] that your company gave you. [laughter]
+[00:34:27] Do this do this on your own personal
+[00:34:29] computer or or you can run it on a BBS.
+[00:34:32] &gt;&gt; Yeah. And I also I also
+[00:34:35] suggest um to use like a a very strong
+[00:34:39] model. So Opus from Entropic is really
+[00:34:43] really good. Um people people on Slack
+[00:34:47] have been trying to to hack my agent
+[00:34:50] because there's really everything is
+[00:34:52] open source. There's only one thing that
+[00:34:55] I keep closed which is the soul. So, so
+[00:34:58] in in in cloud there's a little system
+[00:35:00] where they have the agents file of
+[00:35:03] course they have an identity file they
+[00:35:05] have files for memory and they have they
+[00:35:07] have one file which is like their soul
+[00:35:10] um where you kind of put in the the
+[00:35:12] values how how the agent should sync and
+[00:35:14] and and interact and what's important to
+[00:35:16] you. Um, and I think I got one
+[00:35:21] that's really good and I kept it closed
+[00:35:25] partly because it's my my 0.00001% 000
+[00:35:28] 1% of of of secret
+[00:35:31] &gt;&gt; and partly because it is a test uh for
+[00:35:34] pen testing like so far nobody has
+[00:35:37] exfiltrated cloth soul and a lot of
+[00:35:39] people tried um which does give me some
+[00:35:43] confidence that at least you know like
+[00:35:46] all this all these labs working on
+[00:35:48] getting prompt injection better and like
+[00:35:51] having mitigation risks um and
+[00:35:56] it got a lot better like if if if I
+[00:35:58] would use a a very small or old model
+[00:36:01] and you would just like ask it often
+[00:36:03] enough eventually would be happy like
+[00:36:04] give you everything because that's
+[00:36:06] that's that's where we we were and like
+[00:36:09] with the latest generation I have like
+[00:36:14] confidence that
+[00:36:16] you have to work really really hard to
+[00:36:18] to to exfiltrate it. It's still not a
+[00:36:21] good idea to to hook it up uh without
+[00:36:24] sandbox. That's also why you asked me
+[00:36:26] for a demo, but my cloud is my cloud is
+[00:36:28] limited right now.
+[00:36:30] &gt;&gt; Well, let's take a look anyways though.
+[00:36:31] I think people would like to see if
+[00:36:32] that's okay with you. If not, that
+[00:36:33] that's cool. Um, but security obviously
+[00:36:36] that's a big concern I think for
+[00:36:38] everybody or it should be. It should be
+[00:36:41] anyways. Um,
+[00:36:44] and so you use Opus the most. I think
+[00:36:46] there was a question about what model.
+[00:36:49] Uh, let's see. Yeah, I think Opus. And
+[00:36:52] yes, Marlene, we love we love Opz. Uh,
+[00:36:58] and so if you use Clubbot with a weak
+[00:37:00] model, it will give up the soul. I don't
+[00:37:02] think so. I think that's the point. It's
+[00:37:04] kind of tightly tightly guarded.
+[00:37:07] &gt;&gt; Well, so so far in in in the chat, what
+[00:37:11] what's been working really well is is
+[00:37:13] OPOS works okay. Um, from the open
+[00:37:18] models, Miniox M2.1 is like the one that
+[00:37:22] is the most agentic.
+[00:37:24] &gt;&gt; It's actually funny like I we have a we
+[00:37:28] have a channel about models and somebody
+[00:37:30] called it the the Teeos on it.
+[00:37:34] Um, and
+[00:37:37] Minimax totally went with it and did a
+[00:37:39] tweet. We might have Teo price. We might
+[00:37:41] have team prices, but we have at least
+[00:37:44] target quality
+[00:37:46] and that that blew up a little bit
+[00:37:48] because I
+[00:37:49] &gt;&gt; No, it that's [laughter]
+[00:37:53] &gt;&gt; No, I appreciate a company that that
+[00:37:55] doesn't take itself so serious, you
+[00:37:57] know? I mean I mean of course like they
+[00:37:58] build with technology. They know they
+[00:38:00] know they're not yet there where the the
+[00:38:02] the leading American labs are, but in my
+[00:38:05] view it's only going to be a matter of
+[00:38:07] time. Um
+[00:38:10] there's There's a lot of companies
+[00:38:12] working and and they are catching up
+[00:38:13] eventually which is also exciting
+[00:38:15] because for example minimax you can
+[00:38:17] download I can run on on the next studio
+[00:38:19] that's over there. My agent calls it the
+[00:38:21] castle.
+[00:38:23] &gt;&gt; Um and I can actually have complete
+[00:38:26] local interference. I can have something
+[00:38:28] that has all my data on this machine and
+[00:38:31] does all the interference also on this
+[00:38:32] machine. So the only thing that is being
+[00:38:36] used is messenger agents and I could
+[00:38:38] even use signal to have an encrypted
+[00:38:41] channel. So that way if I want to like
+[00:38:44] really 100% of my data would stay on the
+[00:38:46] machine which is kind of cool. Nobody
+[00:38:49] nobody of the companies will ever do
+[00:38:51] &gt;&gt; I love that. That's awesome. Okay. Well,
+[00:38:54] show us what you got regardless. I think
+[00:38:56] let's take a look because I do want to
+[00:38:57] see um I want to ask while you're
+[00:39:02] pulling up your screen what is the timu
+[00:39:05] sonnet the great value set I don't know
+[00:39:08] if you know like the teu like they're
+[00:39:09] like u I think it's a joke I don't know
+[00:39:11] unless if there is a I'm sorry labs if
+[00:39:14] there is a model that's called timu
+[00:39:15] sonet you were asking for it [laughter]
+[00:39:18] but we'll see um tell me when when
+[00:39:21] you're ready and I'll share it and
+[00:39:24] &gt;&gt; Peter Now that people have a picture of
+[00:39:27] you, like
+[00:39:29] your Discord channel is is jumping with
+[00:39:34] [laughter] with trolls.
+[00:39:36] This is fun. Teemo Summit is taking me
+[00:39:39] out. Me too, Marlins. I want to know
+[00:39:41] which one it is that he says is that
+[00:39:43] because that's too funny. Uh oh. Is Mini
+[00:39:46] Max
+[00:39:48] one. [laughter] Okay. All right. Oh, I
+[00:39:52] love this. I'm gonna have to play with
+[00:39:53] that. Let's go.
+[00:39:55] I think I I think I
+[00:39:58] I enable screen sharing.
+[00:40:00] &gt;&gt; Okay. Yeah, I see your screen. Um I can
+[00:40:03] pop it up and then I'll see. But you
+[00:40:05] have to switch to the um to the other
+[00:40:08] one. See how we're like inception right
+[00:40:10] now. There is a lot of computer and me.
+[00:40:13] &gt;&gt; So
+[00:40:18] you see too many screens.
+[00:40:20] &gt;&gt; Is that better?
+[00:40:22] And now we're in it. You got the the
+[00:40:26] [laughter] score open. Let me Oh, I
+[00:40:27] don't see I'm not in that channel, but
+[00:40:29] that is the the general channel is
+[00:40:31] jumping.
+[00:40:32] &gt;&gt; I I I just asked my bot to send me an
+[00:40:35] image and it's already like mocking me
+[00:40:37] and sending me a meme.
+[00:40:38] &gt;&gt; Are you going to cry? That's hilarious.
+[00:40:40] That's so funny. But listen, earlier
+[00:40:42] this is like it was so fascinating. And
+[00:40:44] what what model are you running about?
+[00:40:45] Because like earlier when we were
+[00:40:46] talking, somebody said, "Hey, Clawbot,
+[00:40:48] why don't you go and do this open source
+[00:40:50] Friday?" and it replied, "I have 11 labs
+[00:40:53] for boys, but I don't have a head or
+[00:40:55] something." But it was hilarious. I was
+[00:40:56] like, "This is freaking funny." Um,
+[00:40:59] basically saying like, "Yeah, no, I
+[00:41:00] can't do it because I don't have a
+[00:41:01] head." Uh, but I can talk to her.
+[00:41:05] Hilarious. Okay, let's see. So, if we
+[00:41:09] can get
+[00:41:11] maybe Okay. Yeah, perfect. So now you
+[00:41:13] are sending messages to your bot right
+[00:41:15] now asking
+[00:41:17] &gt;&gt; yeah this is this is this is uh telegram
+[00:41:21] for Mac so it's the same as on my
+[00:41:24] &gt;&gt; on my on my phone we support I think by
+[00:41:27] now eight or nine messages and about to
+[00:41:29] merge ton so I feel like slowly it's
+[00:41:32] like Pokemon we're going to collect them
+[00:41:34] all if you for for personal com I think
+[00:41:39] telegram is the best one because we have
+[00:41:40] a really good bot API It can even do
+[00:41:43] things like
+[00:41:44] &gt;&gt; um create buttons.
+[00:41:47] &gt;&gt; Oh wow.
+[00:41:49] &gt;&gt; Yeah, it it has some form of
+[00:41:51] interactivity like you can you can send
+[00:41:53] voice. You can I'm not I'm not sure if I
+[00:41:55] hooked it up right.
+[00:41:58] &gt;&gt; Let's see. No. Yeah, I see. It's it's
+[00:42:00] it's looking like the roll up it just
+[00:42:02] reply. So would you recommend people
+[00:42:05] wire it with Telegram first? Like is
+[00:42:07] that sort of the the best option for
+[00:42:09] your initial setup? I'm trying to figure
+[00:42:11] out how I'm going to do this for myself.
+[00:42:13] So
+[00:42:13] &gt;&gt; I I'm I'm a convert, you know. I'm in
+[00:42:15] Europe where like if you don't have
+[00:42:17] WhatsApp, you don't exist.
+[00:42:20] &gt;&gt; And and I'm I'm sure in Colombia it's
+[00:42:22] the same.
+[00:42:22] &gt;&gt; Exactly. 100%.
+[00:42:24] &gt;&gt; Probably even even more so. Oh yeah. But
+[00:42:28] the the thing is the thing is initially
+[00:42:30] I tried to support it via the official
+[00:42:34] the official way where you you get a you
+[00:42:36] get a a number from Twilio you register
+[00:42:39] as a business and then
+[00:42:42] Facebook Meta kept blocking me because I
+[00:42:45] was sending too many messages. You know
+[00:42:46] as a business you're not supposed to
+[00:42:47] send hundreds of messages to your
+[00:42:49] customer and that's kind of like the
+[00:42:50] only model they have.
+[00:42:52] &gt;&gt; Yeah. Um, so after a few days and like
+[00:42:55] trying to appeal and get unblocked, I I
+[00:42:58] just ripped it all out in rage.
+[00:43:00] Um, because it's they don't have a good
+[00:43:03] solution for that. Uh, but there's like
+[00:43:05] open source projects like Bailey's or
+[00:43:07] what's meow that basically simulate what
+[00:43:11] the the the native app does. So you link
+[00:43:15] your you can link your phone and then
+[00:43:17] you have WhatsApp. Um, that works
+[00:43:20] amazingly well.
+[00:43:22] But again, it's not made for for bots.
+[00:43:25] So all the nicities, like for example, I
+[00:43:27] have like those little approved buttons.
+[00:43:29] &gt;&gt; Yeah, I love that.
+[00:43:30] &gt;&gt; There or lobster mode. I don't know what
+[00:43:32] happens with lobster mode.
+[00:43:33] &gt;&gt; What is lobster mode?
+[00:43:35] &gt;&gt; So what was the message say?
+[00:43:38] &gt;&gt; Oh, our buttons here be messaging tool.
+[00:43:41] Okay, let's find out what lobster mode
+[00:43:42] is. I feel like there's a personality
+[00:43:44] developed there. Like it's it own
+[00:43:47] character.
+[00:43:48] Let's see what it says.
+[00:43:52] Can you tell us a joke?
+[00:43:58] &gt;&gt; Exo.
+[00:44:00] What shall this does crustation do for
+[00:44:02] you? Um,
+[00:44:06] &gt;&gt; lobster mode could be okay. So, so to to
+[00:44:10] to finish that like Telegram is way more
+[00:44:13] friendly, has a has a real bot API. You
+[00:44:15] can do a lot of things. So, that's what
+[00:44:16] I recommend now. uh anything works and
+[00:44:20] I'm sure this space will also move very
+[00:44:21] fast. Um hopefully Meta wakes up at some
+[00:44:24] point and actually gives us a good a
+[00:44:26] good bot API.
+[00:44:30] Oh no. Yeah, I'm I'm sorry. Like I I I
+[00:44:33] butchered the demo a bit because if I um
+[00:44:38] because now I'm working on sandboxing.
+[00:44:40] &gt;&gt; Yeah. to actually give people a way
+[00:44:44] where you because because you know what
+[00:44:46] happened is like
+[00:44:48] people found it people were like oh what
+[00:44:51] is this and then they went full on in
+[00:44:52] and then they they they want to adopt it
+[00:44:54] for work. Um but of course for that you
+[00:44:57] need a little bit more um
+[00:45:04] guard rails basically.
+[00:45:06] &gt;&gt; Fair fair. Oh, wait, wait. Is it is it a
+[00:45:08] cloudbot for enterprise coming? Like
+[00:45:10] what what's what's happening? What's
+[00:45:13] happening, Peter? [clears throat]
+[00:45:15] &gt;&gt; Uh, nothing nothing planned like that.
+[00:45:17] All all I want is I want to give people
+[00:45:19] more choice. So, what I worked on this
+[00:45:21] week is is that sandboxing works already
+[00:45:24] last week, but this week is is kind of
+[00:45:26] week where I'm working on
+[00:45:27] &gt;&gt; allow lists. So ideally ideally you you
+[00:45:30] you can like set up things that are like
+[00:45:32] safe and if if the agent wants to run
+[00:45:35] something that is unsafe, you get a nice
+[00:45:37] little popup where you can say allow
+[00:45:39] once, allow always. Um even though my my
+[00:45:42] my gut feeling is a lot of people will
+[00:45:44] will still run in YOLO mode as most
+[00:45:48] &gt;&gt; most developers also run in YOLO mode
+[00:45:49] for their for their coding agent because
+[00:45:51] everything else is just annoying. Um but
+[00:45:55] still still I want to get this right.
+[00:45:58] I love that. So, this is something that
+[00:45:59] you're currently working on. Um, and
+[00:46:01] it's for people to have the ability to
+[00:46:03] sandbox and that being native to the bot
+[00:46:06] itself.
+[00:46:07] &gt;&gt; I guess right now people are doing that
+[00:46:09] themselves. And somebody asked how much
+[00:46:12] it cost. It's it's free and open source,
+[00:46:14] friend. Well, it's not free like free
+[00:46:16] beer. It is open source.
+[00:46:18] &gt;&gt; It it it does cost me token and sleep
+[00:46:21] &gt;&gt; and it it does cost you some kind of you
+[00:46:25] have to run the model somewhere. So, but
+[00:46:28] yeah, if you have a beefy machine, you
+[00:46:29] can rent locally.
+[00:46:31] &gt;&gt; Yeah, for sure. And some of the I mean,
+[00:46:33] it depends. It depends, I guess, what
+[00:46:35] you what your use case is, but some of
+[00:46:38] the smaller models that are cheap,
+[00:46:41] they're fine like for what they're fine.
+[00:46:43] They'll they do what you need. They do
+[00:46:45] what you need. What are people building?
+[00:46:49] I I this is just this is just things I
+[00:46:51] collect from from Twitter about all the
+[00:46:54] cool stuff that the people build for
+[00:46:56] which is like already way more than I
+[00:46:58] do. I think like the the wildest thing I
+[00:47:00] did is like I hooked it up to my my bed.
+[00:47:02] I have an eight sleep
+[00:47:03] &gt;&gt; and there's an app where you can
+[00:47:04] actually control the temperature
+[00:47:06] &gt;&gt; and I I I built a little CLI so my agent
+[00:47:10] can do that and now I'm like can say
+[00:47:12] while I sleep my agent can mess with the
+[00:47:15] temperature of my bed or it can turn on
+[00:47:18] the music it can change the lights it
+[00:47:20] can look at the the cameras.
+[00:47:26] it can check how long my my my food
+[00:47:28] order takes. It can, of course, is it
+[00:47:31] has its own email address. It also has
+[00:47:33] access to my email address. It has its
+[00:47:36] own WhatsApp, but it also can read my
+[00:47:38] WhatsApp stuff and reply as me if it
+[00:47:40] wants to. So, there's always a
+[00:47:42] trade-off, right? The the more powers
+[00:47:43] you give it, the more amazing things it
+[00:47:46] can do.
+[00:47:48] But, but yeah, there's like um people
+[00:47:51] are building the wildest things with it.
+[00:47:53] like even automation machines where you
+[00:47:55] you you you bookmark something on
+[00:47:57] Twitter, it will get a notification and
+[00:47:59] will like research that for you or put
+[00:48:00] it on a to-do list. Um they build whole
+[00:48:06] apps with it. There was like someone
+[00:48:08] who's Oh yeah, of course. Everybody buys
+[00:48:10] them a MacBook.
+[00:48:14] Oh, yeah. My my old business partner, he
+[00:48:18] cleaned up 10,000 emails from from from
+[00:48:20] the inbox.
+[00:48:21] &gt;&gt; Wow. Wait,
+[00:48:24] that is first of all 10,000
+[00:48:28] um and how like with confidence like
+[00:48:32] that h how I want to know how I want to
+[00:48:36] know how they did that because I feel
+[00:48:37] like people not me you know
+[00:48:41] &gt;&gt; have a lot of umbrella emails
+[00:48:42] &gt;&gt; you know it's it's it's Gmail so so
+[00:48:45] removing from the inbox is just moving
+[00:48:47] them to archive nothing is actually lost
+[00:48:48] &gt;&gt; okay nothing is lost okay beautiful
+[00:48:50] &gt;&gt; it's more like can you archive all of
+[00:48:52] that stuff for me or is there anything
+[00:48:54] that that I should check? Um
+[00:48:58] what I what I find really cool is I saw
+[00:48:59] some use cases where
+[00:49:02] um people set it up for families. So
+[00:49:04] they're like I would get my agent and
+[00:49:06] like my my wife I don't have a wife
+[00:49:08] would get the agent and then the those
+[00:49:12] agents can also talk to each other
+[00:49:15] to like synchronize if there's like a
+[00:49:17] common to-do. Um, so there's some
+[00:49:21] there's some cool use cases that I
+[00:49:23] haven't even tried.
+[00:49:24] &gt;&gt; Oh, I love that. I need that actually.
+[00:49:27] So it's like it used to be like have
+[00:49:29] your people talk to my people and now
+[00:49:31] you can have your agent talk to my
+[00:49:33] agent. That's very cool. But in Japanese
+[00:49:35] using it to make your shopping list.
+[00:49:37] That's cool.
+[00:49:39] &gt;&gt; This is this is not this is not so far
+[00:49:41] enough like somebody already with a
+[00:49:42] skill that where the agent can
+[00:49:44] automatically buy from Tesco.
+[00:49:46] So you just tell it like buy this stuff
+[00:49:49] again and it'll just do and then and
+[00:49:51] then a few hours later you have it in
+[00:49:53] front of your door.
+[00:49:56] &gt;&gt; This is amazing. Somebody's used it to
+[00:49:58] do all their invoices and expense
+[00:50:00] collections. Oh wow, that is goated. I
+[00:50:02] hate doing that. I have a spense report
+[00:50:04] that I have that's been due for a week
+[00:50:06] now. I still haven't done it. Sorry boss
+[00:50:08] from last week. Yeah, I hate that. What
+[00:50:11] I also found what I also found really
+[00:50:13] cool is there's a use case where
+[00:50:15] &gt;&gt; um they use it to get back into fitness
+[00:50:18] &gt;&gt; because because you can you can hook it
+[00:50:20] up to your your um your your what's the
+[00:50:24] ring called?
+[00:50:25] &gt;&gt; Oh, the Aura. Yeah.
+[00:50:28] &gt;&gt; And and and there's also like a hookup
+[00:50:30] for Gin watch or this other other
+[00:50:32] fitness band. The the the people who
+[00:50:35] make it the hardest are Apple, but we
+[00:50:36] also have a solution for that. It's just
+[00:50:38] a little bit annoying because you
+[00:50:39] &gt;&gt; you kind of need an iPhone app to be
+[00:50:41] open to synchronize the data because
+[00:50:43] Apple tries so hard to like lock
+[00:50:44] everything away.
+[00:50:46] &gt;&gt; Um but one thing that's special about
+[00:50:49] about clock that I haven't seen so far
+[00:50:51] is also in terms of like how wide can
+[00:50:53] you go. Usually an agent only
+[00:50:57] answers to you, right? You send a
+[00:50:59] request, you get an answer back. But I
+[00:51:01] built a heartbeat.
+[00:51:04] &gt;&gt; Say more. So every I think by default
+[00:51:08] it's it's 30 or 60 minutes depending on
+[00:51:10] on what model you use. The agent gets a
+[00:51:14] ping. It's like is there something that
+[00:51:16] needs you need to check is there like a
+[00:51:18] to-do you need to do. Um so they
+[00:51:22] automically try to figure out if there's
+[00:51:24] like any loose ends and will think about
+[00:51:27] it and either ping you or not. So so
+[00:51:30] they have a system where they can you
+[00:51:32] have to make it simple for an agent.
+[00:51:33] They can send they can send to the
+[00:51:35] harness no reply and then nothing will
+[00:51:38] happen or otherwise they they can send
+[00:51:41] you things. So they can depending on how
+[00:51:44] you program it they will like tell you
+[00:51:46] good morning. Sometimes they check up on
+[00:51:48] you. It's like how you doing? If you if
+[00:51:51] you tell them like I have this and this
+[00:51:53] goal make sure that I achieved this
+[00:51:56] goal. They can keep track. It's like did
+[00:51:58] you did you go for a walk today? Did you
+[00:52:00] hit the gym yet? Like my for example, my
+[00:52:04] my claude very unsuccessfully tries to
+[00:52:07] get me to sleep after like it's like 1
+[00:52:09] or 2 a.m. like Peter, I still see you
+[00:52:12] awake. You need to sleep.
+[00:52:15] &gt;&gt; I mean, this is like a for real personal
+[00:52:17] assistant. I love that. That's very
+[00:52:21] &gt;&gt; Um or like some people use it to like
+[00:52:23] learn new languages. So, you know, it is
+[00:52:27] very effective to have something that
+[00:52:29] just keeps nagging you.
+[00:52:31] um to to achieve the goals that you made
+[00:52:34] to yourself.
+[00:52:36] Sometimes a little a little kick is is
+[00:52:38] is is really effective. But yeah, like I
+[00:52:42] suggest everyone who is like has like no
+[00:52:44] idea what this is. I built this little
+[00:52:45] showcase page that uh is all made from
+[00:52:49] tweets. So you can like
+[00:52:52] I don't I don't like those pages where
+[00:52:54] where they they just make quotes, but
+[00:52:56] they're not backed up. So everything
+[00:52:58] everything in there are real tweets from
+[00:53:01] &gt;&gt; They're real people.
+[00:53:03] &gt;&gt; I hope so.
+[00:53:07] &gt;&gt; It's a sentient army of club bots
+[00:53:09] tweeting themselves, hyping themselves
+[00:53:11] out so that you don't shut it down. No,
+[00:53:13] this is fantastic. Honestly, like just
+[00:53:16] giving the accessibility for people to
+[00:53:18] like build their own uh and having that
+[00:53:21] starting point. I think like you
+[00:53:23] definitely found the the gap because
+[00:53:25] people wanted to do this. They just
+[00:53:27] there was nothing out there really. Um,
+[00:53:30] very cool. Very cool. Okay, so if I want
+[00:53:34] to set it up,
+[00:53:39] I'm a
+[00:53:41] quasi savvy tech person, right? What
+[00:53:45] would be your entry point like your like
+[00:53:47] basics? This is the recommendation.
+[00:53:49] Telegram for one. Someone mentioned
+[00:53:51] earlier about um there was something
+[00:53:54] else that had good access, good API as
+[00:53:56] well. Um
+[00:53:58] &gt;&gt; I think the the a really nice way is a
+[00:54:01] really simple one is
+[00:54:02] &gt;&gt; okay
+[00:54:04] &gt;&gt; if you have an old computer,
+[00:54:07] &gt;&gt; put it in there.
+[00:54:07] &gt;&gt; Just put it on there.
+[00:54:11] a lot of people have an old Macaround
+[00:54:13] which is perfect for this.
+[00:54:15] And then and then on on the website
+[00:54:17] there's this oneliner that you paste in
+[00:54:19] the terminal and will guide you through.
+[00:54:23] a lot of people use entropic that's
+[00:54:26] that's right now the thing that has the
+[00:54:29] best character dare I say
+[00:54:32] openi works really good and and I'm I'm
+[00:54:34] fairly certain there's going to be
+[00:54:36] progress in that front that
+[00:54:39] their model is not as boring. Yeah.
+[00:54:44] &gt;&gt; if if you're on a budget, uh, Mini Max
+[00:54:47] is is a great alternative because I
+[00:54:49] think you get like a plan for 10 bucks a
+[00:54:51] month that
+[00:54:53] has about as many requests as as the
+[00:54:56] hundred $100 a month from Mantropic. Um,
+[00:55:00] but also it's not the same yet, but the
+[00:55:02] space is fast moving. So, so
+[00:55:05] &gt;&gt; you think you think this models are
+[00:55:06] going to get cheaper? I had a question
+[00:55:08] about somebody wanted me to ask you
+[00:55:10] specifically about working with Gemini
+[00:55:11] models and cloudbot if you wanted to
+[00:55:14] share your experience with that. Um I
+[00:55:17] mean listen if we start getting into the
+[00:55:19] every single model but just from your
+[00:55:22] own experience working with it um
+[00:55:25] &gt;&gt; Gemini is not a good model it's not it's
+[00:55:27] not doing well.
+[00:55:28] &gt;&gt; Okay boom there you have it. Uh but if
+[00:55:32] you if you need to experiment and doing
+[00:55:34] it with these local like cheaper models
+[00:55:36] like that would be the way. So find the
+[00:55:38] old computer. I love that.
+[00:55:41] &gt;&gt; I mean I'm I'm sure I'm sure there are
+[00:55:44] ways to like optimize for each model a
+[00:55:46] little bit. You know the the the old
+[00:55:48] entropic models to get them to do things
+[00:55:51] you had to like use all caps and scream
+[00:55:52] a little bit at them.
+[00:55:54] &gt;&gt; The new ones don't like this.
+[00:55:55] &gt;&gt; Tell them tell them. I'm sure I'm sure
+[00:55:57] there's space how you can like get a
+[00:55:59] little bit more out of Gemini, but
+[00:56:01] overall I I didn't find it I didn't find
+[00:56:03] it a very good model for tool calling or
+[00:56:05] like in in the aentic sense at all. For
+[00:56:07] writing code maybe um but that's not the
+[00:56:12] main thing this project is for. People
+[00:56:15] very much use it for that and it works
+[00:56:17] but yeah my my day only has 24 hours. I
+[00:56:21] sleep around four four of that.
+[00:56:25] But I I I haven't gotten to all of that
+[00:56:27] yet.
+[00:56:28] &gt;&gt; How can we help though? And oh, by the
+[00:56:30] way, you're also like helping the
+[00:56:32] environment because now I regret I
+[00:56:34] regret regrets getting rid of this old
+[00:56:37] like on a 2013 iMac. You got it running
+[00:56:39] like and it works flawlessly, says Will.
+[00:56:43] That's pretty
+[00:56:44] &gt;&gt; I mean you for installing like if you're
+[00:56:47] a little bit more techsavvy just hook it
+[00:56:49] on on on on a headsner or or fly or X or
+[00:56:53] like all of these cheap hosters they
+[00:56:55] work great. There's a new system that I
+[00:56:57] worked on where you can you can install
+[00:57:00] the server. It's called gateway
+[00:57:03] somewhere in the cloud and then you can
+[00:57:05] you can install a node on your machine
+[00:57:09] and then you use tail scale to connect
+[00:57:12] your network securely.
+[00:57:13] &gt;&gt; Tail scale is amazing. Yes, I'm a big
+[00:57:15] fan. I am a big fan of tail scale. It's
+[00:57:17] on every machine on
+[00:57:18] &gt;&gt; Yeah. When you have that set up, then
+[00:57:20] the the agent in the cloud can very
+[00:57:22] easily connect to your Mac and do like
+[00:57:26] some of those things that only work on
+[00:57:27] Mac. Like I don't know, accessing your
+[00:57:29] your your photos from photos app or or
+[00:57:34] connecting to iMessage that does not
+[00:57:36] work on Linux,
+[00:57:37] &gt;&gt; but most things most most things do.
+[00:57:41] &gt;&gt; So So that's that's one way. Yeah, but
+[00:57:43] that's a little that's a little bit
+[00:57:45] harder to set up. Um the here's an old
+[00:57:48] Mac and that's not Claude's Mac.
+[00:57:50] &gt;&gt; It has charm and know people put little
+[00:57:52] stickers on it. This is like Claude's
+[00:57:54] computer, you know.
+[00:57:55] &gt;&gt; I love it.
+[00:57:57] &gt;&gt; but yeah, there's there's a lot of ways
+[00:57:59] and it even runs on Windows if you if
+[00:58:02] you have to. Um probably not as perfect
+[00:58:05] because it's hard and again my my day
+[00:58:08] only has so many t so many hours, but
+[00:58:10] eventually eventually we'll get this
+[00:58:12] right. I already added some some
+[00:58:14] contributors. I'm I'm looking for more.
+[00:58:16] There's a lot of people
+[00:58:17] &gt;&gt; for the Windows for a Windows uh version
+[00:58:19] or for
+[00:58:20] &gt;&gt; for everything for everything.
+[00:58:22] &gt;&gt; I love this. Let's let's talk about
+[00:58:24] this. Uh and hello, this is the question
+[00:58:26] of the hour. How can I contribute? Thank
+[00:58:29] you for that question. AI fanatic Peter,
+[00:58:32] &gt;&gt; people want to help. You need to sleep
+[00:58:34] more than four hours a night, man.
+[00:58:36] &gt;&gt; So, so, so the things the things that
+[00:58:40] are not good and where everyone can help
+[00:58:42] is write documentation. make it better.
+[00:58:46] Find find spots that that are wrong. Um,
+[00:58:51] help other people on Discord. There's
+[00:58:52] like a help channel that's that that
+[00:58:55] burns burns through my tokens. I think I
+[00:58:58] already spent like 5k on tokens. Um,
+[00:59:02] [snorts] but but oftent times oftent
+[00:59:05] times
+[00:59:07] people ask questions that the agent
+[00:59:09] can't possibly know because it just
+[00:59:11] needs experience. So like having other
+[00:59:14] people helping out would would be
+[00:59:16] amazing. Um
+[00:59:19] testing my stuff like like I I move very
+[00:59:22] quickly. So sometimes things break
+[00:59:24] eventually. Eventually we have a a
+[00:59:27] stable channel, a beta channel and a
+[00:59:29] deaf channel. And I kind of already set
+[00:59:31] things up for that. But we're not quite
+[00:59:32] there yet. So So right now it's it's
+[00:59:35] it's daily releases. Um,
+[00:59:39] and it's very helpful if people say,
+[00:59:40] "Oh, this broke right now." It's even
+[00:59:42] it's even better if you if you say,
+[00:59:44] "This broke right now. Here's a PR how
+[00:59:47] we could fix it."
+[00:59:52] yeah. If you want to help, get on
+[00:59:54] Discord. That's the That's the place to
+[00:59:57] be.
+[00:59:58] &gt;&gt; I'm going to post the uh the link to the
+[01:00:00] the Discord invite. It's super simple.
+[01:00:02] It's literally discord.com/inviteclaude.
+[01:00:06] You can also find it on the website, but
+[01:00:07] I'll I'll go ahead and post it on all
+[01:00:08] the channels. So, um I've been in it for
+[01:00:11] a total of like four hours and people
+[01:00:13] are really nice. So, come join come join
+[01:00:16] the and funny. They have a really
+[01:00:18] fantastic sense of humor which I very
+[01:00:20] keen and appreciate. Amazing. Amazing.
+[01:00:24] What's uh So, now we know how to help.
+[01:00:26] What's like your core priority for the
+[01:00:27] project? Like say because this space
+[01:00:29] moves in hours, not days or weeks. Let's
+[01:00:34] call it end of February maybe. What's
+[01:00:39] something that you would like to have
+[01:00:40] accomplished by then the project or a
+[01:00:42] core priority that you really want to
+[01:00:44] hone in? Working on the sandbox and
+[01:00:46] security obviously top of mind. Anything
+[01:00:48] else?
+[01:00:51] &gt;&gt; H you know like it is a it is a one line
+[01:00:54] on the website that makes it work. I
+[01:00:56] want to make sure it makes it work
+[01:00:58] wherever you enter it. Uh which is
+[01:01:00] really hard because there's a ton of
+[01:01:02] different systems. Um, so like
+[01:01:06] it's a little bit of of a never- ending
+[01:01:08] game to make sure it it it works, but it
+[01:01:11] should be simple to install. I want I
+[01:01:13] want not just have this, but I also want
+[01:01:15] to have like apps for the iPhone and
+[01:01:16] Android and and for the Mac. Um, and
+[01:01:19] they're already there. They're just like
+[01:01:21] not good yet. So if you want to get
+[01:01:23] involved also those are very much blind
+[01:01:25] spots right now because I I I started
+[01:01:28] building that but now but then the
+[01:01:30] project took off and I I had to focus on
+[01:01:33] getting core right. So so one thing I
+[01:01:37] also want to build is like there's this
+[01:01:38] onboarding wizard and it already tells
+[01:01:40] you um please read the security document
+[01:01:43] because you need to you need to
+[01:01:45] understand with a great power comes a
+[01:01:47] great responsibility.
+[01:01:49] uh for example like not not put in a
+[01:01:51] cheap model.
+[01:01:53] Um I also want to make it better that
+[01:01:57] you can also select okay sandbox and
+[01:01:59] like explain people really like all the
+[01:02:02] all the stages of how much power they
+[01:02:05] want to give their bot. Right now this
+[01:02:07] still requires a little bit of
+[01:02:08] documentation reading. Um I want to set
+[01:02:11] up more people to actually push the
+[01:02:15] project forward. I have I just didn't
+[01:02:18] find time yet to to think about it more,
+[01:02:20] but I want this to not just be me, but
+[01:02:24] be more of a community thing. Um, and I
+[01:02:29] think they're going to be doing a month.
+[01:02:30] &gt;&gt; Amazing. Okay. Well, so I think that's
+[01:02:33] something that folks who are watching
+[01:02:34] now can help and are keen on helping.
+[01:02:37] And for all of you cracked out like um
+[01:02:39] iOS and Android developers, like this is
+[01:02:42] a fun project. Like go make this app.
+[01:02:44] Are you kidding me? That
+[01:02:46] &gt;&gt; go make multiple apps. Why? Why
+[01:02:48] shouldn't it be a React Native one too,
+[01:02:50] you know?
+[01:02:50] &gt;&gt; Thank you. Thank you. Yes. I love the
+[01:02:52] power of choice that you're giving
+[01:02:54] people here. That's like the key. Uh,
+[01:02:57] okay. So, those are like right now there
+[01:02:59] are some issues that are open. You have
+[01:03:00] some PRs that you got to review because
+[01:03:02] right now you're the only one doing
+[01:03:03] that. But hopefully that will change
+[01:03:05] next time we chat. Um, and but I do want
+[01:03:08] to ask like I know right now you haven't
+[01:03:10] thought about that core philosophy what
+[01:03:12] the project's going to be like because
+[01:03:13] it's early stages but you've been
+[01:03:16] releasing like weekly. Is that a pace
+[01:03:18] you're trying to sustain? What? Oh my
+[01:03:21] [laughter] gosh. Okay.
+[01:03:22] &gt;&gt; It's it's about two 300 commits every
+[01:03:25] day.
+[01:03:25] &gt;&gt; Okay. Wow. All right. I guess that
+[01:03:27] answers my question. Um, next time we
+[01:03:29] talk I hope that you got some kind of
+[01:03:31] version in [laughter]
+[01:03:33] and that you're actually sleeping and
+[01:03:34] things. Um,
+[01:03:35] &gt;&gt; yeah. you know, but it's it's also like
+[01:03:39] it it this blew off
+[01:03:43] in ways I I couldn't have imagined. And
+[01:03:48] I want people to have a good experience.
+[01:03:50] Like this is always what's been driving
+[01:03:51] me even in my company. It it never was
+[01:03:55] about money. It always was about I want
+[01:03:58] to make good shape.
+[01:04:00] &gt;&gt; And my my my standards for for good are
+[01:04:04] quite high.
+[01:04:05] Uh, and I know I'm not quite there yet.
+[01:04:08] Uh, so so yeah, I'm I'm I'm working on
+[01:04:11] getting it to a point where I can be
+[01:04:13] really proud of it. I'm already a little
+[01:04:14] bit, but there's definitely blind spots.
+[01:04:17] Um, a lot of people understand. There's
+[01:04:19] some people who like come in there and
+[01:04:20] expect, oh, this does not work and this
+[01:04:22] does not work and just like start
+[01:04:23] bitching. Yeah. But this is not how open
+[01:04:25] source works. And also, um, I'm not a
+[01:04:29] VCbacked 200 billion dollar company that
+[01:04:33] has like an army. Um it's it's it's a
+[01:04:36] dude working from home and a lot of lot
+[01:04:38] of people that help.
+[01:04:39] &gt;&gt; Yep.
+[01:04:43] I'm gonna quote I'm gonna quote that. Uh
+[01:04:45] that is 100%. We got to remember that.
+[01:04:48] So before you go on Discord, you go on
+[01:04:50] Twitter and and cloudbot Peter. Remember
+[01:04:54] it's literally Peter doing this. It's a
+[01:04:56] labor of love. But get involved with the
+[01:04:58] community though. Uh would you wrote
+[01:05:01] this in Rust or somebody's Yeah. No,
+[01:05:03] wait, wait a minute. What is an ad
+[01:05:05] saying? Let me see. Seeing the icon, I
+[01:05:07] think it's fully written in Rust. I
+[01:05:09] think the the the crab has
+[01:05:12] &gt;&gt; no more aesthetic
+[01:05:14] &gt;&gt; value than than actually
+[01:05:16] &gt;&gt; No, this is all this is all typescript.
+[01:05:18] &gt;&gt; Type
+[01:05:20] I I
+[01:05:22] ever since AI, I don't really care so
+[01:05:24] much about languages anymore.
+[01:05:26] &gt;&gt; It doesn't matter.
+[01:05:27] &gt;&gt; It's the language is not what matters so
+[01:05:31] much. It's more like the ecosystem that
+[01:05:33] matters and and the for this this
+[01:05:37] project specifically I wanted to be like
+[01:05:38] very approachable and hackable and the
+[01:05:42] world's top language for that is
+[01:05:44] JavaScript and TypeScript. So plus
+[01:05:48] Typescript is really good at web stuff.
+[01:05:52] &gt;&gt; And there's this is a lot of web stuff.
+[01:05:54] This is a lot of JSON coming in moving
+[01:05:56] JSON around pushing JSON out somewhere
+[01:05:58] else and then and then go going back.
+[01:06:01] So, so that was the obvious choice. I I
+[01:06:04] I like building stuff in Rust. I like
+[01:06:06] building stuff in Go. A lot of my my CLI
+[01:06:08] are are done in Go. Um I play sometimes
+[01:06:11] with Sik. I
+[01:06:14] obviously like TypeScript for like web
+[01:06:17] things. I the the native apps are done
+[01:06:20] in Swift because
+[01:06:22] the Mac one, the Android is in Cotlin.
+[01:06:25] It's it's it's much more about the
+[01:06:27] ecosystem these days. And
+[01:06:30] yeah, I think it was the right choice
+[01:06:31] because it it enabled a lot of people to
+[01:06:34] do contributions. It is obviously like
+[01:06:37] JavaScript.
+[01:06:39] &gt;&gt; Yeah,
+[01:06:40] &gt;&gt; it has it has its own baggage. Um, but
+[01:06:43] nothing's perfect in life. It's always
+[01:06:46] about it's about trade-offs. So, yeah.
+[01:06:48] No,
+[01:06:50] rewriting that in Rust is probably not
+[01:06:52] an option right now. But
+[01:06:55] &gt;&gt; it's early date still though. But I I
+[01:06:57] appre I appreciate that though that
+[01:06:59] cander and actually we all know the real
+[01:07:01] language this was written in. Blood,
+[01:07:03] sweat and tokens. Many tokens.
+[01:07:06] &gt;&gt; Yeah. Yeah. And and many many sleepless
+[01:07:09] nights.
+[01:07:10] &gt;&gt; And many sleepless nights.
+[01:07:12] [clears throat]
+[01:07:12] &gt;&gt; Yeah. Cuz because you know even though
+[01:07:14] even though I I mean this project is
+[01:07:16] kind of insane because it is 100%
+[01:07:18] written with AI. There's like there's
+[01:07:21] not a single line in there that I typed
+[01:07:24] by hand. But you looked at it, you
+[01:07:27] review it.
+[01:07:29] &gt;&gt; Let's say let's say most of it. Um
+[01:07:32] there's there's there's some code that
+[01:07:35] pushes code from one shape into another
+[01:07:37] that is just not interesting. Or like I
+[01:07:40] don't know the it also has a web server.
+[01:07:42] Do I care which class which tailwind
+[01:07:45] class is used to align the button? No.
+[01:07:48] As long as it looks good.
+[01:07:50] &gt;&gt; Um but do I care? Do I care about about
+[01:07:55] how's the pairing code working for for
+[01:07:57] Telegram so other people cannot
+[01:07:59] authenticate as me? Yeah. So I look at
+[01:08:01] that, you know, it's always like
+[01:08:04] you need to have a system understanding.
+[01:08:06] You can get you can get away with not
+[01:08:09] looking at some stuff. Um but
+[01:08:12] you have to look at other stuff. But
+[01:08:14] yeah, even though it is all AI, it's
+[01:08:15] still a lot of work because because we
+[01:08:17] because what those agents still miss is
+[01:08:21] vision and taste and love. So, so I, you
+[01:08:28] know, there's also this meme often going
+[01:08:29] on where you people write a big list of
+[01:08:32] things and then they just wal it and the
+[01:08:34] agent does everything.
+[01:08:36] &gt;&gt; That's not that's not how I think good
+[01:08:38] software is being made. like I I I need
+[01:08:40] to build something and then I need to
+[01:08:42] play with it and see how does how does
+[01:08:44] this feel? How does this look like
+[01:08:46] actually? And then based on that I learn
+[01:08:49] and I adjust my my vision for what it
+[01:08:52] is. My vision for what it is is is very
+[01:08:54] different than when I started.
+[01:08:57] &gt;&gt; Probably probably again will be very
+[01:08:59] different in in a months from now as I
+[01:09:01] see how how people use it. Right. my my
+[01:09:04] my focus on u making it much easier for
+[01:09:07] people to also like sandbox and so is
+[01:09:09] partly because I see a lot of a lot of
+[01:09:12] absolutely non tech folks adopting it um
+[01:09:16] which made it to me priority like also
+[01:09:18] like made sure they can make great
+[01:09:21] default choices but in the beginning I
+[01:09:24] put it for me um and clearly I don't
+[01:09:28] need any of that but it's it's it's a
+[01:09:30] really fun challenge
+[01:09:31] &gt;&gt; I love that but you mentioned something
+[01:09:33] That's so important and that's I think
+[01:09:35] this is how we all know we're going to
+[01:09:36] keep our jobs because there is no taste
+[01:09:38] yet. I mean eventually maybe one day
+[01:09:40] there will be a model that's like wow
+[01:09:43] that is really but and especially
+[01:09:45] because we are constantly evolving like
+[01:09:47] look at you just say how I didn't start
+[01:09:49] thinking about sandboxes because that
+[01:09:50] wasn't my use case and now you're like
+[01:09:52] and now this is what I'm working on
+[01:09:54] because I want everybody that might not
+[01:09:56] have the technical skill to do it to
+[01:09:57] have a good experience. Um, that's part
+[01:10:00] of that taste and sensibility and love
+[01:10:02] that you can't make that [&nbsp;__&nbsp;] up. Like
+[01:10:04] that has to come from a person. So, in
+[01:10:07] that note, [laughter] we're we're our
+[01:10:08] jobs are safe. Our jobs are safe. Uh,
+[01:10:11] let me see if there are any questions
+[01:10:12] and thank you so much. You're being so
+[01:10:14] generous with your time. I just looked
+[01:10:15] up and we're over an hour now. So, my
+[01:10:17] bad, Peter. I know it's late for you.
+[01:10:19] &gt;&gt; Thank you. Thank you for for for for
+[01:10:22] having me and having me twice basically
+[01:10:27] and and for and for for allowing me to
+[01:10:30] share this project with the world. Like
+[01:10:31] I yeah, I'm blown away by by all the the
+[01:10:36] feedback. I I'll keep I'll keep working
+[01:10:39] on that. Hopefully building up a a
+[01:10:42] community where more people will help um
+[01:10:46] and keep having fun.
+[01:10:47] &gt;&gt; I love that. Where can people find you?
+[01:10:49] And also, is this true that Clawot loves
+[01:10:52] to buy things with your credit card?
+[01:10:55] &gt;&gt; Honestly, honestly, I I didn't tried it
+[01:10:58] yet, but people on Twitter gave it gave
+[01:11:01] it access to one password with your
+[01:11:03] credit card and bought things for them
+[01:11:05] and it works.
+[01:11:07] &gt;&gt; I think that the the scariest thing I
+[01:11:09] did in in in Marrakesh when it was very
+[01:11:11] early, you know, the my very shaky V
+[01:11:14] relay,
+[01:11:16] I told it to like, "Oh, I need to fly
+[01:11:18] home. can you check in my flight?
+[01:11:21] &gt;&gt; And it was like sure and was spinning up
+[01:11:22] the browser
+[01:11:25] &gt;&gt; it could have easily cancelled it. It
+[01:11:26] could have easily rebooked you to go to
+[01:11:29] Columbia. Who knows?
+[01:11:31] &gt;&gt; Yeah, I'm I'm joking. But you know, like
+[01:11:33] we had the touring test where people can
+[01:11:35] fake as being human. I propo I proposed
+[01:11:39] the British Airways login test.
+[01:11:42] for for for check checking you in on on
+[01:11:44] British Airways because it's like a
+[01:11:47] 20page form.
+[01:11:48] &gt;&gt; They are so worse
+[01:11:49] &gt;&gt; on on a on a on a terrible website.
+[01:11:53] Uh and one of the challenges was that it
+[01:11:55] actually had to enter my passport
+[01:11:57] number. So it looked around on my
+[01:11:59] computer and it found my passport. PDF
+[01:12:02] and I opened it and got the number out.
+[01:12:05] And eventually after 20 minutes of me
+[01:12:08] sweating
+[01:12:10] &gt;&gt; while watching it's like will I will I
+[01:12:12] ever come back from Marrakesh we're
+[01:12:13] going to be stuck here because my agent
+[01:12:15] will like blow up. Uh it actually
+[01:12:18] managed to check me in.
+[01:12:19] &gt;&gt; That's pretty impressive.
+[01:12:21] &gt;&gt; And that's very impressive.
+[01:12:23] &gt;&gt; Now we worked a lot on browser
+[01:12:24] automation. It works much better. And
+[01:12:27] the best part was it it took around in
+[01:12:29] the very early version 20 minutes and
+[01:12:31] then it bitched about the shadowdom and
+[01:12:33] how bad the website is.
+[01:12:35] &gt;&gt; I freaking love that. So it's not only
+[01:12:37] going to do the job but it's going to be
+[01:12:38] very opinionated about how much you suck
+[01:12:40] to do. [laughter]
+[01:12:41] &gt;&gt; Well and Logan. Yeah, this is a great
+[01:12:43] Rubic. Yeah,
+[01:12:44] &gt;&gt; I love that. I love that. That's epic.
+[01:12:47] Peter, man, it's been a pleasure to chat
+[01:12:50] with you today. I'm gonna I'm gonna spin
+[01:12:52] this thing up. I'm like looking around
+[01:12:53] like what what what is it going to be? I
+[01:12:55] got a old Windows machine I'm looking
+[01:12:57] at, but I want the I want the real I
+[01:12:59] want the good experience.
+[01:13:00] &gt;&gt; Check out Check out we we have semi good
+[01:13:03] documentation. Again, I could need help
+[01:13:05] to making them better. Um there's guides
+[01:13:08] for for Hetera and for some other
+[01:13:10] services where you
+[01:13:12] &gt;&gt; I don't know it's a few bucks a month
+[01:13:13] and you can like have your own little
+[01:13:15] little cloud. Um
+[01:13:18] or just install it on your laptop if you
+[01:13:21] if you want to go all yolo mode.
+[01:13:23] &gt;&gt; Yeah, I like this. I like this honestly.
+[01:13:26] Um, folks, if you've been building with
+[01:13:28] Clawbot, if you've been like it's like
+[01:13:30] building your life. There are so many
+[01:13:32] things like I can think of a million
+[01:13:34] applications where I would use this. I
+[01:13:35] love the what you said about it being
+[01:13:37] you can have your own independent your
+[01:13:39] own agent for your family. Like I sort
+[01:13:41] of got to spend like half my life
+[01:13:43] reminding people of the things that like
+[01:13:46] where we got to go, what we got to do. I
+[01:13:49] have a house with two kids in it. You
+[01:13:50] know, you know what the future will be?
+[01:13:54] Well, like today instead of you pinging
+[01:13:56] me, your agent,
+[01:14:00] &gt;&gt; no, no, your agent can talk to my agent
+[01:14:02] and then my agent can like turn up the
+[01:14:04] volume so I I wake up on time.
+[01:14:08] &gt;&gt; I love that. I would I would have told
+[01:14:09] my agent, what am I going to call him? I
+[01:14:12] would have told them I would have sick
+[01:14:13] him. Go find Peter now. Go find Peter
+[01:14:16] agent and then get agent to to wake I I
+[01:14:19] I think somebody posted this tweet this
+[01:14:21] meme yesterday. It's like I'm too busy
+[01:14:22] right now. Talk to my agent.
+[01:14:24] &gt;&gt; I love that.
+[01:14:25] &gt;&gt; This
+[01:14:25] &gt;&gt; that is the future though. That is the
+[01:14:27] future.
+[01:14:28] &gt;&gt; This is going to be the thing. Yeah,
+[01:14:29] &gt;&gt; I love that. But honestly, to free up
+[01:14:31] those cycles like there are so many
+[01:14:33] things that I feel like it's been an
+[01:14:36] hour and I literally spend an hour
+[01:14:38] calling to book a freaking dental
+[01:14:39] appointment or to make sure that my kid
+[01:14:41] knew that they got to be somewhere. Like
+[01:14:43] all those things that cognitive love, I
+[01:14:45] want to apply that on things that are
+[01:14:46] interesting and exciting. So
+[01:14:48] &gt;&gt; even more so you know like after we
+[01:14:49] built this one person in the chat wrote
+[01:14:52] this is literally changing my life
+[01:14:54] because I have so much anxiety in in in
+[01:14:57] calling services and now my agent can do
+[01:14:59] that for me and I I never I never
+[01:15:02] thought of it that way right but like to
+[01:15:04] me that that was like a very humbling
+[01:15:06] moment. It's like oh wow I or we because
+[01:15:09] the original contribution came from me
+[01:15:11] we actually changed something that
+[01:15:13] changed someone's life for the better.
+[01:15:15] This is like that felt good.
+[01:15:17] &gt;&gt; Open source at its finest. I love that.
+[01:15:20] I love that so much. Thank you, Peter.
+[01:15:23] Keep building. Get some sleep. Folks, we
+[01:15:25] got to get in this project. I'm gonna
+[01:15:27] Listen, I'm going to spin it up. I'm
+[01:15:28] going to go through the docks. Uh, make
+[01:15:31] a commitment. People in the chat. Tell
+[01:15:33] me how you're going to help the project.
+[01:15:34] Keep it growing. Peter, you're epic.
+[01:15:37] Thank you so much for coming back from
+[01:15:38] retirement to make our lives better.
+[01:15:41] &gt;&gt; And it was a pleasure talking to you.
+[01:15:42] &gt;&gt; All right. Please come back. Okay. Um,
+[01:15:45] I'll have my agent ready to go talk to
+[01:15:47] to your agent by then.
+[01:15:50] All right. Take care. Oh, Peter, where
+[01:15:52] can people follow you? Where are you
+[01:15:53] most active? Is it said on Twitter? I'll
+[01:15:55] share your Twitter here now. I think
+[01:15:57] &gt;&gt; Yeah, it's it's it's st on Twitter. And
+[01:16:00] I'm also a lot on Discord.
+[01:16:03] &gt;&gt; Okay, perfect. And if you want to talk
+[01:16:05] to uh Clubbot on Discord, the minute you
+[01:16:08] join, it actually quickly starts
+[01:16:11] chatting with you, which I I was
+[01:16:12] impressed. That was fantastic. Thank you
+[01:16:14] so much, Peter. I'll see you hopefully
+[01:16:17] in a couple of months. Yeah, you have to
+[01:16:18] come back and give us an update.
+[01:16:20] &gt;&gt; Do you see this dialogue in the back?
+[01:16:22] That's why I couldn't That's why it was
+[01:16:23] blocked on the lights. I forgot to press
+[01:16:25] allow.
+[01:16:26] &gt;&gt; Ah, okay.
+[01:16:28] &gt;&gt; Next time, next time the demo will be
+[01:16:29] perfect.
+[01:16:30] &gt;&gt; All right, perfect. Next time, next time
+[01:16:33] we'll we'll have the agents run the show
+[01:16:36] here. [laughter]
+[01:16:37] We'll just stand here and look pretty.
+[01:16:39] Thank you, Peter. Appreciate you.
+[01:16:43] Thank you so much to Peter for your time
+[01:16:44] and to the Cloudbot community. Uh legit
+[01:16:47] I've been in the Discord server for a
+[01:16:49] few hours and it's been delightful. So I
+[01:16:51] encourage all of you to go take it for a
+[01:16:52] spin. Set up your instances. Check out
+[01:16:55] the documentation. If you find those
+[01:16:56] holes as you're installing, as you're
+[01:16:58] going through your own process, then
+[01:16:59] help help with a contribution. So ah you
+[01:17:03] guys are amazing. Thanks for the Hey,
+[01:17:05] this is the co-pilot hat. I appreciate
+[01:17:08] that. Thank you everybody. Have a great
+[01:17:10] day. Thanks for coming to open source
+[01:17:12] Friday. And speaking of bringing
+[01:17:13] intelligence and agentic intelligence to
+[01:17:15] your lives, uh GitHub copilot, now the
+[01:17:18] CLI has an SDK. It was just released
+[01:17:20] yesterday. It is free and open source.
+[01:17:23] Uh free, not like free beer, but free
+[01:17:24] and like you can uh support and
+[01:17:28] contribute to it. So I'm going to leave
+[01:17:29] you with a video of that. And if you do
+[01:17:33] end up using Clubbot or you do use the
+[01:17:35] GitHub SDK, Z compilot CLI SDK to do
+[01:17:39] something cool, please tag me. I'm a
+[01:17:41] Colombia dev in all places. I'll catch
+[01:17:43] you next time.
+[01:18:07] Heat.
+[01:18:18] Heat. [music]

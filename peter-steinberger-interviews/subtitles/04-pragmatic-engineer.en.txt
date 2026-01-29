@@ -1,0 +1,3126 @@
+[00:00:00] What if you could merge 600 commits on a
+[00:00:02] single day and none of it was slopp?
+[00:00:04] This is what today's guest, Peter
+[00:00:05] Stainberger, the creator of Claudebot,
+[00:00:08] claims he's doing. Peter is a standout
+[00:00:10] developer who built PSP PDF kit, the PDF
+[00:00:12] framework used on more than 1 billion
+[00:00:14] devices. Then he burned out, sold his
+[00:00:16] shares, and disappeared from tech for 3
+[00:00:18] years. This year, he came back and how
+[00:00:20] he builds and what he's doing now looks
+[00:00:22] nothing like traditional software
+[00:00:23] development. In today's episode, we
+[00:00:25] cover why he no longer reads most of the
+[00:00:27] code he ships, and why that's not as
+[00:00:29] crazy as it sounds. How he is building
+[00:00:31] Clawbot, his wildly popular personal
+[00:00:34] assistant project, which feels like the
+[00:00:35] future of Siri, the closing the loop
+[00:00:37] principle that separates effective AI
+[00:00:39] assistant coding from frustrating vibe
+[00:00:41] coding. Why he says code reviews are
+[00:00:43] dead and PR should be called prompt
+[00:00:45] requests, and many more. If you're
+[00:00:47] interested in how the software engine
+[00:00:48] workflow could change in the coming
+[00:00:49] years thanks to AI, this episode is for
+[00:00:51] you. This episode is presented by
+[00:00:53] Statsig, the unified platform for flags,
+[00:00:55] analytics experiments, and more. Check
+[00:00:57] out the show notes to learn more about
+[00:00:58] them, the pragmatic summit on the 11th
+[00:01:00] February in San Francisco that I'm
+[00:01:02] hosting with them, and our other season
+[00:01:04] sponsors. Right, Pete, welcome to the
+[00:01:06] podcast.
+[00:01:07] &gt;&gt; Thanks for having me, Gay.
+[00:01:08] &gt;&gt; It is awesome to meet you in in person.
+[00:01:11] &gt;&gt; Yeah, and I almost messed it up.
+[00:01:14] &gt;&gt; Yeah. What what what what happened? You
+[00:01:16] lost track of time. Does that happen
+[00:01:18] often? And how how so? Um, not usually.
+[00:01:21] Not usually. Um, this is an interesting
+[00:01:24] time for me cuz I cuz my latest project
+[00:01:26] is is blowing up. Cloud, right?
+[00:01:29] &gt;&gt; Clawbot. Yeah,
+[00:01:30] &gt;&gt; Cloudbot.
+[00:01:31] &gt;&gt; I'm struggling a bit to get enough
+[00:01:32] sleep, but it's it's it's interesting. I
+[00:01:35] never I never had a community blowing up
+[00:01:37] so fast and it's just incredibly fun to
+[00:01:39] work with.
+[00:01:39] &gt;&gt; So, before we we get into Clubbot and
+[00:01:41] all the fun stuff you're doing, I wanted
+[00:01:43] to rewind all the way way back. You
+[00:01:46] create a PSPDF kit which is used I think
+[00:01:49] on more than 1 billion devices users. If
+[00:01:52] if you see a PDF render you probably see
+[00:01:54] that. But even before that how did you
+[00:01:58] get into tech? Oh my god. How did you
+[00:02:01] get into tech? So I'm from rural
+[00:02:04] Austria. Um always more being the
+[00:02:07] introvert.
+[00:02:08] So eventually I we always had like
+[00:02:11] summer guests and one of them one of
+[00:02:13] them was a was a computer nerd and then
+[00:02:15] I kind of got hooked with with like the
+[00:02:17] machine he had and begged my mom to buy
+[00:02:20] me one
+[00:02:22] and ever since then I this was in high
+[00:02:24] school or so.
+[00:02:25] &gt;&gt; I guess I was 14.
+[00:02:27] &gt;&gt; Yeah. And ever since I started
+[00:02:29] tinkering, like I can remember the
+[00:02:30] earliest thing was like I stole an old
+[00:02:33] DOS game from my school and then wrote a
+[00:02:36] copy protection for the floppy disc so I
+[00:02:38] could sell it.
+[00:02:40] It took like 2 minutes to load. I was
+[00:02:42] just always tinkering. Also playing a
+[00:02:43] lot of computer games of course, but
+[00:02:46] like building stuff almost feels like
+[00:02:49] playing a computer game. Like definitely
+[00:02:51] right now it feels better than Factorio.
+[00:02:54] Oh, when I started out, I I I I read
+[00:02:56] like
+[00:02:58] the equivalent of bash scripts for
+[00:02:59] Windows and then I did like websites.
+[00:03:02] So, I guess a little bit of JavaScript,
+[00:03:05] uh, even though I had no clue what I was
+[00:03:06] doing. And then the actual first
+[00:03:10] language where I I had to learn how to
+[00:03:13] build things is when I started
+[00:03:14] university.
+[00:03:16] And I never met my dad. And I come from
+[00:03:19] a from a poor family. So, I always had
+[00:03:23] to work. like I had to had to finance my
+[00:03:25] own studies, right? So when other people
+[00:03:27] were were having holiday, I just worked
+[00:03:32] full-time at a company. So the the first
+[00:03:35] real job I had was was in Vienna was
+[00:03:38] supposed to be 1 months and then they
+[00:03:39] kept me for 6 months. It was just a
+[00:03:41] bridge between military and and my
+[00:03:43] university. And I kept working there for
+[00:03:45] like I think 5 years. And I remember the
+[00:03:48] first day they they gave me this huge
+[00:03:50] book. maybe that huge and say Microsoft
+[00:03:53] MFC. Um I still have nightmares and I
+[00:03:56] got I got like I was like this is
+[00:03:59] terrible like for for the next win I
+[00:04:01] just I just silently used net I just
+[00:04:04] didn't tell them and like a few months
+[00:04:05] in I just told them yeah but the text I
+[00:04:07] I did a few modernizations but then it
+[00:04:09] was too late. I did this a few times in
+[00:04:11] this company. I don't know why they kept
+[00:04:13] me because because my [&nbsp;__&nbsp;] worked. So uh
+[00:04:18] I did net and actually I actually
+[00:04:20] actually dig it.NET 2.0 had like
+[00:04:22] generics. It took insanely long for the
+[00:04:25] application to to to launch because like
+[00:04:27] everything was compiled at first start
+[00:04:29] and like your hard disk was like
+[00:04:32] if you remember
+[00:04:33] &gt;&gt; so so you you how did you stumble into
+[00:04:35] both iOS and where did the idea from
+[00:04:37] PSPDF
+[00:04:39] &gt;&gt; come from?
+[00:04:40] &gt;&gt; Not even yeah the first one the first
+[00:04:41] one wasn't even available in in in
+[00:04:43] Austria. That's true. Yeah.
+[00:04:44] &gt;&gt; A little time goes went on and I was at
+[00:04:47] university and a friend showed me the
+[00:04:49] iPhone and I I think I I touched it for
+[00:04:52] a minute and then immediately bought one
+[00:04:55] like like this like it it clicked when I
+[00:04:59] felt it and and to me this was like a
+[00:05:04] holy f moment cuz it was just like so
+[00:05:07] different and so much better. So I got I
+[00:05:09] got one. I was still not thinking about
+[00:05:12] building for it, you know. That was that
+[00:05:13] was
+[00:05:14] &gt;&gt; when was this 2009 10 something like
+[00:05:16] that.
+[00:05:16] &gt;&gt; Yeah. Yeah. And then I I used their
+[00:05:18] browser. I I can see the story. I was I
+[00:05:21] was literally driving in the subway.
+[00:05:23] &gt;&gt; Mhm.
+[00:05:24] &gt;&gt; And by the time I was using a gay dating
+[00:05:26] app and this was iPhone OS 2.
+[00:05:28] &gt;&gt; Yeah.
+[00:05:29] &gt;&gt; So So I I
+[00:05:30] &gt;&gt; long time ago
+[00:05:31] &gt;&gt; I typed this long message. I pressed
+[00:05:32] send and we were just going into a
+[00:05:34] tunnel and the JavaScript disabled the
+[00:05:36] send button and then an error message
+[00:05:38] came but there was no copy paste. There
+[00:05:41] was no screenshot. So I was just like
+[00:05:43] and I couldn't scroll anymore because
+[00:05:44] like scrolling was disabled. So like
+[00:05:46] this long message was like a little bit
+[00:05:48] emotional was gone and I was so mad. I
+[00:05:52] was so mad. I'm like what the hell? I
+[00:05:55] went home and I downloaded Xcode. That's
+[00:05:57] that's where that's where the window
+[00:05:59] came and I was like where is the ID?
+[00:06:02] So it was like like I was like this is
+[00:06:05] unacceptable. I basically hacked the
+[00:06:06] website. I used regular expressions to
+[00:06:08] like download uh to parse the HTML which
+[00:06:11] is like totally not something you should
+[00:06:12] do and I built an app and I used I used
+[00:06:17] iPhone OS3 beta with like core data in
+[00:06:20] beta regaxit light. I used a hacked
+[00:06:24] version of GCC that backported the
+[00:06:25] blocks compiler so I could use blocks in
+[00:06:27] iPhone OS3. It took me quite a while
+[00:06:30] until anything worked because like I had
+[00:06:31] no idea what I was doing and I was like
+[00:06:33] using all kind of like beta tech but
+[00:06:35] eventually I I got it to work and I I I
+[00:06:38] wrote that company was like hey I'm
+[00:06:40] making an app. What do you think about
+[00:06:41] it? Got no response of course. So I was
+[00:06:44] like let's just put it in the app store.
+[00:06:46] &gt;&gt; And this was for the dating app right?
+[00:06:48] &gt;&gt; So you just like you know you looked at
+[00:06:50] you saw their APIs you could just like
+[00:06:52] easily like build a client on top
+[00:06:53] &gt;&gt; API. It was HTML.
+[00:06:55] &gt;&gt; Oh
+[00:06:55] &gt;&gt; I was I was just literally parsing HTML.
+[00:06:58] &gt;&gt; Oh. So, so you kind of parse the HTML,
+[00:07:00] kind of turn it into your own, you know,
+[00:07:01] like you use it as an API. Oh, clever. I
+[00:07:04] mean, this was back in the day where no
+[00:07:05] one thought this this would happen, but
+[00:07:08] I made I put it in the app store. I
+[00:07:10] charged five bucks for it and I made
+[00:07:13] like 10k in the first month.
+[00:07:16] And I had no clue what I was doing. So,
+[00:07:18] and there was like so many complex tech
+[00:07:20] stuff. This was very early on where
+[00:07:21] there was a lot of weird forums on
+[00:07:22] Apple.
+[00:07:23] &gt;&gt; So, I just put in the the bank account
+[00:07:25] of my grandpa. And then one day my
+[00:07:28] grandpa called me, "Yeah, something is
+[00:07:29] weird. Like I got this huge payment from
+[00:07:31] Apple." I'm like, "This is mine. This is
+[00:07:32] mine. Don't touch it." But the the funny
+[00:07:36] thing was when I this blew off and I
+[00:07:39] remember I was in a club one day and
+[00:07:41] like I saw someone using my app and I
+[00:07:43] was so proud and I wanted to like tap
+[00:07:44] him on the shoulder and say I built this
+[00:07:46] and I thought like that would be really
+[00:07:47] weird. So I didn't. And then I I I went
+[00:07:50] to the company I worked for for 5 years
+[00:07:52] and told him like I'm going to pursue
+[00:07:54] this. This is this is really exciting.
+[00:07:56] And my boss was like mocking me.
+[00:08:00] &gt;&gt; Oh, really?
+[00:08:01] &gt;&gt; They're like, "Oh, you're making a
+[00:08:02] mistake. This is a fat. This will not
+[00:08:04] go." Blah, blah, blah, blah, blah. And
+[00:08:06] you know what that got me? That's what
+[00:08:08] you call a chip on your shoulder. I'm
+[00:08:10] like,
+[00:08:11] &gt;&gt; you know, one day I'm going to I'm going
+[00:08:13] to have a company that that's worth more
+[00:08:15] money than yours. Well, it took me eight
+[00:08:17] years. So, I I got hooked. Like, I I
+[00:08:20] worked
+[00:08:22] I I'm I'm a little bit of an addictive
+[00:08:23] personality. So which you see again
+[00:08:26] right now. But I I worked a lot on this
+[00:08:28] app. I learned I learned in in high
+[00:08:31] speed and this was also the time where I
+[00:08:33] started Twitter and that was usually
+[00:08:36] hugely influential for my career. I made
+[00:08:39] this app actually quite good and then
+[00:08:40] one day I was at a party at at 3:00 a.m.
+[00:08:45] um slightly intoxicated and I got a call
+[00:08:48] from a US number. The guy on the phone
+[00:08:50] was like, "Yeah, hello. This is John
+[00:08:52] from Apple. Yeah, there's a problem with
+[00:08:55] your application. Like some people
+[00:08:56] reported pictures and that was it. That
+[00:08:58] was the end of my app. Um,
+[00:09:02] &gt;&gt; it was good until it lasted
+[00:09:03] &gt;&gt; and I was just I just quit my my job and
+[00:09:06] was like, well,
+[00:09:09] f you Apple.
+[00:09:10] &gt;&gt; I did freelance work. I was at dubdub.
+[00:09:14] I was introduced to
+[00:09:16] &gt;&gt; dubdubdubc.
+[00:09:17] &gt;&gt; Yes. Sorry for the insider terms. I was
+[00:09:20] introduced to someone as one of the best
+[00:09:22] iOS developers in Austria at a bar at 2
+[00:09:25] a.m. in San Francisco and then basically
+[00:09:28] got a job in the US and then I moved to
+[00:09:30] the US for a while and then I I went to
+[00:09:32] the Nokia development days. This is all
+[00:09:35] like stone age by now. My god. And then
+[00:09:38] someone came up to me and said, "Yeah,
+[00:09:40] they built this app somewhere in Eastern
+[00:09:42] Europe and it works but it crashes
+[00:09:46] sometimes and it was like was like a
+[00:09:48] magazine viewer, right? This was back
+[00:09:49] when the iPad just came out and Steve
+[00:09:52] Jobs hit that like this is the savior.
+[00:09:55] So everybody was building magazine apps
+[00:09:57] and I was like that sounds like an
+[00:10:00] interesting short-term gig. And I I was
+[00:10:03] like okay I I'll I'll I'll help you out.
+[00:10:06] And I opened the app and it was like oh
+[00:10:09] the worst code I've
+[00:10:11] ever seen in my life. It was literally
+[00:10:14] one file with like thousands of lines
+[00:10:17] &gt;&gt; of Objective C. Yes. Where they used
+[00:10:21] windows as tabs. I I didn't know this
+[00:10:23] worked. I was surprised this worked at
+[00:10:24] all, but it felt like a a house of
+[00:10:27] cards. And I I tried to I tried to
+[00:10:29] surgically fix things, but like as soon
+[00:10:31] as you would touch something, something
+[00:10:32] else would break. Um so I got it I got
+[00:10:35] it somewhat stabilized and I told him
+[00:10:36] like, "Look, this is this is like
+[00:10:38] madness. Um I'm going to rewite this for
+[00:10:40] you." Yeah. But it took half a year. I'm
+[00:10:42] going to do it in in a month. Well, it
+[00:10:44] took me two months. Um, I wasn't that
+[00:10:46] far off
+[00:10:48] and and then here I was working on a on
+[00:10:50] a PDF viewer. You know, on every
+[00:10:53] technical problem, the domain is is I
+[00:10:57] wouldn't say like completely
+[00:10:58] unimportant, but you can always find
+[00:11:02] interesting problems in every domain.
+[00:11:04] And there was a lot of interesting
+[00:11:05] problems because you had a C call that
+[00:11:07] would render a PDF that would maybe take
+[00:11:10] 30 megabytes, but the whole system had
+[00:11:12] 64 megabytes. So if you're not very
+[00:11:14] smart and like very careful what you do
+[00:11:17] in the background and when the OS would
+[00:11:20] just kill you. I got really fixated at
+[00:11:22] like making it good like when the
+[00:11:23] rotation is like that the page would
+[00:11:25] like animate and so so you know I I like
+[00:11:27] I like those details. I spent way too
+[00:11:29] much time on that. That's why I took two
+[00:11:30] months instead of one. But the end
+[00:11:32] result was it's good. Um and then I I I
+[00:11:35] worked with them for a while and then a
+[00:11:37] friend texted me up. He's like, "Yeah,
+[00:11:38] I'm working on this magazine app and
+[00:11:39] it's really hard." I'm like, "Yeah, no
+[00:11:41] way it's hard. I know." Oh, like I did
+[00:11:43] it.
+[00:11:43] &gt;&gt; You just built one.
+[00:11:44] &gt;&gt; And and he was like, "Can you can you
+[00:11:47] can you get me the code?" I'm like,
+[00:11:48] "Sure." So, I sold him like I extracted
+[00:11:51] the the part that was PDF from from this
+[00:11:54] magazine app. And I I made sure I made
+[00:11:58] sure like the other person was okay. And
+[00:12:00] then I sold him that. I was like, "Well,
+[00:12:02] if he's interested in that, why let's
+[00:12:04] not try to sell it to other people." I
+[00:12:07] used a a WordPress template and
+[00:12:10] mutilated it to run on GitHub pages and
+[00:12:13] then and then when you did the the fast
+[00:12:15] lane flow at the end you got a Dropbox
+[00:12:17] link to my personal Dropbox with a
+[00:12:18] source code sip and I put this on one
+[00:12:20] afternoon and I I tweeted it and and
+[00:12:23] then in that week three people bought it
+[00:12:25] and it was like I guess 200 bucks but
+[00:12:29] back then and for me this was like
+[00:12:30] amazing and not only I got like three
+[00:12:33] people who just bought it and like 10
+[00:12:34] emails who comp 10 people who complained
+[00:12:36] about
+[00:12:37] uh because they wanted it but it didn't
+[00:12:40] have the features they wanted. You know,
+[00:12:41] it's like I got nerd sniped. I was like,
+[00:12:43] "Oh, I didn't have text selection." Oh,
+[00:12:45] how hard can it be? 3 months later. Oh,
+[00:12:48] yeah. It's really hard.
+[00:12:50] Text selection in a PDF specifically.
+[00:12:52] &gt;&gt; Yeah. Yeah. Yeah. Yeah. You know the
+[00:12:54] saying the saying like uh the companies
+[00:12:56] are built by young people because they
+[00:12:58] don't know how hard it is.
+[00:12:59] &gt;&gt; Yes.
+[00:12:59] &gt;&gt; Yeah. Yeah. I had no idea what an insane
+[00:13:01] madness this file format is. Peter was
+[00:13:04] talking about how some problems look
+[00:13:06] deceptively simple. PDF rendering is a
+[00:13:08] good example. You look at it and think,
+[00:13:10] how hard could it be? And then you spend
+[00:13:12] months on edge cases that you didn't
+[00:13:14] even know existed. This looks easy until
+[00:13:16] you build it pattern shows up in other
+[00:13:18] places, too. Internal tooling for
+[00:13:20] feature flags and experimentation is a
+[00:13:22] classic example. Teams often
+[00:13:23] underestimate how much work it is to
+[00:13:25] build infrastructure around these tools.
+[00:13:27] There's a reason big tech companies like
+[00:13:28] Uber invested years into building
+[00:13:30] internal experimentation and feature
+[00:13:32] flagging systems. Which brings me to
+[00:13:34] Static, our presenting partner for the
+[00:13:36] season. Static gives you the complete
+[00:13:37] toolkit without building it yourself.
+[00:13:39] You get feature flags, experimentation,
+[00:13:41] and product analytics all in one
+[00:13:43] platform tied to the same underlying
+[00:13:45] user assignments and data. In practice,
+[00:13:47] it looks like this. You roll out a
+[00:13:49] change to 1% of users first. You see how
+[00:13:52] it moves the top pipeline metrics you
+[00:13:53] care about, conversion, retention,
+[00:13:56] whatever is relevant for the release. If
+[00:13:58] something goes wrong, instant roll back.
+[00:14:00] If it's working, you can confidently
+[00:14:02] scale it up. Companies like Notion went
+[00:14:04] from singledigit experiments per quarter
+[00:14:06] to over 300 experiments with static.
+[00:14:09] They shipped over 600 features behind
+[00:14:11] feature flags, moving fast while
+[00:14:12] protecting against metrics regression.
+[00:14:14] Microsoft, Atlassian, and Brex use
+[00:14:16] static for the same reason. It's the
+[00:14:18] infrastructure that enables both speed
+[00:14:20] and reliability at scale. Static has a
+[00:14:22] generous free tier to get started and
+[00:14:24] pro pricricing for teams starts at $150
+[00:14:26] per month. To learn more and get a
+[00:14:27] 30-day enterprise trial, go to
+[00:14:29] stats.com/pragmatic.
+[00:14:31] And now, let's get back to Peter and why
+[00:14:33] rendering PDFs was a surprisingly hard
+[00:14:35] problem.
+[00:14:37] But now, I remember there was a few
+[00:14:39] weeks ago someone emailed me. They did
+[00:14:41] something PDF and they wanted my help.
+[00:14:43] And I just wrote them like, I'm sorry,
+[00:14:44] like I I did my deed. I I know more
+[00:14:46] about PDF than any any sane human person
+[00:14:49] ever should know. And I went I went to
+[00:14:51] therapy. Good luck.
+[00:14:54] But that took off and and I just I while
+[00:14:56] I was waiting for my visa, I I worked on
+[00:14:59] this project and and it just kept on
+[00:15:03] more people kept on buying it. And you
+[00:15:05] know, it was like it was like summer. I
+[00:15:07] was I was like lying at the lake and got
+[00:15:09] another email that someone bought it for
+[00:15:11] 600 bucks, 800 bucks. I just up the
+[00:15:13] prices as it had more features. And by
+[00:15:15] the time I I went to San Francisco to
+[00:15:18] work at this company, it already made
+[00:15:21] more than what I made there. But my
+[00:15:23] whole life was I still I still thought
+[00:15:26] like I have to be there, you know.
+[00:15:28] &gt;&gt; So I I did it. And also interestingly at
+[00:15:31] this company, I had to
+[00:15:32] &gt;&gt; So what would you say that you moved to
+[00:15:33] San Francisco?
+[00:15:34] &gt;&gt; Yeah. And and of course also it ended up
+[00:15:36] being something where I had to build
+[00:15:38] build something with my framework at
+[00:15:39] that company too. But you know startups
+[00:15:41] are not like 8 hours. They're a little
+[00:15:43] more. And my personal project was also a
+[00:15:46] little more. So my sleep was a little
+[00:15:49] less. And then eventually after 3 months
+[00:15:53] uh Sabine my manager came over and said
+[00:15:56] this Peter are you okay? And they gave
+[00:15:59] me a choice uh to either keep working at
+[00:16:02] this company and drop my project or or
+[00:16:04] vice versa. And I had one week to
+[00:16:07] decide. The counter was one week to
+[00:16:10] stay there or leave the country because
+[00:16:12] I was on a on a complicated visa.
+[00:16:16] And well, the decision was quite easy.
+[00:16:18] It's like, yeah, I want to do my own
+[00:16:20] thing. And then and
+[00:16:21] &gt;&gt; and at this point, it was already taking
+[00:16:23] off. You already saw that this is
+[00:16:25] there's a big business here. It it will
+[00:16:27] probably pay you as much as your US job
+[00:16:30] would have paid. Ah,
+[00:16:31] &gt;&gt; it was never money driven either.
+[00:16:33] &gt;&gt; It was more about what what were you
+[00:16:35] driven by? I want to make stuff that
+[00:16:39] other people find amazing. Like I I I
+[00:16:43] love tweaking the details. I love those
+[00:16:45] little delights. It wasn't even that the
+[00:16:47] space there were competitors in the
+[00:16:48] space. But my angle was always like I
+[00:16:51] built something as if Apple would have
+[00:16:53] built it like like with with like all
+[00:16:55] the love and care and and polish and and
+[00:16:59] those little delights that
+[00:17:01] a lot of people in the industry don't
+[00:17:03] get. Uh, so even though we had
+[00:17:05] competitors that had way more features
+[00:17:07] and were around way longer, my company
+[00:17:10] was more successful and my product was
+[00:17:11] more successful cuz developers tried the
+[00:17:15] the different ones and mine just felt
+[00:17:17] the best. I think software is all about
+[00:17:19] about how it feels much more so than the
+[00:17:21] than the feature set. Like why did we
+[00:17:23] buy Apple stuff? It has more features
+[00:17:24] than than Windows. Um, but it it feels
+[00:17:28] better. So, how did you go from like you
+[00:17:31] you left this company and you were
+[00:17:34] building this PDF component that started
+[00:17:37] to sell. At what point did you hire the
+[00:17:40] first person realizing, okay, there's
+[00:17:42] something more to this? when I went back
+[00:17:44] to Vienna then I was like okay I have to
+[00:17:47] go all in and that's where I I started
+[00:17:49] working with freelancers a little bit
+[00:17:51] and way too late to be honest also like
+[00:17:54] I I could have could have hired much
+[00:17:55] earlier but you know you know it's it's
+[00:17:58] it's a big step and that's kind of where
+[00:18:00] it it started having a life of its own
+[00:18:01] and I spent
+[00:18:03] pretty much 13 years of my career
+[00:18:07] um building this product with this weird
+[00:18:08] name that I never changed because I took
+[00:18:10] me like I thought like five minutes
+[00:18:11] about it and then stock PSPDF kit.
+[00:18:13] &gt;&gt; PSPDF.
+[00:18:14] &gt;&gt; They finally they finally did a rename,
+[00:18:16] but I wouldn't have I wouldn't have
+[00:18:17] renamed it. But now it it
+[00:18:19] &gt;&gt; it's it's a mouthful, but it's very
+[00:18:21] unique.
+[00:18:22] &gt;&gt; Well, you get it if you do Objective C
+[00:18:24] because it's just a name space.
+[00:18:26] &gt;&gt; Um and by by the time it it made perfect
+[00:18:28] sense, my marketing my strategy for
+[00:18:31] marketing was always I only care about
+[00:18:33] the developer. Like I know like upper
+[00:18:36] management does the decisions but if I
+[00:18:39] can convince the people inside the
+[00:18:41] company they all do the marketing and
+[00:18:42] lobbying for me that worked really well.
+[00:18:44] We never did like cold cold emails or
+[00:18:47] aggressive. It was all inbound. All we
+[00:18:49] did was like make good stuff and write
+[00:18:53] insertful technical blog posts that and
+[00:18:57] I went to a lot of conferences like the
+[00:18:59] for me important it was okay if if
+[00:19:02] people understand that the people who
+[00:19:04] built this product are like know what
+[00:19:06] they do and and love what they do that
+[00:19:09] reflects on the product and that that
+[00:19:12] worked really well.
+[00:19:13] &gt;&gt; And then what was the text type behind
+[00:19:15] PSPDF kit? Was it objective C? Was it
+[00:19:17] later swift? Were there other
+[00:19:18] technologies like C or or anything else?
+[00:19:20] &gt;&gt; We eventually expanded to to all the
+[00:19:23] platforms. Um big shift was the switch
+[00:19:26] out renderer which was and is still
+[00:19:29] quite buggy to like a big C++ one that
+[00:19:32] when then we used across all the
+[00:19:34] frameworks. Um we we were we were really
+[00:19:37] early with web. We were one of the first
+[00:19:39] PDF frameworks that ran in web assembly.
+[00:19:42] And I I did the most clever thing that
+[00:19:44] it was in the very early days when Web
+[00:19:45] Assembly was just taking off and we
+[00:19:47] built a benchmark and that benchmark was
+[00:19:49] eventually used by by Google and
+[00:19:51] Microsoft and Apple and I basically had
+[00:19:55] all these companies like working really
+[00:19:56] hard on making my renderer faster cuz
+[00:19:58] cuz they used their benchmark as one of
+[00:20:00] their benchmarks and the benchmark was
+[00:20:01] just like rendering our stuff with our
+[00:20:03] [&nbsp;__&nbsp;]
+[00:20:03] &gt;&gt; Ah nice. And then a as as a company
+[00:20:06] grew, one thing that I remember about
+[00:20:07] PSPDF kit, you did write a lot of blogs
+[00:20:10] and one blog in 2019, so this was about
+[00:20:13] like I think you know year nine or 10 in
+[00:20:15] the company. It was about how the team
+[00:20:18] worked and you you mentioned things
+[00:20:20] there like every feature starts with a
+[00:20:23] proposal. You mentioned that you are
+[00:20:25] conservative because it's a it's a big
+[00:20:26] API that that people use. You want to be
+[00:20:28] careful things like the boy scout rule
+[00:20:31] such a factor. How how did you kind of
+[00:20:33] put together the the culture of of this
+[00:20:36] now this team which was now closer to 30
+[00:20:38] or 60 people?
+[00:20:39] &gt;&gt; We were actually 70 when when I sold my
+[00:20:42] shares and now it's almost 200. And I I
+[00:20:44] knew right from the get- go it's like
+[00:20:46] I'm not going to find the people that I
+[00:20:48] need in Vienna. So it was always just
+[00:20:50] like remote first and eventually we we
+[00:20:54] landed up with some kind of hybrid model
+[00:20:56] uh which made things a bit more
+[00:20:58] complicated. I learned a whole lot on
+[00:21:00] the go. Like I I never had the urge to
+[00:21:03] be CEO. I always was coding. I I brought
+[00:21:08] people in to people that that helped me
+[00:21:11] a lot with other other parts. Uh and on
+[00:21:13] the business side, I can do it and I I
+[00:21:16] think I think I'm I'm quite good at it,
+[00:21:17] but I just don't enjoy it. Like even on
+[00:21:20] sales calls where you like have to like
+[00:21:22] think of all the magic number how much
+[00:21:23] it would be worth because that's how
+[00:21:25] enterprise works. Gh worse. Peter just
+[00:21:28] said, "Ah, the worst about enterprise
+[00:21:30] sales. Because selling to large
+[00:21:31] companies, enterprises, is as tricky as
+[00:21:34] it gets." Not just because you need to
+[00:21:36] get pricing right, but because of all
+[00:21:37] the enterprise features that you need to
+[00:21:39] build. And this leads us nicely to our
+[00:21:40] season sponsor, Work OS. If you're
+[00:21:42] building with AI agents or automation
+[00:21:44] tools, here's a problem most teams don't
+[00:21:46] think about at first. Once an agent can
+[00:21:48] take actions on your behalf, you need to
+[00:21:50] control what it's allowed to do. And
+[00:21:52] traditional O just wasn't designed for
+[00:21:54] that. That's why work introduced MCP off
+[00:21:56] which gives teams a way to authenticate
+[00:21:58] AI agents with explicit permissions
+[00:22:01] auditability and enterprisegrade
+[00:22:03] security. Instead of sharing over scoped
+[00:22:05] API keys, you can define clear
+[00:22:07] boundaries for the data that agents can
+[00:22:09] access and the agents they can perform.
+[00:22:11] If you're building AI powered features
+[00:22:13] and want to share fast without
+[00:22:14] compromising security, check out
+[00:22:16] workeros.com/mcp.
+[00:22:19] And with this, let's get back to Peter
+[00:22:20] and enterprise pricing. But that's also
+[00:22:23] the only thing that that really works on
+[00:22:24] on a model like this.
+[00:22:26] &gt;&gt; Yeah. You mean enterprise sales
+[00:22:27] specifically, right?
+[00:22:29] &gt;&gt; Meaning custom pricing. So So can you
+[00:22:31] tell us for for for you know devs
+[00:22:33] listening who go to a vendor's website
+[00:22:36] and they're frustrated that there's no
+[00:22:37] price. It says call us or schedule
+[00:22:39] meeting. Why that is?
+[00:22:40] &gt;&gt; Oh, that's that's why because we going
+[00:22:42] to look at your company and then just
+[00:22:44] take the dice and and and think about
+[00:22:46] the number that you're probably willing
+[00:22:47] to pay. And that sounds horrible. But
+[00:22:51] also when you have a product where you
+[00:22:53] can't really tear it down to a specific
+[00:22:55] number like it it's it makes a
+[00:22:57] difference if uh a freelancer contacts
+[00:23:00] us or one of the big Fortune 500s. Let's
+[00:23:03] not say names
+[00:23:04] &gt;&gt; because the usage will be different. The
+[00:23:06] value they get out of it will be
+[00:23:07] different and charging the same. You
+[00:23:10] would either exclude one or the other.
+[00:23:12] If I if I if I go too low, they're going
+[00:23:14] to see this fishy. It's like uh
+[00:23:17] procurement for like 500 bucks. we're
+[00:23:19] not going to even start the process. And
+[00:23:21] if we we target it too high, we're going
+[00:23:23] to lose those people. So So as horrible
+[00:23:25] and unfair this process seems for some
+[00:23:28] kinds of products, it is the it's the
+[00:23:31] most fair way after all. You know, you
+[00:23:33] know, on software
+[00:23:35] there is I would say there's like four
+[00:23:36] axes. There's like easy and hard and
+[00:23:39] interesting and not interesting. We were
+[00:23:41] very much in the not interesting and
+[00:23:42] hard part. If you build something that
+[00:23:45] every developer wants to build, it's
+[00:23:46] going to be a hard cell. It's it's a
+[00:23:48] hard sell anyhow. Selling anything to
+[00:23:50] developers is a hard sell.
+[00:23:52] &gt;&gt; But if it's if it's too easy or too
+[00:23:54] interesting, good luck. But if it's
+[00:23:57] &gt;&gt; oh god, I don't want to do this and oh
+[00:23:59] my god, this is hard. That's a good spot
+[00:24:01] to be in. So So I found a really
+[00:24:04] interesting niche and there were just an
+[00:24:08] infinite number of complex problems.
+[00:24:10] &gt;&gt; You you you need to tell me tell me one
+[00:24:12] or two hard things about parsing PDF.
+[00:24:15] How hard could it be? There's a
+[00:24:17] specification. I'm an engineer. I know
+[00:24:19] specifications. I What's so hard about
+[00:24:22] it?
+[00:24:22] &gt;&gt; I mean, there was this one example
+[00:24:23] where, you know, like PDF has have
+[00:24:25] links. So, like there's like there's
+[00:24:26] like a table of contents and you click
+[00:24:27] on it and it goes to like page 37. So, I
+[00:24:29] built this whole model with the
+[00:24:30] assumption, oh yeah, maybe there's like
+[00:24:32] a 100 or 400 links in there.
+[00:24:34] &gt;&gt; And then we got this one customer who
+[00:24:36] like paid really good money. And then I
+[00:24:37] was like, oh, it takes 4 minutes to load
+[00:24:39] a PDF. What the heck, guys? And I looked
+[00:24:42] at it and it was like a 50,000 page text
+[00:24:44] bible from Canada and it had
+[00:24:46] &gt;&gt; 50,000 pages.
+[00:24:47] &gt;&gt; It had like more than 100 links per
+[00:24:49] page,
+[00:24:50] &gt;&gt; 500,000 links.
+[00:24:52] &gt;&gt; My data model completely exploded
+[00:24:53] because my assumptions were off by a
+[00:24:55] number of what 1,000. But by then you
+[00:24:57] have like a mature product with an API.
+[00:24:59] So like how do you how do you completely
+[00:25:03] redesign the internal part without
+[00:25:07] breaking things for everyone? like
+[00:25:09] suddenly everything has to be lazy where
+[00:25:11] where before parsing 100 one was easy
+[00:25:13] but now they were like this was like so
+[00:25:16] difficult to keep it working for people
+[00:25:19] um I think I spent like two months just
+[00:25:22] on that completely redesigning like the
+[00:25:24] internals and like making sure it's
+[00:25:27] still easy for people they don't have to
+[00:25:29] know what we what we load easy what we
+[00:25:31] load lazy or if you copy this thing it
+[00:25:34] it still has to like have to keep some
+[00:25:36] connection
+[00:25:36] &gt;&gt; it needs to keep the references and and
+[00:25:38] some of those things.
+[00:25:39] &gt;&gt; So, so I and I I love to do support and
+[00:25:42] I think that that that also a confining
+[00:25:44] factor why the company worked cuz if if
+[00:25:47] you send a ticket and then the the the
+[00:25:50] CEO replies and helps you out
+[00:25:53] um that has impact and my my strategy
+[00:25:56] was always like I always used to list in
+[00:25:58] reverse cuz if you if you send a ticket
+[00:26:02] and you get a reply within 5 minute
+[00:26:04] that's magical. If you wait one or two
+[00:26:06] days not much difference. Yeah.
+[00:26:08] &gt;&gt; So, yeah, this this was one of the
+[00:26:10] problems where I worked two months and I
+[00:26:13] finally got it down to almost like this.
+[00:26:15] &gt;&gt; Mhm. That must have been satisfying.
+[00:26:16] &gt;&gt; And and it was this was very satisfying.
+[00:26:19] &gt;&gt; And you were writing a lot a lot of the
+[00:26:20] code or you were involved in in in a
+[00:26:22] bunch of the code like obviously a big
+[00:26:24] big team was now here, but you were
+[00:26:25] still kind of overseeing it, right?
+[00:26:26] You're in the details. I mean, of
+[00:26:28] course, I had a a really great team and
+[00:26:29] and some parts I was more involved. I
+[00:26:31] was always more involved in mobile
+[00:26:33] because that's where my my heart was,
+[00:26:34] but I was always very deep in the tech
+[00:26:36] and and the the
+[00:26:39] marketing side, the business side. I had
+[00:26:40] like Jonathan's help, I had marketing
+[00:26:42] help. There was I I I found good people.
+[00:26:44] The the thing is if you like the
+[00:26:46] blogging and writing about how you solve
+[00:26:49] interesting hard problems will help you
+[00:26:51] hire interesting people that want to
+[00:26:53] solve interesting problems. This is what
+[00:26:55] I remember at PSP PDF kit that your blog
+[00:26:59] was every now and then it admitted it to
+[00:27:01] hacker news as well but it was just
+[00:27:02] interesting to read and I couldn't name
+[00:27:05] again I I'm not went into PDFs but if I
+[00:27:08] had to say something a PDF I would have
+[00:27:09] said PSPDF kit because they're the only
+[00:27:11] ones where I read interesting engineing
+[00:27:13] blogs about how you optimize your ship
+[00:27:15] is still there by the way I I I myself
+[00:27:17] also sometimes ask myself like hm
+[00:27:20] interesting do more companies not see
+[00:27:22] this or is is the question that you you
+[00:27:24] need to be a developer who's either the
+[00:27:26] CEO or or up there who just likes doing
+[00:27:29] this. And by the way, did did you ever
+[00:27:32] write this thinking this will be helpful
+[00:27:34] or you just wrote because you got
+[00:27:36] something out of it like putting out
+[00:27:38] that you solved this hard problem?
+[00:27:39] &gt;&gt; I like sharing and and and like
+[00:27:41] inspiring people. Um there was sometimes
+[00:27:44] even conflicts where we were like should
+[00:27:46] we write about this because it's like a
+[00:27:47] little bit of secret sauce
+[00:27:50] but I just never listen to those voices
+[00:27:52] too much. Um I just you know there's
+[00:27:56] also like when you when you write
+[00:27:58] something down there it's this principle
+[00:27:59] of like you understand it but then if
+[00:28:02] you want to teach it you really have to
+[00:28:04] understand it. So to to me it was also a
+[00:28:06] little bit like oh yeah I worked on this
+[00:28:08] really hard problem and now I want to
+[00:28:11] like preserve it and like help others.
+[00:28:13] So, so, so I I got I got a gig of it of
+[00:28:16] of course I liked the attention. Um, but
+[00:28:20] really it it was this
+[00:28:23] sometimes I just referenced a year later
+[00:28:25] to my own post like yeah this this is a
+[00:28:29] this is both company documentation. This
+[00:28:31] is like my own lookbook. It's helpful on
+[00:28:34] so many ways and a lot of those bigger
+[00:28:36] companies.
+[00:28:38] Oh, they put on too much red tape.
+[00:28:40] There's a lot of developers who don't
+[00:28:41] really like to write. So I I I forced
+[00:28:44] everyone once a month a full day just to
+[00:28:47] write a blog post.
+[00:28:48] &gt;&gt; But you gave them the time. You're like
+[00:28:50] that day you don't need to do any other
+[00:28:51] work but write something.
+[00:28:52] &gt;&gt; Yeah. You have Yeah. You have a day to
+[00:28:54] come up with a post. Ah a day is is
+[00:28:57] quite much actually. I mean when I'm
+[00:29:00] nowadays when I write posts it still
+[00:29:01] takes me
+[00:29:03] a few hours. I don't want to dwell too
+[00:29:05] much on like the I think the the the
+[00:29:08] starting time of the company is the most
+[00:29:10] interesting. the then the the growth
+[00:29:14] phase, you get more red tape, you get
+[00:29:16] more people. It's much more gardening
+[00:29:19] your product instead of like doing doing
+[00:29:22] wild hacks
+[00:29:24] &gt;&gt; um and more iterative. So, so, so it got
+[00:29:26] a little bit less interesting uh over
+[00:29:28] the years and there was like more people
+[00:29:30] drama cuz the more so the more people
+[00:29:33] you have, the more issues there are and
+[00:29:35] I didn't enjoy it that much and I was
+[00:29:38] really really burned out. What what
+[00:29:40] burnt you out, do you think?
+[00:29:42] &gt;&gt; I was just burning too hard. I was
+[00:29:45] working most weekends. I I I tried to
+[00:29:48] shuffle all my managerial needs. And you
+[00:29:51] know, as a CEO, you're basically the
+[00:29:52] waste bin cuz everything everything that
+[00:29:55] other people don't manage or or can do
+[00:29:57] or or mess up, you have to fix. And it's
+[00:30:00] also quite lonely because you you can't
+[00:30:03] openly talk about a lot of things. I
+[00:30:06] mean I I I I structured the company to
+[00:30:08] be quite open but still like you cannot
+[00:30:11] you cannot be negative. You have to even
+[00:30:14] if even if like even if like really bad
+[00:30:16] stuff happens. I know there was like
+[00:30:18] there was like one weekend where my my
+[00:30:19] co-founder called me at at 5:00 a.m. and
+[00:30:23] told me like yeah there's this big
+[00:30:24] airplane company and their planes are
+[00:30:25] down because our software is crashing.
+[00:30:28] That was a very interesting weekend
+[00:30:29] until I could like I disassembled their
+[00:30:34] their app and did proof that they messed
+[00:30:36] around with our source code to
+[00:30:38] triggering a triggering a license key
+[00:30:40] fall back. Uh that eventually like
+[00:30:43] caused issue they had. But that was like
+[00:30:46] a if they sus company's gone and more
+[00:30:49] moment. Um and that's just on top to all
+[00:30:52] the additional stress and there were
+[00:30:54] quite a few of those things. You can do
+[00:30:55] that for a while. And I I also believe
+[00:30:57] like burnout doesn't necessarily come
+[00:31:00] from working too much. It it comes more
+[00:31:03] from or at least for me when you when
+[00:31:05] you work on something but you don't
+[00:31:07] believe in it anymore or you have like
+[00:31:09] too many conflicts and and we also had a
+[00:31:12] we did fight a lot in the team uh with
+[00:31:15] like management team and by the time I I
+[00:31:18] made this mistake and I thought you have
+[00:31:20] to like lead a company more
+[00:31:21] democratically.
+[00:31:23] Um so that was also something that
+[00:31:24] burned me out. I wouldn't I wouldn't
+[00:31:26] want to miss it for a while, though.
+[00:31:27] &gt;&gt; Yeah. So, you know, from from the
+[00:31:30] outside, it seems you sold your shares,
+[00:31:33] you made enough money to not have to
+[00:31:35] work again, should you not choose. And
+[00:31:37] for a lot of people, like, you know,
+[00:31:38] people who are starting out their
+[00:31:40] business or or one day want to start a
+[00:31:41] business, this sounds like the absolute
+[00:31:43] dream. Like, this is I guess what we
+[00:31:45] know realistically that most people will
+[00:31:46] not make it, but if you make it, I mean,
+[00:31:48] you've kind of like I guess you know,
+[00:31:49] checkbox done. You're kind of it's a
+[00:31:51] little bit if you're like climbing on a
+[00:31:52] wall and you ring the bell, you're done.
+[00:31:54] And then what I noticed is from the
+[00:31:57] outside again on your blog, the blog
+[00:31:59] post completely stopped for several
+[00:32:01] years. What what did you do uh in in
+[00:32:03] this time uh and and what what what did
+[00:32:05] you learn in this time, you know, before
+[00:32:07] you came back to to where we are now?
+[00:32:09] &gt;&gt; I needed a lot of time to decompress. I
+[00:32:13] I catched up a lot on the things I
+[00:32:15] thought I missed. I I a lot. Um there
+[00:32:20] were months where I didn't even turn on
+[00:32:21] my computer. And for a while I was I
+[00:32:23] just didn't had this feeling of like
+[00:32:25] what should I do now? Like like I
+[00:32:27] definitely was like
+[00:32:29] why border? You know, you're not you're
+[00:32:32] not supposed to to retire so early or
+[00:32:36] like have so much have such a good exit
+[00:32:39] that you never have to work again. That
+[00:32:42] messed with my mind quite a bit. That
+[00:32:44] &gt;&gt; that was some that was some hard years.
+[00:32:47] And then in in April I was like
+[00:32:51] I there was this idea that I had years
+[00:32:53] ago and even a side project that I
+[00:32:55] started I was like oh yeah I want to I
+[00:32:57] want to continue on that and then after
+[00:33:00] after after more than 3 years I just sat
+[00:33:02] back to my computer and and started
+[00:33:05] hacking again. But the thing was this
+[00:33:09] was like a a Twitter analytics thing and
+[00:33:11] it was written in in Swift and Swift UI
+[00:33:14] and back then I already knew this would
+[00:33:17] have would be so much better if I would
+[00:33:19] build as a website.
+[00:33:20] &gt;&gt; So So was this an existing idea that you
+[00:33:22] kind of had at the back of your your
+[00:33:24] mind something something Twitter
+[00:33:25] analytic?
+[00:33:26] &gt;&gt; Yeah, it was just like something I
+[00:33:27] wanted to build for myself because uh
+[00:33:29] because it didn't exist and then
+[00:33:31] &gt;&gt; even three years later it didn't exist.
+[00:33:32] It still doesn't exist. Uh it it kind of
+[00:33:35] does but I got a bit sidetracked. So I I
+[00:33:38] went back and I I wanted to build it in
+[00:33:41] in with web tech. But web was really was
+[00:33:44] always even at the company the one thing
+[00:33:46] that I looked into the least because I
+[00:33:49] had I had someone really smart who took
+[00:33:52] care of of of that side in the company
+[00:33:53] that I brought in Martin. So I never had
+[00:33:55] to worry about it. That was one of the
+[00:33:57] &gt;&gt; You're not hands on with React or any of
+[00:33:59] that stuff.
+[00:33:59] &gt;&gt; Yeah. And when I came back, I was like,
+[00:34:01] what's a prop? You know, that that level
+[00:34:04] where you really where and you know,
+[00:34:05] this is like this is a a trap I see with
+[00:34:08] many developers. The the better you get
+[00:34:11] at one technology, the harder it is to
+[00:34:13] jump somewhere else. It's not that you
+[00:34:15] can't do it, but it hurts so much.
+[00:34:19] You're like like I can I can program in
+[00:34:21] in in in Apple stack. and program blind.
+[00:34:24] But then in that stack, I have to Google
+[00:34:26] the most mundane stuff and it it just
+[00:34:29] like it just hurts. You you you feel you
+[00:34:32] feel like an idiot again.
+[00:34:33] &gt;&gt; Yeah. And and I guess the more
+[00:34:35] experience you have, it it kind of sucks
+[00:34:36] feeling. I mean, I'm sure you say
+[00:34:38] embrace and and all that, but it's it's
+[00:34:39] not great. You're not as efficient. You
+[00:34:41] know that you could be faster, etc.
+[00:34:43] &gt;&gt; Yeah. So So I came back and I was like,
+[00:34:45] gosh, there has to be there has to be
+[00:34:47] what is this AI? What is this AI stuff
+[00:34:50] that every that that people are
+[00:34:51] dismissing? let's look into this. Yeah.
+[00:34:53] And in April, a lot of us were the
+[00:34:54] specific probably for rightfully so, but
+[00:34:57] and I and I and I like and I to a degree
+[00:35:00] I I credit those three years where I
+[00:35:03] basically didn't turn on my computer
+[00:35:06] because in those years you guys checked
+[00:35:10] out AI and learned that it's crap.
+[00:35:13] &gt;&gt; Yeah. the the people who like I was
+[00:35:15] about to say so you missed out on you
+[00:35:18] didn't do the beta of GitHub copilot you
+[00:35:20] know glorified autocomplete which is
+[00:35:22] GPC3 or or maybe not even there was then
+[00:35:25] of course 3.5 which is a big jump and it
+[00:35:27] it got incrementally better than GPT4
+[00:35:30] and so by the time you came back what
+[00:35:32] tool did you first use when you cuz you
+[00:35:34] missed out on like two years of like
+[00:35:36] like devs us devs using dismissing
+[00:35:39] finding some niche use cases for it
+[00:35:41] &gt;&gt; oh cloud code so you start with cloud
+[00:35:43] mode that I think came out.
+[00:35:45] &gt;&gt; It just came out It came out in May, but
+[00:35:47] there was a beta beforehand.
+[00:35:48] &gt;&gt; Yeah. Yeah. I think they had something
+[00:35:49] Didn't they have something in February
+[00:35:50] already?
+[00:35:51] &gt;&gt; They had a beta from February. Correct.
+[00:35:53] &gt;&gt; Yeah. So, so
+[00:35:54] &gt;&gt; so clock was your first you you come
+[00:35:56] back after like a you know hiatus and
+[00:35:59] you immediately turned on clock code and
+[00:36:00] you missed everything else before. and
+[00:36:03] and and you know, you know, it was like
+[00:36:05] I I remember I took this big messy site
+[00:36:10] project that I built and I have this
+[00:36:13] browser extension where that that
+[00:36:14] converts a GitHub repository into one
+[00:36:16] big markdown that was like a 1.3
+[00:36:19] megabyte markdown file and I dragged it
+[00:36:21] into into Google's CI studio with
+[00:36:24] Geminina 2.5 or two to something and I
+[00:36:27] typed write me a spec and it generated
+[00:36:29] those 400 lines of spec And I dragged
+[00:36:32] this back into cloud code
+[00:36:35] and I was like build and then I continue
+[00:36:38] continue continue and while I was like
+[00:36:41] working on other stuff, you know, um and
+[00:36:44] eventually told me like it's 100%
+[00:36:46] production ready and I started it and it
+[00:36:49] crashed. I'm sure we can all relate to
+[00:36:51] the story of the AI saying the code is
+[00:36:53] production ready then crashing. This is
+[00:36:55] a pretty funny and innocent story, but I
+[00:36:57] personally don't trust code that AI
+[00:36:59] generates without verifying it. And this
+[00:37:01] leads us nicely to our season sponsor,
+[00:37:03] Sonar. So, let's look at some data. A
+[00:37:05] new report from Sonar, the state of code
+[00:37:07] developer survey report, found that 82%
+[00:37:10] of developers believe they can code
+[00:37:12] faster with AI. But here's what's
+[00:37:13] interesting. In the same survey, 96% of
+[00:37:16] developers said they do not highly trust
+[00:37:18] the accuracy of AI code. This checks out
+[00:37:21] for me as well. While I write the code
+[00:37:23] faster with AI agents, I don't exactly
+[00:37:25] trust the code it produces. This really
+[00:37:27] becomes a problem at the code review
+[00:37:29] stage where all this AI generated code
+[00:37:31] must be regularly verified for security,
+[00:37:33] reliability, and maintainability. Sonar
+[00:37:36] cube is precisely built to solve this
+[00:37:37] code verification issue. Sonar has been
+[00:37:39] the leader in the automated code
+[00:37:40] analysis business for over 17 years,
+[00:37:42] analyzing 750 billion lines of code
+[00:37:45] daily. That's over 8 million lines of
+[00:37:48] code per second. I actually first came
+[00:37:49] across Sonar 13 years ago in 2013 when I
+[00:37:52] was working at Microsoft Skype and a
+[00:37:54] bunch of teams already use Sonar Cube to
+[00:37:56] improve the quality of their code. I've
+[00:37:58] been a fan since. Sonar provides an
+[00:38:00] essential and independent verification
+[00:38:01] layer. It's the automated guardrail that
+[00:38:03] analyzes all code whether it's developer
+[00:38:06] or AI agent generated, ensuring it meets
+[00:38:09] your quality and security standards
+[00:38:10] before it ever reaches production. To
+[00:38:12] get started for free, head to
+[00:38:13] sonarsource.com/pragmatic.
+[00:38:16] With this, let's get back to Peter and
+[00:38:18] how AI agents cannot exactly be trusted.
+[00:38:21] &gt;&gt; Then I had then I added added an MCP so
+[00:38:24] it could use the browser. I think the
+[00:38:25] player with MCP was already there and it
+[00:38:27] looped a few more hours and then I had a
+[00:38:30] I had a Twitter login page and it it did
+[00:38:33] something. I It was not great, but it
+[00:38:36] did something. And to me to me this was
+[00:38:39] my holy [&nbsp;__&nbsp;] mind-blowing moment.
+[00:38:42] &gt;&gt; This and this was like in April or May
+[00:38:44] this year, right?
+[00:38:45] &gt;&gt; Yeah. It was it was it was just good
+[00:38:47] enough that I could see the potential
+[00:38:51] and I I understood it's like
+[00:38:53] &gt;&gt; yeah this is this is where it's going
+[00:38:55] and and from that moment on I I had a
+[00:38:57] few months where I had really trouble
+[00:38:59] sleeping and I in
+[00:39:01] &gt;&gt; I I remember because once on Twitter I
+[00:39:05] sent you a direct message. I was up
+[00:39:06] early for valid reasons, you know, my my
+[00:39:08] kids or something like that. But it was
+[00:39:11] 5:00 a.m. and I I sent you a message on
+[00:39:13] Twitter and you replied immediately. And
+[00:39:15] I was like, "Why are you up?" And he's
+[00:39:17] like, "Oh, this is usual. Like I I
+[00:39:19] usually I'm still usually awake." And
+[00:39:21] and I asked like, "Why?" And you said
+[00:39:22] like, "Oh, I'm I'm just like using
+[00:39:23] Claude and it's really really
+[00:39:24] addictive." And I was like, "Really?"
+[00:39:27] And you're like, "Yeah, I'm not joking.
+[00:39:29] Like it's really good." And I think that
+[00:39:31] was the thing. You said something or
+[00:39:32] wrote something like just one more
+[00:39:34] prompt. like you told me how like what
+[00:39:37] what made it so addictive or or what
+[00:39:39] what still makes it so addictive?
+[00:39:40] &gt;&gt; Oh, it's the same economics as as you go
+[00:39:42] to a casino. That's that's it's my
+[00:39:44] little slot machines, you know? You you
+[00:39:47] you press the trigger and ding ding ding
+[00:39:49] ding ding and it's like nope. you you
+[00:39:51] type in the prompt and it it will like
+[00:39:54] and it does it does crap or it does
+[00:39:57] something that actually blows your mind
+[00:39:59] and it's this
+[00:40:00] &gt;&gt; and and you're saying it it blows your
+[00:40:01] mind as like you're a really experienced
+[00:40:03] developer like it's it's not easy to
+[00:40:04] blow your mind, right? Like you you
+[00:40:06] you've seen good code you can
+[00:40:08] differentiate like crap code, decent
+[00:40:11] code, good enough code like you have a
+[00:40:12] bar, right? It's so funny, you know, in
+[00:40:15] my company, I used to obsess over every
+[00:40:18] detail, every spacing, every new line,
+[00:40:23] the naming. I spend so much time bike
+[00:40:26] shedding. And in retrospect, I'm like,
+[00:40:29] what the heck? Why did I do that? Like,
+[00:40:31] what's the point that the customer
+[00:40:34] doesn't see the insights of of course
+[00:40:36] like it has to meet certain certain
+[00:40:38] standards. It has to work. It has to be
+[00:40:39] fast. It should be secure, but like how
+[00:40:44] much did that bike [&nbsp;__&nbsp;] there is like
+[00:40:46] stupid.
+[00:40:47] &gt;&gt; You say that, but then you also just
+[00:40:49] said that people loved PSPDF kit because
+[00:40:53] it was the most polished. It worked the
+[00:40:55] best. Do you not think that that that
+[00:40:56] amount of caring bike shedding as you
+[00:40:59] call it? Being obsessed. It sound like
+[00:41:01] you were keeping tech depth at bay, you
+[00:41:03] know, like being obsessed with white
+[00:41:04] spaces is is not going to be messy. And
+[00:41:06] we know it's not just the white spaces.
+[00:41:08] we know you're going to care about
+[00:41:09] testing and all that. Like it sounds to
+[00:41:11] me that PSPDF kit like you know like
+[00:41:13] what I see is you were not just building
+[00:41:16] a product that was great UX but you
+[00:41:18] built something that had a really good
+[00:41:21] hygiene and that's how it could be high
+[00:41:23] performance and all that is how do you
+[00:41:24] think about it?
+[00:41:25] &gt;&gt; Yeah. Yeah. Yeah. To a degree. Yes. And
+[00:41:27] and even now like I I I mean like my my
+[00:41:32] last blog post was a confession that I I
+[00:41:35] ship code on read and
+[00:41:37] &gt;&gt; yeah we have to talk about that
+[00:41:40] &gt;&gt; and at the same time I spent so much
+[00:41:44] time to like restructuring
+[00:41:47] I mean I mean like even even today like
+[00:41:49] I I really wanted to get this PR in
+[00:41:52] where it was like 15,000 line change
+[00:41:55] where in my I moved everything over to a
+[00:41:57] plug-in architecture where I was so
+[00:41:59] excited about and I care a lot about the
+[00:42:01] structure. Did I read all the code? No,
+[00:42:04] because a lot of code really is just
+[00:42:05] boring plumbing. Well, what are most
+[00:42:07] apps? Like data comes in from an API in
+[00:42:11] one form. You like you parse it, you
+[00:42:14] package into a different form. Hey, you
+[00:42:16] store it into database and it's a
+[00:42:18] different form. It comes out again into
+[00:42:19] a different form. Then it's like HTML or
+[00:42:21] whatever. And you type in something it's
+[00:42:24] a different form again. And all you do
+[00:42:26] is like you're massaging data in
+[00:42:28] different forms throughout your app.
+[00:42:30] This is what most apps are. We are
+[00:42:31] pretty chasing printers. And the and the
+[00:42:33] the really the hard part is solved by
+[00:42:36] Postgress 30 years ago by some neck
+[00:42:38] birds. Uh that's that's really what a
+[00:42:41] lot of software is like. There's always
+[00:42:43] some interesting parts, but I don't have
+[00:42:45] to care how this button is aligned or
+[00:42:47] which tailwind class is used or or like
+[00:42:51] many details are boring and many other
+[00:42:52] details are interesting. But it I think
+[00:42:54] it's much more about system architecture
+[00:42:56] than having to read every single line.
+[00:42:59] &gt;&gt; Right now jumping forward, what is your
+[00:43:01] workflow like? Like like when you're
+[00:43:02] working on on cloud bot, are you using a
+[00:43:06] terminal, multiple terminals, which
+[00:43:09] which tools and and how are you you know
+[00:43:11] like you said you're not you're kind of
+[00:43:13] like not reviewing the the code, but
+[00:43:14] you're still thinking about
+[00:43:15] architecture. Like what does your
+[00:43:16] average day look like in terms of
+[00:43:18] tooling? You know, you have to explain
+[00:43:19] to a developer who might join the team.
+[00:43:21] you know, at at one point you didn't get
+[00:43:23] like what does it look like?
+[00:43:24] &gt;&gt; It's interesting. Let's let's let's go a
+[00:43:26] little bit. We were we were in in in
+[00:43:28] April with Cloud Code and then I got
+[00:43:31] really hooked and then I did some I had
+[00:43:33] a phase where I did cursor and then I
+[00:43:38] did I I used Gemini 2.5 a bit. Then we
+[00:43:41] had this phase with Opus 4. I hooked up
+[00:43:45] a lot of my friends like I know I know
+[00:43:47] both Armen and and Mario from Vinner.
+[00:43:49] They got they got AI pill because I I
+[00:43:53] was addictive. You know, my my enem was
+[00:43:56] like confusing them and then they tried
+[00:43:58] it out and then and then eventually they
+[00:44:00] also were up at 5:00 a.m. and I called
+[00:44:01] it like the black eye club. I mean,
+[00:44:04] there's a reason like I I I I started a
+[00:44:06] meet up in London that I called called
+[00:44:08] uh Cloud Code Anonymous because because
+[00:44:10] it's it's a little bit like a drug
+[00:44:12] because it's so it's so much fun. Like
+[00:44:15] to to me what what what blew my mind so
+[00:44:18] much was this realization that I can
+[00:44:22] build everything now. Before you had to
+[00:44:24] really pick which side project you build
+[00:44:26] because software is hard. Yeah, it's
+[00:44:28] still hard. But now like I I am this
+[00:44:31] this friction that I talked about where
+[00:44:34] I'm so good at this at this technology
+[00:44:36] and I'm like so bad at this and I'm like
+[00:44:38] oh let's make the CLI in Go. I have no
+[00:44:41] clue about Go. But I have I have a good
+[00:44:44] system understanding and once you have
+[00:44:47] that is like you you develop a feeling
+[00:44:50] what's right what's wrong like it's it
+[00:44:52] it is a skill in itself. I remember
+[00:44:54] there was this tweet where someone said,
+[00:44:55] "Oh, when you write the code, you you
+[00:44:58] feel the friction and that's why that's
+[00:45:00] how you make good architecture." I feel
+[00:45:02] the same friction when I prompt because
+[00:45:04] I I see the code flying by. I see how
+[00:45:07] long it takes. I see if like the agent
+[00:45:09] pushes back. Um I see if what it creates
+[00:45:13] looks like messy or like makes sense.
+[00:45:15] When I prompt, I I have a hint already
+[00:45:17] how long it's going to take. If it takes
+[00:45:19] much longer, I understand that I messed
+[00:45:20] up somewhere.
+[00:45:21] &gt;&gt; You kind of feel the model. you you know
+[00:45:23] you know
+[00:45:24] &gt;&gt; yeah usually it's like this or if it
+[00:45:26] runs
+[00:45:26] &gt;&gt; I I feel it's very much a symbiosis like
+[00:45:28] I I learn to to talk
+[00:45:32] &gt;&gt; may I even say dare or that language
+[00:45:34] more so it's like my my knowledge how to
+[00:45:37] use those things improved and also the
+[00:45:39] models improved and then and then like
+[00:45:41] over the time between between April and
+[00:45:44] now I would say yeah the inflection
+[00:45:46] point was summer where it just got so
+[00:45:49] good that you could you create software
+[00:45:52] without actually writing code by hand.
+[00:45:54] But the real that change that like sold
+[00:45:57] it for me is was
+[00:46:01] again GBD 5.2 that was again I think
+[00:46:04] it's underrated. I don't know I don't
+[00:46:06] know why why all these people still use
+[00:46:09] cloud code. I I I kind of get it. It's
+[00:46:11] it's a different way of working but
+[00:46:14] whatever OpenAI cook there is insanely
+[00:46:18] good. pretty much every prompt I type
+[00:46:21] gives me the result I want which is
+[00:46:24] insane like like on on on cloudbot the
+[00:46:28] my latest product I use
+[00:46:31] between five and 10 agents in parallel
+[00:46:34] if you're very much cloud code build you
+[00:46:37] have to forget quite a lot of the
+[00:46:42] the silliness that the things that you
+[00:46:44] have to do to create good output with
+[00:46:46] cloud code I mean I also met that team
+[00:46:48] and and they created a whole new
+[00:46:51] category. Like cloud code is is is a
+[00:46:54] category defining product and it is
+[00:46:56] amazing for general purpose computer
+[00:46:58] work and it is is really good for coding
+[00:47:00] and I I I I still use it almost every
+[00:47:03] day. But for writing code in complex
+[00:47:07] applications, Codex is just so much
+[00:47:09] better because it it it takes 10 times
+[00:47:11] longer. um Claude would
+[00:47:15] read three files and then be confident
+[00:47:17] enough to just like create code and then
+[00:47:20] you really have to steer it and push it
+[00:47:22] so it reads more code so it gets it sees
+[00:47:24] a bigger picture of your codebase so
+[00:47:27] that it it it weaves in new features
+[00:47:29] better and Codex will just like be
+[00:47:32] silent and just read files for 10
+[00:47:34] minutes and if you if you only work on
+[00:47:36] one terminal I completely understand how
+[00:47:38] you how you find this unbearable
+[00:47:41] But I rather have something where it's
+[00:47:44] also you don't tell it what to do. You
+[00:47:45] know this is this is also something that
+[00:47:47] people don't get like I have a
+[00:47:49] conversation with the model. It's like
+[00:47:52] oh let's look at this what what what
+[00:47:54] what options do we have for this
+[00:47:56] structure? Did you consider this
+[00:47:58] feature? It's like because every every
+[00:48:00] session is like the model starts from
+[00:48:03] having no understanding about your
+[00:48:04] product and you have and and sometimes
+[00:48:07] you have to just give it a little bit of
+[00:48:08] pointers. What about this and this? So
+[00:48:10] it explores different directions and you
+[00:48:13] don't need plan mode like I'm just
+[00:48:14] having a conversation until I say build
+[00:48:16] this it will not build this. There's
+[00:48:19] some trigger words because it it is they
+[00:48:21] all are a little trigger hungry but as
+[00:48:23] soon as I say let's discuss or give me
+[00:48:25] options they will not build things until
+[00:48:27] I say build.
+[00:48:29] &gt;&gt; So so a lot of a lot would you say a lot
+[00:48:31] of your prompting or a good part of it
+[00:48:33] is this conversation where you are
+[00:48:35] pretty much planning together with the
+[00:48:38] agent.
+[00:48:38] &gt;&gt; Yeah. It's like what about like I say
+[00:48:40] okay then you remind them it's like okay
+[00:48:42] we need documentation what would be a
+[00:48:43] good spot it would like give me some
+[00:48:44] recommendations I say no this should
+[00:48:47] really be its own page do we need a
+[00:48:48] configuration how how does this fit into
+[00:48:50] this other feature it's like I am
+[00:48:52] designing the system because I have this
+[00:48:55] I have this system understanding about
+[00:48:56] how how is my my product how are the
+[00:48:59] shapes looking I don't have a line by
+[00:49:02] line code understanding that's that's
+[00:49:04] what Codex does for me but I'm the
+[00:49:07] architect you
+[00:49:08] It sounds a little bit like you're
+[00:49:11] almost, you know, for
+[00:49:15] years back this this totally came got
+[00:49:18] out of style. But there was this idea
+[00:49:20] that you would have the architect with a
+[00:49:22] capital A who used to be a software
+[00:49:24] developer, but they're not hands-on
+[00:49:26] anymore because they spend a lot of time
+[00:49:28] understanding the business and they have
+[00:49:29] these developers working underneath
+[00:49:31] them. And some companies still kind of
+[00:49:33] work a little bit like this, but most
+[00:49:34] modern companies don't. But some banks,
+[00:49:36] etc. I met people there who are capital
+[00:49:38] architects. They do the system plan.
+[00:49:41] They talk with fellow architects. They
+[00:49:43] have the blueprint and then they
+[00:49:44] literally pass it down to the team and
+[00:49:46] everyone hates this model obviously
+[00:49:47] because you know again like I I think as
+[00:49:50] people you kind of want more. The
+[00:49:51] architect is never on call for for this
+[00:49:53] stuff and so it just kind of breaks down
+[00:49:55] in practice and a lot of large companies
+[00:49:57] just move to the staff engineer model
+[00:49:58] where you're kind of all working
+[00:50:00] together. Of course, there's people who
+[00:50:01] make who might have more input, but
+[00:50:03] sounds like it's almost like this world
+[00:50:05] where you are the architect who kind of,
+[00:50:07] you know, you have your little agents
+[00:50:10] who who do the code, except in this
+[00:50:12] case, you are of course fully
+[00:50:13] responsible because you're still an
+[00:50:14] individual contributor. You're not
+[00:50:16] you're not like a okay, you might say
+[00:50:17] you're a manager of agents or whatnot,
+[00:50:18] but the code is is yours. It's your
+[00:50:20] responsibility. You're going to be on
+[00:50:22] call. If you know, if you push out code
+[00:50:24] that takes down CloudBot, which it did
+[00:50:26] just recently, you're on the hook for
+[00:50:28] it, right? like and I think the the
+[00:50:30] difference in this system when when it
+[00:50:32] was in companies it was the architect
+[00:50:35] was kind of shielded from the output of
+[00:50:38] their work because there's so much
+[00:50:39] people and so much process etc. Well, I
+[00:50:42] wouldn't say architecture. I I like the
+[00:50:43] word builder.
+[00:50:44] &gt;&gt; Builder. Yeah.
+[00:50:45] &gt;&gt; And and and I think also that's there's
+[00:50:47] a few categories that I see for people
+[00:50:50] that are highly successful using using
+[00:50:52] AI and people who really struggle.
+[00:50:55] &gt;&gt; I care more about the outcome, the
+[00:50:57] product. I very much care about how it
+[00:50:59] feels and everything, but how the
+[00:51:02] plumbing works underneath.
+[00:51:04] &gt;&gt; I care structurally, but you know, not
+[00:51:06] to the not the biggest detail. And then
+[00:51:07] there are people who really love to to
+[00:51:10] code on hard problems like think about
+[00:51:12] algorithms don't really like the I'm
+[00:51:15] building a product with like all the
+[00:51:17] marketing all the they they more like
+[00:51:19] they like to solve hard problems and
+[00:51:21] those are the people who really struggle
+[00:51:22] and and and often reject AI or get
+[00:51:25] really sad because that's exactly the
+[00:51:27] job where that AI does like it solves
+[00:51:30] the hard problems. Now sometimes I give
+[00:51:32] it some pointers but many times I
+[00:51:34] learned I learned more this year than
+[00:51:37] last five years around around software
+[00:51:40] architecture and designing. I the
+[00:51:42] there's so much inside those monsters um
+[00:51:46] on knowledge and everything is just a
+[00:51:49] question away but you have to know what
+[00:51:50] question to ask. Of course I also built
+[00:51:52] this Twitter thing and it's still not
+[00:51:54] done and I and I I really hope I I'll
+[00:51:55] get back to it at one one time.
+[00:51:57] everything worked but if I used it more
+[00:51:59] at some point things got really laggy
+[00:52:01] and weird and then it worked again and I
+[00:52:03] just couldn't figure it out and it was
+[00:52:05] like really difficult to debug because
+[00:52:07] it was not easy to reproduce. It was
+[00:52:08] just like you use it more and things get
+[00:52:10] really slow. I basically had like
+[00:52:12] software in in in in Psql like in
+[00:52:14] Postgress that would be triggered when
+[00:52:16] certain inserts were were doing and then
+[00:52:18] the database would would get really busy
+[00:52:21] and the model couldn't see it because it
+[00:52:23] was it was it was so far abstracted from
+[00:52:27] all the you know like those those models
+[00:52:29] are really good at tracing through but
+[00:52:31] this was a side effect that was so hard
+[00:52:33] to see because it was only in this one
+[00:52:36] file
+[00:52:37] a function that had no connection to
+[00:52:39] anything else. um with a name that was
+[00:52:42] not easy grabbable. I just never asked
+[00:52:44] the right question until I was like do
+[00:52:46] we have any side effects for this and
+[00:52:47] this and I found it and I fixed it and
+[00:52:49] it's like but I everything is just the
+[00:52:52] right question away.
+[00:52:53] &gt;&gt; Yeah. But you you need to have like
+[00:52:55] knowledge, expertise.
+[00:52:56] &gt;&gt; Yeah. You experience
+[00:52:58] &gt;&gt; you you I mean so so so these are the
+[00:53:01] people who rejected and then the people
+[00:53:02] who who care a bit less about how it's
+[00:53:05] being plumbed internally but are just
+[00:53:06] excited to build things. They're really
+[00:53:08] successful. And one thing that also
+[00:53:10] helped me is, you know, when you run a
+[00:53:12] company and then you hire people, you
+[00:53:15] can't breathe on everyone's neck and
+[00:53:17] like make them have the line of code
+[00:53:19] exactly that way. And there's a lot of
+[00:53:21] people who who didn't manage a team,
+[00:53:23] they didn't had this experience how to
+[00:53:26] how to relax a little bit and understand
+[00:53:28] that yes, this maybe is not exactly that
+[00:53:30] code that I want, but it will get me
+[00:53:33] closer to my goal. And for anything that
+[00:53:37] is like
+[00:53:39] not perfect, we can always make it
+[00:53:41] better and like put more time into it. I
+[00:53:42] very much believe into this iterative
+[00:53:44] improvement. I had to learn to let go a
+[00:53:46] little bit at my company. So, so, so
+[00:53:48] then when I when I had cloud code, it
+[00:53:50] kind of felt like I have like I have
+[00:53:52] like imperfect, sometimes silly, but
+[00:53:54] sometimes very brilliant engineers that
+[00:53:56] I have to steer and where we where we
+[00:53:59] work together on a common goal. It felt
+[00:54:02] a lot like being the boss again.
+[00:54:04] &gt;&gt; Yeah. And and interesting now you know
+[00:54:06] you you built kind of software I guess
+[00:54:08] the traditional way you know pre AI for
+[00:54:11] 15 years or even more than 15 years and
+[00:54:14] you got really good at being also
+[00:54:16] leading a team and then how to have high
+[00:54:18] standards. You really cared about the
+[00:54:20] the craft there as well. You've now kind
+[00:54:22] of been I guess vibe coding or working
+[00:54:23] with agents for a year. You're comparing
+[00:54:25] the two. What do you think? What do you
+[00:54:27] think really really changed? And what do
+[00:54:29] you think are things that kind of stayed
+[00:54:30] the same despite all
+[00:54:32] &gt;&gt; First of all, I don't like I don't like
+[00:54:33] the term VIP code.
+[00:54:34] &gt;&gt; All right. How should we call it?
+[00:54:35] &gt;&gt; I I think I think I think VIP coding is
+[00:54:38] by now almost a I I call it I tell
+[00:54:41] people I do what I do is agending
+[00:54:42] engineering with a little star. VIP
+[00:54:44] coding starts at 3:00 a.m.
+[00:54:46] &gt;&gt; Now like because all the the mundane
+[00:54:49] stuff of writing code is automated away,
+[00:54:52] I can move so much faster. But also
+[00:54:54] means like I have to sing so much more.
+[00:54:56] I'm still very much in the flow. Like it
+[00:54:59] is it is completely the same feeling as
+[00:55:01] for me as as I I very much get in this
+[00:55:03] flow state but it is mentally even more
+[00:55:06] taxing because I have I don't have one
+[00:55:09] employee that I manage. I have like five
+[00:55:10] or 10 that all work on things and I
+[00:55:12] switch from this one part to this other
+[00:55:13] part to this other part to this other
+[00:55:15] part. mostly because of I'm designing
+[00:55:18] this new subsystem or like this feature
+[00:55:19] and then I know that it will probably
+[00:55:21] take Codex like 40 minutes or or one
+[00:55:23] hour to build. So like I want to like
+[00:55:26] have the plan right and then I build it
+[00:55:28] and then I'll I'll move on to something
+[00:55:30] else but then this is cooking and then I
+[00:55:32] work on this and then this is cooking
+[00:55:33] and then this is cooking and then at
+[00:55:34] some point this is cooking and then this
+[00:55:36] is cooking and then I go back to this
+[00:55:37] one. So like I I I I switch around a lot
+[00:55:41] in my head. I wish I wouldn't have to do
+[00:55:44] that. Like I'm sure this is a
+[00:55:45] transitionary problem and at some point
+[00:55:47] we have we have models and and systems
+[00:55:50] that are so fast that that I can
+[00:55:52] paralyze a little less. But to stay in
+[00:55:55] the float flow state I need to massively
+[00:55:57] parallelize. So that that's that's how
+[00:55:59] it work. I go back to there and and
+[00:56:02] maybe tweak it a little bit more. But
+[00:56:03] usually just like try it out and maybe
+[00:56:07] then this is ready because this only
+[00:56:08] took like 20 minutes. So like I
+[00:56:10] constantly jump around. Usually there's
+[00:56:13] there's one main project that has my
+[00:56:15] focus and I have like some satellite
+[00:56:16] projects that also need attention but
+[00:56:19] where I can make maybe I spend 5 minutes
+[00:56:21] it does something for half an hour and
+[00:56:23] and and I try it and it doesn't need uh
+[00:56:26] so much capacity up there.
+[00:56:27] &gt;&gt; This almost sounds you know like two
+[00:56:29] things come to mind. One is there's
+[00:56:30] these like games where you have to
+[00:56:32] manage a kitchen with the employee and
+[00:56:34] and you see like the recipes or
+[00:56:36] something come out and you need to jump
+[00:56:37] and do it again.
+[00:56:38] &gt;&gt; It's like Starcraft, you know, you have
+[00:56:40] like your main base and you have like
+[00:56:41] your side bases. They give you
+[00:56:42] resources.
+[00:56:43] &gt;&gt; That as well. And also one thing that
+[00:56:44] just came to mind as you said like I go
+[00:56:46] there and I watch this and I make a
+[00:56:47] decision is when I see the chess grand
+[00:56:49] masters play multiple boards at once.
+[00:56:52] You see see sometimes they 20 boards and
+[00:56:54] they always all you they go there they
+[00:56:55] kind of you can see that they just like
+[00:56:57] see what's on that board. they make a
+[00:57:00] decision and for some boards they stop
+[00:57:02] for longer I guess better players or
+[00:57:04] better opponents. It feels, you know,
+[00:57:05] both they're occupying 100% of of their
+[00:57:07] brain. You're occupying your bay and
+[00:57:09] you're you're kind of scaling yourself
+[00:57:11] as long as you can context switch. The
+[00:57:13] difference the difference was up until
+[00:57:16] with with cloud code I you have to work
+[00:57:18] a little different because it is much
+[00:57:20] faster but then the output often doesn't
+[00:57:23] work on the first try. So like it makes
+[00:57:25] something but then it forgot to update
+[00:57:27] three other things. it crashes or you
+[00:57:29] give it
+[00:57:31] the good thing how to be effective with
+[00:57:33] coding agent is always like you have to
+[00:57:35] close the loop. It needs to be able to
+[00:57:37] debug and test itself. That's the big
+[00:57:40] secret. Um that's also something I I
+[00:57:44] think that's part of why it got so much
+[00:57:46] more effective. Um but yeah, with with
+[00:57:48] with clock code you I often had to go
+[00:57:50] back and like fix up the stuff
+[00:57:53] um or it just takes a lot of iterations.
+[00:57:55] So in the end it's not that much faster.
+[00:57:58] It's just more interactive.
+[00:58:01] And and these days with Cordex it just
+[00:58:04] almost always gets it right. My my
+[00:58:06] general strategy is always I I build a
+[00:58:08] feature of course you and and of course
+[00:58:10] you always let it write tests and you
+[00:58:13] make sure that it runs it.
+[00:58:15] &gt;&gt; It runs them. Yes.
+[00:58:17] So even even when I write a MAC app, I
+[00:58:19] don't know like I I just yesterday I
+[00:58:21] debuged this feature where
+[00:58:24] the MAC app couldn't find a a remote
+[00:58:26] gateway but like the the same code in
+[00:58:29] Typescript could but makeup is kind of
+[00:58:32] annoying to debug because like it builds
+[00:58:35] it you have to start it you have to look
+[00:58:36] at it you have to like say no this is
+[00:58:38] not working. So now I just said it like
+[00:58:41] you know you're going to build a CLI
+[00:58:42] just for debugging that invokes all the
+[00:58:44] same code path that you can call
+[00:58:45] yourself and then you just iterate and
+[00:58:48] you fix it yourself and then it will
+[00:58:49] just cook and it just cooked for an hour
+[00:58:51] and it was done and it told me like
+[00:58:52] there was a race condition here and here
+[00:58:53] and like a misconfiguration blah blah
+[00:58:55] blah and like yeah it sounds sensible. I
+[00:58:57] don't need to I don't need to see that
+[00:58:58] code. It's like but but you don't need
+[00:59:00] to see it because you set up the
+[00:59:02] validation loops and you trust that
+[00:59:04] because it ran it. I mean this is I
+[00:59:07] guess I guess it's not too dissimilar to
+[00:59:08] like sometimes when you work on a large
+[00:59:10] project in a large company when all the
+[00:59:11] tests pass I mean it doesn't mean 100%
+[00:59:14] it's there but it's it's a pretty good
+[00:59:16] and and all the new new code has test as
+[00:59:18] well you know someone thought about it
+[00:59:20] and tested it and and all that. So even
+[00:59:22] even on my on the very latest project we
+[00:59:25] always had bugs
+[00:59:28] but like anti-gravity has like a certain
+[00:59:30] a certain weirdness with how it takes
+[00:59:33] tool calls in the loop in the in the
+[00:59:34] format. So you have to do like some
+[00:59:36] filtering.
+[00:59:37] &gt;&gt; And that broke a bunch. And it actually
+[00:59:39] took me way too long to realize like
+[00:59:41] what am I doing here? I just need to
+[00:59:42] automate this. So I was just going to
+[00:59:44] codeex. like design life tests that spin
+[00:59:49] up a Docker container, install the whole
+[00:59:51] thing, spin up a loop, use my API keys
+[00:59:54] from this and this file
+[00:59:56] and then you tell the model to
+[01:00:00] read an image, create an image before
+[01:00:03] and then look into the image and see
+[01:00:05] what it sees. So I I don't not just tell
+[01:00:07] the loop, I still tell tool calling,
+[01:00:09] make it work
+[01:00:11] and then it solved itself. It took
+[01:00:12] forever, but it it it it tested all my
+[01:00:14] API keys like from from Entropic over
+[01:00:17] SEI over GLM like everything and it
+[01:00:19] fixed all those little indicies where
+[01:00:21] where sometimes the tool calling didn't
+[01:00:23] work or the ordering was wrong because I
+[01:00:25] closed the loop and and that's that's
+[01:00:28] &gt;&gt; and closing the loop you mean just have
+[01:00:30] a way to to have have the agent be able
+[01:00:32] to validate its work?
+[01:00:33] &gt;&gt; Yeah, that's why that's the whole reason
+[01:00:35] why why those models that we currently
+[01:00:38] have are so good at coding. But like
+[01:00:41] sometimes mediocre good at writing
+[01:00:43] creative because there's no easy way to
+[01:00:45] validate right but code I can compile I
+[01:00:49] can lint I can execute I can verify the
+[01:00:52] output if you design it the right way
+[01:00:54] you have a perfect loop like even now
+[01:00:55] even now for for websites I built the
+[01:00:58] core in a way that can be run via a CLI
+[01:01:01] so it's like I have this I have this
+[01:01:03] perfect uh execution loop because the
+[01:01:05] the browser loop is insanely slow you
+[01:01:07] want something that that loops fast. So
+[01:01:09] it sounds like one thing that is not
+[01:01:11] really changing from like before is we
+[01:01:13] had this before like backend or business
+[01:01:15] logic heavy he heavy thing could easily
+[01:01:17] be or more easily be verified that it's
+[01:01:20] correct.
+[01:01:20] &gt;&gt; Surprise actually using aentic coding
+[01:01:22] makes you a better coder because you
+[01:01:24] have to have to think harder about your
+[01:01:26] your your architecture so that it's
+[01:01:28] easier verifiable because verifying is
+[01:01:30] the way how to make things good. Well,
+[01:01:32] then remember back back even before AI
+[01:01:35] for complex systems like once you got
+[01:01:37] someone who built these things before
+[01:01:39] what they started with how do we make it
+[01:01:40] testable right like you you need to
+[01:01:42] design interfaces classes testable you
+[01:01:44] need to think about like am I going to
+[01:01:46] fake things will I use mocks will I use
+[01:01:49] end toend testing which will be long etc
+[01:01:52] but these are like really hard
+[01:01:53] architectural decisions and once you
+[01:01:54] make them they're I guess harder to
+[01:01:56] change in your in your word you know
+[01:01:58] like the model would cook a lot longer
+[01:02:00] if you asked it to make a massive
+[01:02:01] refactor acture and you know if you have
+[01:02:04] test it'll get it right but you know now
+[01:02:06] these we we still have these trade-offs
+[01:02:07] &gt;&gt; yeah it's still it's still software it's
+[01:02:09] it's I I would say I write better code
+[01:02:12] now that I don't write code myself
+[01:02:14] anymore and I wrote really good code but
+[01:02:16] but like even back at the company
+[01:02:19] sometimes testing was so tedious and you
+[01:02:22] come up with all those edge cases and
+[01:02:24] and and the branching
+[01:02:25] &gt;&gt; I mean outside of Ken Debbec who I
+[01:02:27] deeply respect and he was on the podcast
+[01:02:29] and we We we we talk like he he still
+[01:02:34] writes test first and he tells me that
+[01:02:36] he's not mad at me for not writing it
+[01:02:38] but if you want to write like you know
+[01:02:39] poor quality code it's on you. Uh but I
+[01:02:41] don't know many developers myself
+[01:02:43] included I never liked writing tests and
+[01:02:45] even even when I pretended that I did I
+[01:02:47] I just never did. It's a little bit like
+[01:02:49] writing documentation and writing tests
+[01:02:50] to me it was never a creative
+[01:02:53] expression. It is so good now like I I
+[01:02:56] would say for my last project I have
+[01:02:57] really good documentation and I didn't
+[01:02:59] write a single line myself like no I
+[01:03:03] don't write the test I don't write
+[01:03:04] documentation I explain the model the
+[01:03:07] trade-off so like why we did something
+[01:03:08] like this and then tell it like like
+[01:03:10] write that write the entrance section
+[01:03:12] beginner friendly and then add more
+[01:03:13] technical detail at the end and it is so
+[01:03:16] good I never had a project with that
+[01:03:18] good documentation just by every time I
+[01:03:21] design a feature this is a part of this
+[01:03:23] a part of the process And also like
+[01:03:24] testing I was like okay we built this
+[01:03:27] how are we going to test this? Yeah we
+[01:03:28] could do this and this and this. What if
+[01:03:30] we build it this way and oh yeah then we
+[01:03:32] can test it better. So it's like this is
+[01:03:34] now part of my singing because I I
+[01:03:35] always think like how do I close the
+[01:03:37] loop? How do I the model always needs to
+[01:03:39] be able to verify the work itself
+[01:03:43] um which automatically steers me to
+[01:03:45] better architecture. So why do you think
+[01:03:47] there's, you know, a bunch of like
+[01:03:50] experienced devs who are still pushing
+[01:03:52] quite a bit back on on just like the
+[01:03:54] idea that AI can do a lot of this?
+[01:03:57] &gt;&gt; That was a week ago. I I stumbled over a
+[01:04:01] a blog post by Nala Coco with love that
+[01:04:05] I deeply respect and learned a lot from.
+[01:04:08] And this blog post was just was a
+[01:04:11] dissing of the current way how models
+[01:04:14] work. And and what he did was he he
+[01:04:18] tested like five or six models including
+[01:04:20] some that make no sense like the the
+[01:04:22] Open EI 120 billion open- source one
+[01:04:25] that is not good enough to write good
+[01:04:27] code you know it's like and he just he
+[01:04:31] he wrote a prompt as far as I understand
+[01:04:34] it there was there was not a lot of
+[01:04:35] information on the website but to me it
+[01:04:37] sounded like he wrote a prompt he put it
+[01:04:39] on claude web and and he pressed send
+[01:04:44] and And then he took the output and ran
+[01:04:46] it and it didn't compile and he was
+[01:04:48] disappointed. But he's like, "Of course
+[01:04:50] it will not work. Do you think I can
+[01:04:52] write buck-free code on the first
+[01:04:54] attempt?" And those little those
+[01:04:58] models are ghosts of our collective
+[01:05:01] human knowledge. They work very similar
+[01:05:03] in many ways. Of course, you don't get
+[01:05:05] it right the first time. Like there will
+[01:05:07] be mistakes. That's why you have to
+[01:05:09] close the feedback loop. And also you
+[01:05:11] don't just send a prompt to the model,
+[01:05:14] you start a conversation. Hey, this is
+[01:05:16] what I want to build. It's like you he
+[01:05:19] complained that it used old API. Yeah,
+[01:05:21] you didn't specify the Mac OS version.
+[01:05:23] So it so so it made an assumption to
+[01:05:25] default to like old API because that
+[01:05:27] information was missing and it is it is
+[01:05:29] trained on a lot of data, not just the
+[01:05:31] last two years and there's just more old
+[01:05:33] data than new data. So this is like the
+[01:05:36] more you understand how those little
+[01:05:37] beasts think, the the better you get at
+[01:05:41] prompting. Um and then and then and then
+[01:05:44] he he spent maybe I don't know a day or
+[01:05:48] so on on playing with it and then just
+[01:05:51] decided that this technology is still
+[01:05:53] not really good. But to be effective you
+[01:05:57] have to spend significantly more time.
+[01:05:59] You know, it's it's like it's like you
+[01:06:01] know how to play guitar and I put you on
+[01:06:03] the piano and you tried a bit. It's
+[01:06:04] like, "Oh, this sucks. I go back to my
+[01:06:06] guitar." No. No. It's like it's it's a
+[01:06:09] different way of building. It's a
+[01:06:10] different way of thinking. You have no
+[01:06:12] idea how often I screamed at like 3:00
+[01:06:15] a.m. to cloud code because it did
+[01:06:17] something silly. I slowly started to
+[01:06:20] understand why those things do what they
+[01:06:22] do with like exactly the way I tell it
+[01:06:25] to do things. And sometimes you can
+[01:06:27] literally ask you can even even last
+[01:06:30] year like I for this project I the last
+[01:06:33] project like clotboard I feel like a
+[01:06:34] human merge button because the community
+[01:06:36] is like blowing off and all I do is like
+[01:06:37] reviewing PRs. I I I I have very little
+[01:06:40] time to actually write code myself
+[01:06:41] anymore.
+[01:06:42] &gt;&gt; And in the beginning it would often like
+[01:06:44] just cherrypick things and would close
+[01:06:46] the PR and I was like so annoyed. So was
+[01:06:47] I'm like why are you doing this? Yeah.
+[01:06:50] When you say this and this I interpret
+[01:06:51] this this and this. It was like ah like
+[01:06:55] I I learned the language of the machine
+[01:06:58] a little bit more. I tweaked my my
+[01:07:00] prompting and now I get exactly what I
+[01:07:02] want because it's it's a skill like any
+[01:07:05] other skill.
+[01:07:06] &gt;&gt; Yeah. And this is like Simon Wilson has
+[01:07:08] been saying the same thing even though
+[01:07:09] he's been using it for for years and I
+[01:07:10] think everyone I think once I start to
+[01:07:12] use it I also realize like I'm not I'm
+[01:07:14] okay at it but I I I I could do better.
+[01:07:17] What if we put this to a real test? cuz
+[01:07:19] I think it's fair to say that right now
+[01:07:21] you're building CloudBot which is a you
+[01:07:23] know it's not something that generates
+[01:07:25] revenue there's a lot of users and it's
+[01:07:26] blowing up and it's it's a really cool
+[01:07:28] tool but it's not PSPDF kit which is a
+[01:07:31] business that it's a lot of revenue is
+[01:07:33] hinging over it if today you know we
+[01:07:37] just wiped PSPF kit does not exist you
+[01:07:39] need to rebuild PSPDF kit you now have
+[01:07:42] these agents how differently would it
+[01:07:44] look how much would you trust it what
+[01:07:46] would you delegate what you would you
+[01:07:48] validate and and when you know you built
+[01:07:50] up a team around it because now it's a
+[01:07:52] profitable business at the very least
+[01:07:53] you need to hire sales people whatot how
+[01:07:55] do you think the team would look
+[01:07:56] different today with that same product
+[01:07:58] cuz you you know exactly what it took to
+[01:07:59] build it and you also know what these
+[01:08:01] tools can do today
+[01:08:02] &gt;&gt; I could easily run a company with
+[01:08:05] 30% of the people it would probably be
+[01:08:09] quite difficult to find people
+[01:08:12] on that level but you you you want you
+[01:08:15] want to have really senior engineers
+[01:08:17] that really understand what they build
+[01:08:20] but that are also comfortable in in in
+[01:08:23] delegating and know which parts are
+[01:08:26] actually important to to work on and
+[01:08:28] which parts
+[01:08:30] I can vibe. That's still something I
+[01:08:32] don't see. I don't see a lot like like
+[01:08:36] especially in the AI world, there is so
+[01:08:40] much crap on Twitter, there's there's so
+[01:08:43] many people that are loud but clearly
+[01:08:47] have no clue what they're doing. There's
+[01:08:49] there's so many there's so many dumb
+[01:08:51] concepts around like I'm sorry, but the
+[01:08:53] Ralph Wigum one gh like this is again
+[01:08:57] another another silliness people use to
+[01:09:00] work around
+[01:09:01] uh model limitations of of of of Opus
+[01:09:05] that you don't even need when you use
+[01:09:06] Codex. There's there's maybe a few cases
+[01:09:09] where you have a really long list of
+[01:09:11] individual tasks that can be automated,
+[01:09:13] but that's usually not how software
+[01:09:14] building works. So there's these people
+[01:09:16] who I see so many people building up
+[01:09:18] this elaborated orchestration layers and
+[01:09:21] then you have like beats that
+[01:09:22] automatically creates tickets and then
+[01:09:24] your agent does tickets and then your
+[01:09:25] agent emails the other agent and then
+[01:09:28] you build up this this elaborate mess.
+[01:09:31] What for? Oh yeah, they did they design
+[01:09:34] the the spec for like a few hours and
+[01:09:36] then you just like the machine builds it
+[01:09:37] in the whole day. I don't I don't
+[01:09:40] believe this works. Like like this is
+[01:09:42] this is this is the waterfall model of
+[01:09:46] software building. This we learned long
+[01:09:48] ago that this doesn't work. Like
+[01:09:50] yes, people work differently and maybe
+[01:09:52] it does work for some. I just I just I
+[01:09:55] don't see how this
+[01:09:57] how this could work for me. Like I I
+[01:09:59] have to start
+[01:10:01] with an idea and often I purposefully
+[01:10:04] underprompt the agent so it would do
+[01:10:07] something
+[01:10:08] that would give me new ideas. You like
+[01:10:10] maybe like 80% of the things I assumed
+[01:10:13] were like crap but like there were like
+[01:10:15] two things like oh I didn't think about
+[01:10:18] that way.
+[01:10:19] &gt;&gt; And then I I I iterate and and and shape
+[01:10:22] the project and I have to I have to
+[01:10:23] click it. I have to like I have to feel
+[01:10:25] it. I feel I feel to make good software
+[01:10:27] I you know one thing those those things
+[01:10:31] often lack is taste. I have to feel like
+[01:10:34] how does this feature feel and and the
+[01:10:36] beauty now is that features are so easy
+[01:10:38] I can just like throw it away or like
+[01:10:41] reprompt it. My building model is
+[01:10:43] usually very much forward. It's very
+[01:10:45] rarely that I actually revert and have
+[01:10:48] to go back. It's just like okay no then
+[01:10:50] let's change this. No let's do this.
+[01:10:51] It's like it's like shaping. I I love
+[01:10:53] how this like you start with a rock and
+[01:10:55] then you like sisle away at it and like
+[01:10:58] pick different areas and and and then
+[01:11:00] slowly like this statue emerges out of
+[01:11:02] out of marble. That's that's how I see
+[01:11:05] that's how I see building something. I I
+[01:11:07] guess reflecting on how software engine
+[01:11:09] is changing. This seems like a change
+[01:11:11] because before before we had AI or any
+[01:11:14] of these agents, upfront planning did
+[01:11:17] make a difference. you know, writing at
+[01:11:19] PSPDF could you insisted I think to have
+[01:11:22] a proposal where people put a lot of
+[01:11:24] thought up front to specify and do all
+[01:11:26] because it was expensive to I guess to
+[01:11:28] to build to to do you think this is
+[01:11:31] changing because of the the cost of just
+[01:11:33] writing code is is going down or
+[01:11:36] &gt;&gt; I mean I still I still I still plan and
+[01:11:38] I but
+[01:11:40] &gt;&gt; you still do yes
+[01:11:41] &gt;&gt; but I don't put as much into it because
+[01:11:44] I it's now so much easier to just like
+[01:11:47] try and look at the results and then see
+[01:11:49] if oh yeah this this shape could work or
+[01:11:51] no we have to like the tweaking and even
+[01:11:53] even like oh no we have to like do it a
+[01:11:55] completely different way isn't so much
+[01:11:57] cheaper that it's to me it became much
+[01:11:59] more playful.
+[01:12:00] &gt;&gt; Yeah. Yeah. I guess cuz cuz like you
+[01:12:02] know when you're working even if you
+[01:12:03] have like a new grad on the team or an
+[01:12:04] intern you know you give them something
+[01:12:06] they work it for a day or two now you
+[01:12:08] give them another it's another day or
+[01:12:09] two you know and and we're not talking
+[01:12:10] days here we're talking minutes or like
+[01:12:12] if it's a longunning task like 10 20
+[01:12:14] minutes at at worst. Plus, you're not
+[01:12:16] just waiting on that thing. You have
+[01:12:18] parallel things running. So, it's not
+[01:12:20] that much of a waste, if you will,
+[01:12:22] &gt;&gt; in in in in in cloud.
+[01:12:24] At the beginning I had this assumption
+[01:12:26] of like one agent and then eventually
+[01:12:28] changed to multiple agents and there was
+[01:12:31] the assumption of like one provider like
+[01:12:34] WhatsApp and now it's multiple ones and
+[01:12:35] changing that was like such a pain would
+[01:12:38] would have been such a pain if I would
+[01:12:39] have written it myself because you have
+[01:12:41] to weave in literally everything through
+[01:12:43] the whole logic of the application
+[01:12:47] and yeah it took Codex like three hours
+[01:12:49] it would have taken me like two weeks
+[01:12:51] you know so so that upfront planning. I
+[01:12:54] I could have realized that in the
+[01:12:56] beginning, but now I I know that like I
+[01:13:00] can just change things and it's it's
+[01:13:02] much it's much easier to work down your
+[01:13:04] technical depth or your you know, you
+[01:13:06] evolve how you think about a project as
+[01:13:08] you build a project. That's why I don't
+[01:13:10] believe in I don't know things like Gas
+[01:13:11] Town where like you write up the spec
+[01:13:13] and then it builds itself and then it's
+[01:13:15] done. How can you even know what you
+[01:13:16] want to build before you built it? you
+[01:13:18] learn so much in the process of building
+[01:13:20] it that will go back into your thinking
+[01:13:21] of how this how the how the system
+[01:13:24] actually will end up being to me this is
+[01:13:26] very much it is very much a circle um
+[01:13:29] until I you don't I don't you don't walk
+[01:13:31] up the mountain like this you go you go
+[01:13:33] around and sometimes you like you you
+[01:13:35] you stray off a little bit of path but
+[01:13:38] but eventually you you you reach the top
+[01:13:40] that's that's how I feel so
+[01:13:42] &gt;&gt; then you know you've been building cloud
+[01:13:44] bot for what like two months three
+[01:13:46] months non-stop upish or or like like
+[01:13:49] how long?
+[01:13:50] &gt;&gt; Let me let me let's switch a little bit
+[01:13:51] gear. So, one of the ideas that got me
+[01:13:56] back was even even in in April May was I
+[01:14:00] I wanted to have this
+[01:14:03] hyper personal assistant and not like
+[01:14:07] not like one that sends you a good
+[01:14:09] morning email. Oh, these are your three
+[01:14:10] tasks. No, one that has a really deep
+[01:14:15] understanding
+[01:14:16] of me and doesn't just I don't know I
+[01:14:20] meet a friend and then and then when I
+[01:14:22] go home it would ping me, hey, how was
+[01:14:23] how was that meeting? Or one that would
+[01:14:26] wake me up one day and say, "Hey, you
+[01:14:28] haven't texted Thomas in 3 weeks and I
+[01:14:31] noticed he's he's in town right now
+[01:14:34] because I checked his Instagram account.
+[01:14:36] Do you want to say hi?" or something
+[01:14:38] that says, "Hey, I noticed every time
+[01:14:41] you meet that and that person, you're
+[01:14:43] sad. Why is that?" Like something
+[01:14:46] something that is deeply personal. Um
+[01:14:50] like almost the the anti-orem. It's kind
+[01:14:53] of like the movie Her, but but that's
+[01:14:56] where the technology is going. Those
+[01:14:58] models are really good at understanding
+[01:15:00] text. the the the bigger the context is,
+[01:15:03] the more patterns they see. And even
+[01:15:05] though they're like matrix calculation
+[01:15:07] without a soul, it very often feels
+[01:15:11] different. So this was like one of these
+[01:15:13] ideas and I even created a company I
+[01:15:15] called a mant machina like the loving
+[01:15:18] machine. But in summer when I explored
+[01:15:20] it, the models weren't quite there yet.
+[01:15:21] I got some results that it was like okay
+[01:15:23] this is like I'm a little too much on
+[01:15:26] the edge of what I need right now which
+[01:15:28] it was very exciting because I know that
+[01:15:30] that the the state of AI goes so fast
+[01:15:33] that oh I can just revisit that in like
+[01:15:34] a little later and and one of the ideas
+[01:15:37] also was is that I assume that all of
+[01:15:41] the big corporations right now are very
+[01:15:44] much working on personal assistance in
+[01:15:46] the future. Yeah,
+[01:15:47] &gt;&gt; everyone will have you will have your
+[01:15:50] best friend who is a a freaking machine
+[01:15:54] that will understand you, that will know
+[01:15:56] everything from you, that will can do
+[01:15:58] tasks for you, that will be proactive,
+[01:16:01] that will require a lot of tokens, but
+[01:16:03] everyone who can afford it will have
+[01:16:05] one. And of course, this will democ
+[01:16:07] democratize and and trickle down to like
+[01:16:09] more and more people as as we learn how
+[01:16:12] to build more efficient systems and and
+[01:16:14] and hook up on on on chips. No question
+[01:16:17] this is where the things are going. You
+[01:16:18] see like the first things with like
+[01:16:20] OpenAI who who launched pulse with some
+[01:16:22] productivity but we just don't have
+[01:16:24] enough compute yet to offer this as a
+[01:16:26] feature and also it's it's quite
+[01:16:27] difficult. My idea always was like ah I
+[01:16:30] kind of want something that runs on my
+[01:16:33] computer and where the data is
+[01:16:35] &gt;&gt; it's yours
+[01:16:36] &gt;&gt; is is actually mine and not and it it's
+[01:16:40] also quite scary that like you you give
+[01:16:41] openropic access to your email your
+[01:16:44] calendar your your dating apps I don't
+[01:16:47] know if you talk to to to your normie
+[01:16:50] friends but a lot of my friends in they
+[01:16:53] use that a lot to basically have a a
+[01:16:57] therapist
+[01:16:58] And it it does work incredibly well.
+[01:17:00] Like it's it's a really great listener.
+[01:17:02] It understands your problems and unless
+[01:17:05] like some of versions of 40 that are
+[01:17:06] like sure this is a great idea. I want
+[01:17:09] to put French fries into a salad. It it
+[01:17:11] works really well. And I did that too
+[01:17:13] like to like re I mean part of it just
+[01:17:16] is like the the act of reflecting
+[01:17:18] already is helping you. So it would even
+[01:17:20] work if the machine would only repeat
+[01:17:22] exactly what you wrote to a degree. But
+[01:17:25] it actually gives insightful questions.
+[01:17:27] It's actually it it got really good. So
+[01:17:29] I had this idea of this like assistant
+[01:17:32] but the tech wasn't there. So I did
+[01:17:34] other part and I I built a whole bunch
+[01:17:36] of fun stuff with like of course like I
+[01:17:40] built VIP tunnel this in your career to
+[01:17:43] become like an authentic engineer you
+[01:17:45] have this phase. It's a trap phase where
+[01:17:47] you you're looping and building your own
+[01:17:49] tools to like optimizing your own
+[01:17:51] workflow. But this idea of like this
+[01:17:54] hyper personal agent
+[01:17:56] stuck a little bit and then
+[01:18:00] over the last few months I I really
+[01:18:02] started I built it but finally
+[01:18:06] initially I didn't even had the the
+[01:18:09] scope that it has now. Like I called it
+[01:18:11] WhatsApp relay. I just I just I just
+[01:18:14] wanted to do to trigger stuff on my
+[01:18:16] computer with WhatsApp. So, I built like
+[01:18:17] a WhatsApp relay where I had an agent
+[01:18:20] that could do stuff with my computer and
+[01:18:22] then I I was traveling to Morocco for a
+[01:18:25] friend's birthday and
+[01:18:28] was out most of the day and just used
+[01:18:30] WhatsApp to to talk to my agent and I
+[01:18:33] was kind of hooked. It it it was guiding
+[01:18:35] me through the city. It was making
+[01:18:38] jokes. It could text other friends via
+[01:18:42] WhatsApp from me.
+[01:18:45] And I remember I I was blown away
+[01:18:47] because I in the beginning the tech was
+[01:18:49] very scrappy but I I built in something
+[01:18:51] where I could send it an image. Didn't
+[01:18:53] even use the proper thing to send an
+[01:18:55] image. I just gave the the
+[01:18:57] a string and it could do the read tool
+[01:19:00] to like read the string. And then I was
+[01:19:01] in Morocco and was just like just like
+[01:19:04] not seeing it and saying it a voice a
+[01:19:06] voice message but it didn't build that.
+[01:19:07] And then like like 30 seconds later it
+[01:19:10] replied to my voice message. I'm like,
+[01:19:12] "How the did you do that?" Oh, yeah. You
+[01:19:16] sent me a file and and then I looked at
+[01:19:20] the header and I found that it's OG. So,
+[01:19:23] I used FFmpeg to convert it. And then I
+[01:19:26] I looked for Visper on your computer,
+[01:19:27] but it's not installed. But I found the
+[01:19:29] OpenAI key. So, I did a curl to open
+[01:19:31] server, let it translate, and I'm like,
+[01:19:35] "Holy cow." like this was Opus 4.5 and
+[01:19:39] it's so incredibly resourceful like you
+[01:19:43] just did this you know other people say
+[01:19:45] oh you need a skill or some system no
+[01:19:46] just like it just figured it out I
+[01:19:48] slowly got hooked on the thing I I used
+[01:19:51] it I used it to wake me up and it was
+[01:19:54] running I it was running on my Mac
+[01:19:57] Studio in London and was connecting over
+[01:20:00] SSH to my MacBook in in Morocco and was
+[01:20:04] turning on the music and making it
+[01:20:05] louder louder is because I didn't reply.
+[01:20:08] And to make that work, I I added a
+[01:20:10] heartbeat. So, which which in a way is
+[01:20:13] insane from a security perspective. You
+[01:20:15] have a model that you prompt with do
+[01:20:17] something cool and surprise me that you
+[01:20:20] send every few minutes to make it
+[01:20:22] proactive and like go through your task
+[01:20:24] list. Uh like probably the most
+[01:20:27] expensive alarm clock ever. But it was
+[01:20:29] just hilarious. And also the text it
+[01:20:31] sends like cuz I I I was I had a balloon
+[01:20:33] fart and it it knew that I had to wake
+[01:20:35] up very early and I didn't reply and it
+[01:20:37] was like you could see the reasoning
+[01:20:40] Peter's not responding but Peter has to
+[01:20:42] wake up. No, no, no, no, no, no sleep.
+[01:20:45] Like I it was bitching to me and then I
+[01:20:49] I showed it to the the the friends I was
+[01:20:51] with and everybody was like hooked. Like
+[01:20:53] this is something magical and I was
+[01:20:55] hooked too. Um, and then I I I went on
+[01:20:59] Twitter and I got the most muted
+[01:21:03] responses cuz nobody would get it. I
+[01:21:05] feel it's somewhat of a of a new
+[01:21:07] category of products. Um, that a little
+[01:21:11] bit like your story with like you know
+[01:21:12] when you didn't get the iPhone uh from
+[01:21:14] the marketing campaigns on TV and
+[01:21:16] anywhere and then you had to use it.
+[01:21:18] &gt;&gt; Yeah. So I I worked on it but only the
+[01:21:20] last two months and it the name changed
+[01:21:22] from V relay to at some point a claude
+[01:21:27] uh said like then what is this name like
+[01:21:29] it doesn't fit the feature set anymore
+[01:21:32] because like I had like in there and
+[01:21:34] other features so I renamed it to to
+[01:21:36] Claudius because it's an inside joke
+[01:21:38] because I like Doctor Who. I felt
+[01:21:40] cloudbot is is a better name has a
+[01:21:42] better domain and explained the product
+[01:21:45] better. So I did on all the domains and
+[01:21:48] then I I also quietly built up my army
+[01:21:50] because to make this work you want you
+[01:21:53] want everything to be a CLI. So I was
+[01:21:55] just building CLI for everything like
+[01:21:56] for Google for my bed for lambs for
+[01:22:01] music.
+[01:22:02] &gt;&gt; Why CLIs? Why not why not MCPs? And what
+[01:22:05] do you think about MCPS anyway?
+[01:22:06] &gt;&gt; As a crutch it's it's I think that the
+[01:22:09] the best thing that came out of MCPS is
+[01:22:11] that it made companies reync to open up
+[01:22:13] more APIs.
+[01:22:14] &gt;&gt; Mh. But the whole concept is is silly.
+[01:22:19] You you have to pre-export
+[01:22:24] all the functions of all the tools and
+[01:22:26] all the explanations when your session
+[01:22:28] loads and then the model has to send a
+[01:22:31] precise blob of JSON there and gets JSON
+[01:22:35] back. But surprise, models are really
+[01:22:38] good at using bash. And like imagine
+[01:22:42] imagine you have a better service. So
+[01:22:44] the model could ask for
+[01:22:47] list of available cities and then get
+[01:22:49] like 500 cities back and then it has to
+[01:22:51] pick one city out of 500 city. But it
+[01:22:52] cannot filter that list because that's
+[01:22:54] not part of how MCP works. And then you
+[01:22:57] say, "Okay, give me the weather for
+[01:22:58] London." And you would get like the
+[01:23:00] weather, temperature, wind, rain, and
+[01:23:03] like 50 other things that I'm not
+[01:23:04] interested in because I just want to
+[01:23:06] know is it raining or not? Probably
+[01:23:08] raining because London. But the model
+[01:23:09] needs to digest everything and then you
+[01:23:11] have like so much crap in your context.
+[01:23:13] Whereas if it's a CLI, I could use just
+[01:23:16] it could use GQ and you could filter for
+[01:23:18] exactly what it needs. But does does not
+[01:23:21] seem like a limitation that everything
+[01:23:23] is loaded around the MCP in the context.
+[01:23:25] That seems a problem. Like it sounds
+[01:23:27] like it could work if MCPS were not in
+[01:23:29] the context and there was a way to
+[01:23:30] discover or decide which one to use.
+[01:23:33] &gt;&gt; That's what that's what companies are
+[01:23:34] building now. But there's still the
+[01:23:35] problem of that I cannot chain them. I
+[01:23:38] cannot I cannot easily build a script
+[01:23:40] that says, "Hey, get me get me like all
+[01:23:42] the
+[01:23:43] &gt;&gt; all the CDs that are over 25 degrees and
+[01:23:46] then and then filter out only that part
+[01:23:48] of information and like pack it in one
+[01:23:50] command." That's it's all individual MCP
+[01:23:52] calls. I cannot I cannot script it.
+[01:23:54] &gt;&gt; Yeah. But but I guess this is just a
+[01:23:55] matter of time because if we think about
+[01:23:57] like you know when when I'm building a
+[01:23:58] weather app right now, I know that you
+[01:24:02] know even without AI, I know I need to
+[01:24:04] build up this thing. I need to I needs
+[01:24:05] to fetch the data. So I will search what
+[01:24:07] kind of APIs are available, which one do
+[01:24:09] I like, which what kind of trade-offs
+[01:24:11] for pricing, for covering, etc. And then
+[01:24:13] I choose that API and I could chain APIs
+[01:24:16] because I I could get that result and
+[01:24:18] look up a etc. So I I guess this is, you
+[01:24:20] know, like it it sounds pretty much
+[01:24:22] we've solved this. So as free AI, we're
+[01:24:25] going to solve it. It'll just take some
+[01:24:26] time and who knows what the format for
+[01:24:28] it will be. I mean I mean I built make
+[01:24:30] porter which is a which is a a small
+[01:24:33] TypeScript thing that converts an MCP to
+[01:24:36] a CLI. So so you can you can just
+[01:24:38] package it up.
+[01:24:39] &gt;&gt; Basically you're saying CLIs right now
+[01:24:41] are a lot more efficient.
+[01:24:42] &gt;&gt; Yeah. Yeah. So so my in in in cloud but
+[01:24:45] I don't have MCP support but you can we
+[01:24:47] make portal you can use any MCP you can
+[01:24:49] you can literally be on your phone and
+[01:24:51] say hey use the use the versel MCP to do
+[01:24:55] this and this and it will go on the
+[01:24:56] website. It'll find the MCP. it will
+[01:24:58] load it and it'll use it all all on
+[01:25:01] demand. Even right now if you use MCP
+[01:25:04] you have to restart cloud code which is
+[01:25:05] like very user unfriendly. So I quietly
+[01:25:08] built up my army to like automate
+[01:25:10] everything which was a lot of work. Uh I
+[01:25:12] think t did a video a few days ago where
+[01:25:15] he told me like this guy is insane
+[01:25:18] because the list is really long by now
+[01:25:19] but like I I as I was playing with my my
+[01:25:22] my agent I just I want him to do more
+[01:25:24] and more stuff you know. I felt it
+[01:25:27] really hard to convey what it does. It's
+[01:25:30] still hard to me. In January, January
+[01:25:34] 1st, just a week now, I did. Okay, let's
+[01:25:37] let's try something. Let's let's do the
+[01:25:39] ins really insane thing of like making a
+[01:25:42] Discord and then adding my agent to
+[01:25:45] Discord. There was somebody who
+[01:25:47] contributed Discord support to it. And
+[01:25:49] uh even though I wasn't sure if I should
+[01:25:51] merge it and I eventually did. So I put
+[01:25:54] on my agent who has full read write
+[01:25:56] access to my computer in a public
+[01:25:58] Discord.
+[01:26:00] &gt;&gt; What could possibly go wrong?
+[01:26:02] &gt;&gt; Yeah. It's like this is absolutely
+[01:26:04] insane. And then of course like some
+[01:26:06] people join the Discord and then they
+[01:26:08] saw me they saw me using the full power
+[01:26:10] of this thing like checking my cameras
+[01:26:13] doing home automation.
+[01:26:15] It playing DJ for me. Like I was in the
+[01:26:18] kitchen and I told him like look at my
+[01:26:20] screen and are my agents done cuz it has
+[01:26:22] full access of my clean and it can
+[01:26:24] click. So it can actually click into the
+[01:26:25] terminal and type for me and like it can
+[01:26:27] tell me your codex say this and this
+[01:26:29] because it just sees the screen. I mean
+[01:26:31] I'm working on optimizing that like I I
+[01:26:33] actually want to stream out it because
+[01:26:35] would be much would be much better if
+[01:26:37] it's text but it works already like it
+[01:26:39] it's it's in the background it look at
+[01:26:41] my screen and like make some rants if I
+[01:26:42] do some [&nbsp;__&nbsp;] And everybody who
+[01:26:44] experienced it for a few minutes got
+[01:26:46] hooked. Like this was this was the
+[01:26:49] craziest blow up from 100 stars to like
+[01:26:52] what 3,300 stars in a week. Um and I
+[01:26:57] think I merged 500 pull requests
+[01:26:58] already. That's why I feel like I even
+[01:27:00] merge button. So, so that that's why
+[01:27:02] that's why I'm I'm a little I'm a little
+[01:27:06] all over the place these days because
+[01:27:08] this project is blowing off and and and
+[01:27:11] you know the beauty of it is the
+[01:27:13] technology
+[01:27:15] disappears.
+[01:27:16] You just you just talk to a a friend on
+[01:27:19] your phone that is infinitely
+[01:27:21] resourceful, has access to your your
+[01:27:23] email, your calendar, your files, can
+[01:27:25] build websites for you, can like do
+[01:27:27] administrative work, can scrape
+[01:27:29] websites, can call your friends or can
+[01:27:31] call a business. I'm just about to to to
+[01:27:33] merge the call feature. It literally can
+[01:27:35] call a business and like make make a
+[01:27:37] reservation for you and you don't have
+[01:27:39] to think about compactation or or any
+[01:27:43] all of that context blends away. I have
+[01:27:45] like a I have a memory system that will
+[01:27:47] remember um not perfect. Nothing's
+[01:27:50] perfect yet, but it's already feels
+[01:27:54] magical. cuz all cuz cuz now I I walk
+[01:27:58] around, I see like this event, I I send
+[01:28:00] Claude a picture, it will it will not
+[01:28:03] only tell me the reviews of this event,
+[01:28:06] if there's a conflict in my calendar, if
+[01:28:08] like friends talked about it or, you
+[01:28:10] know, it has so much context that it the
+[01:28:13] responses that it can give me are like
+[01:28:14] so much better than like what any of the
+[01:28:16] the current tools that live in their own
+[01:28:19] little box can give me. Well, sounds
+[01:28:20] like you built whatever Apple was hoping
+[01:28:24] Siri to do, but they've been unable to.
+[01:28:26] &gt;&gt; I honestly I built the best marketing
+[01:28:31] tool for Entropic to sell them more
+[01:28:33] subscription. I don't know how many
+[01:28:34] people signed up for the $200
+[01:28:37] subscription because of Cloudbot and
+[01:28:40] like many people already had one and
+[01:28:41] used a second subscription because of
+[01:28:43] that because it's so token hungry. It's
+[01:28:45] not is not that it's token hunter. It's
+[01:28:47] just that people love it so much that
+[01:28:48] they use it all the time. And because
+[01:28:50] the technology blends away, they don't
+[01:28:52] see that it spawns sub agents and does
+[01:28:54] like a whole bunch of things in the
+[01:28:55] background to just make it feel easy.
+[01:28:58] But like there's some actual engineering
+[01:29:00] like there's a lot of work in the back
+[01:29:02] uh to make it feel easy. You know, this
+[01:29:05] is like the hard part. Like you hide
+[01:29:07] complexity
+[01:29:09] to a degree that it it it feels magical.
+[01:29:12] Well, but yeah, but this is interesting
+[01:29:13] because like I I I can sense from we're
+[01:29:15] talking, you know, you put so much
+[01:29:17] thought into architecting this thing and
+[01:29:19] right now like you've been building this
+[01:29:20] for a few months and yes, it blew up,
+[01:29:22] but in your head like do you have a
+[01:29:24] structure of how CloudBot is structured
+[01:29:27] like what parts you need to modify, you
+[01:29:29] know, like like you kind of you can get
+[01:29:32] your your mindset into it and you you
+[01:29:34] know where modification needs to do. You
+[01:29:36] know what you want to refactor because
+[01:29:38] it's not going to be efficient. Are you
+[01:29:40] thinking about like things like memory
+[01:29:41] consumption, token consumption,
+[01:29:43] efficiency, those kind of things?
+[01:29:45] &gt;&gt; I mean, token consumption is more like
+[01:29:48] how do how do you structure the prompt
+[01:29:49] and memory?
+[01:29:51] It's it's TypeScript that shows Jason
+[01:29:54] around in the end. Let's be honest. Like
+[01:29:56] like like I get text from from an LLM,
+[01:30:00] &gt;&gt; I save text to to disk. I send text to
+[01:30:05] WhatsApp or to now we have like MS
+[01:30:08] Teams, Slack, Discord, uh Signal,
+[01:30:10] iMessage, WhatsApp, and there's there's
+[01:30:14] two more that are landing like Metrics
+[01:30:16] that will will expand this thing even
+[01:30:18] further. It's like it's it's really poly
+[01:30:20] by now. But but mostly I I again I I
+[01:30:24] move around text in different shapes and
+[01:30:26] maybe maybe it goes to different
+[01:30:28] providers or there's like now it's
+[01:30:30] different agents and there's like the
+[01:30:32] agentic loop and there's like a lot of
+[01:30:34] configuration and there's it's it's a
+[01:30:35] lot of plumbing but nothing's there's
+[01:30:39] nothing in there that is really
+[01:30:41] difficult. Yeah. Well, but it's it's a
+[01:30:43] lot lot of small things, right? Like I I
+[01:30:45] feel in software, right? Like we we know
+[01:30:47] for software even before AI there was
+[01:30:49] not much difficult. Of course, you need
+[01:30:51] to learn and understand the language and
+[01:30:52] all that, but
+[01:30:53] &gt;&gt; the difficulty is how do I how do I make
+[01:30:56] it so that it feels magical. So, so what
+[01:30:58] I worked on a lot is now you have you
+[01:31:00] have this oneliner that you type in that
+[01:31:02] you python your command. I will I will
+[01:31:04] check if you have node installed
+[01:31:05] homebrew installed. I'll I'll install
+[01:31:07] the mpm package. I do some check if you
+[01:31:10] have any existing stuff just to like y
+[01:31:12] &gt;&gt; just to make it work simple even if you
+[01:31:14] already used an older version and
+[01:31:16] everything. and then I I'll guide you
+[01:31:18] through uh setting up a model. But
+[01:31:22] again, I will I will predict
+[01:31:25] or or claude installed. So you can just
+[01:31:28] press enter. So you don't have have to
+[01:31:30] think about it. Mostly just press enter
+[01:31:33] and then you want a WhatsApp, you type
+[01:31:35] in your number, it will just work again.
+[01:31:38] And then and then I'll ask you do you
+[01:31:40] want do you want to hatch your bot? And
+[01:31:43] you can press yes. And then and then
+[01:31:45] like a TUI a TUI comes up because you're
+[01:31:47] still in the terminal, right? You want a
+[01:31:48] good experience.
+[01:31:49] &gt;&gt; Yeah. So just a toy basically for that
+[01:31:51] and where you where you to see wake up
+[01:31:54] my friend and then the the I programmed
+[01:31:56] the model I added a bootstrap file and
+[01:31:59] the to explain the model that it is now
+[01:32:01] being born to like create an identity
+[01:32:04] and a in a in a in a soul where like the
+[01:32:07] values of the user are in and then the
+[01:32:08] model will be like hello like stretches
+[01:32:13] who are you um who are who I am what's
+[01:32:16] my name you know and this this is is
+[01:32:19] like I've watched people do it and
+[01:32:20] that's where the magic starts. That's
+[01:32:22] where that's where they're like they no
+[01:32:24] longer think about I'm talking to to
+[01:32:27] GPD4.2. No, I'm now talking to my friend
+[01:32:31] created Vajorn like a a unicorn with
+[01:32:33] part of his name or like I'm talking to
+[01:32:35] Claude. Uh and then it's like what
+[01:32:38] what's important to you? What do you do?
+[01:32:40] It's like curious. I I programmed it to
+[01:32:42] be like curious and then go through this
+[01:32:44] bootstrapping phase and then it will
+[01:32:45] actually delete the bootstrap file and
+[01:32:46] create a a user.md with like information
+[01:32:50] about you a soul.md with like all the
+[01:32:52] core values and an identity with the
+[01:32:55] like what's his name what's his core
+[01:32:57] emoji what are the things that are like
+[01:32:58] inside jokes and and but it's like
+[01:33:00] evolving documents that it will maintain
+[01:33:02] and like tweak as you interact with it
+[01:33:04] and then you it will just like send you
+[01:33:06] a message on on WhatsApp and you just
+[01:33:08] like suddenly you talk on WhatsApp like
+[01:33:10] making this flow easy. That was hard.
+[01:33:13] Yeah. Also like even even get coming up
+[01:33:16] with the idea of you know you you're not
+[01:33:19] you're not editing the configuration
+[01:33:21] because the agent can edit its own
+[01:33:23] configuration. You don't have to update
+[01:33:26] anything because the agent can update
+[01:33:27] itself. You can literally ask your bot
+[01:33:29] update yourself and it will fetch itself
+[01:33:32] and update itself and come back like hey
+[01:33:34] I have new features. Planning the
+[01:33:35] technical giveaway so far that's the
+[01:33:37] magic. That's why that's why I
+[01:33:39] &gt;&gt; But it feels it's very similar to what
+[01:33:41] you would with PSP PDF cut, right? You
+[01:33:43] kind of blended away the complexity of a
+[01:33:45] PDF. So it was just there. You could
+[01:33:47] rotate, you could do.
+[01:33:48] &gt;&gt; Yeah. Yeah. Even at the API level back
+[01:33:50] then,
+[01:33:51] &gt;&gt; but it's a it's a bit bizarre like what
+[01:33:53] what you described reminds me of this
+[01:33:55] Black Mirror episode I just watched,
+[01:33:57] which is called Play Thing. uh where
+[01:33:59] it's a it's a digital little uh creature
+[01:34:03] that creates of course it's black mirror
+[01:34:04] so it has a black
+[01:34:06] &gt;&gt; bit bit of a dark ending but but it it
+[01:34:08] had it was also a game. It also kind of
+[01:34:10] feels you know we talked about how you
+[01:34:12] you don't play as much games cuz you
+[01:34:13] like but this also feels a little bit
+[01:34:15] like a game, right? But it it's it's
+[01:34:16] kind of like more connected with
+[01:34:18] reality. Just fascinating how we're
+[01:34:21] we're we're here pulling back into the
+[01:34:22] the realm of of software engineering. So
+[01:34:24] you built this this product and it's now
+[01:34:27] it's a production software you're
+[01:34:29] merging porocas people are using it now
+[01:34:32] thinking back to PSPDF kit and and
+[01:34:34] companies that are like that which which
+[01:34:36] have you know like like tens or hundreds
+[01:34:38] of developers working on on production
+[01:34:40] software knowing what you know with how
+[01:34:43] you're building cloudbot and the tools
+[01:34:45] that you're using how do you think
+[01:34:46] software engineering at those larger
+[01:34:48] companies could change because one one
+[01:34:50] thing I see is is for individual people
+[01:34:52] like you it's like AI I is really really
+[01:34:55] hitting a fit like you're making you way
+[01:34:57] more productive. You're in control at
+[01:34:59] teams or at companies that are you know
+[01:35:00] have existing code. It's just a lot kind
+[01:35:03] of slower. It's it's not really okay
+[01:35:06] people use it for this or that but but
+[01:35:08] it it seems a huge divide between the
+[01:35:10] two worlds. And you've kind of been you
+[01:35:11] know CEO for this company. What what
+[01:35:13] might that be or is it just more of a
+[01:35:15] timing thing where every new technology
+[01:35:16] often comes with with hobists you know
+[01:35:18] pick it up uh earlier? I think companies
+[01:35:20] will have a really hard time adopting AI
+[01:35:23] efficiently because this also requires
+[01:35:26] to completely redefine how the company
+[01:35:28] works. You know, you know, you know like
+[01:35:30] you know like at Google they they tell
+[01:35:32] you you can either be an engineer or
+[01:35:34] like a manager but or you want to also
+[01:35:37] like define how the UI looks. That role
+[01:35:39] doesn't exist because either you like
+[01:35:40] you you build it or you you design it.
+[01:35:44] But this new world needs people that
+[01:35:47] that have a a product vision that that
+[01:35:50] that can be able to do everything and
+[01:35:52] you need like far fewer of them, but
+[01:35:55] ultimately
+[01:35:56] just very high agency and and and high
+[01:35:59] competency people. But you can you can
+[01:36:02] like probably like trim the company down
+[01:36:04] to like 30%. Which is very scary because
+[01:36:06] like I mean economically this will all
+[01:36:10] this will all lead into a fiasco. Um,
+[01:36:13] and a lot of people will like have
+[01:36:16] trouble finding a a place in this new
+[01:36:19] world, but
+[01:36:21] I'm not the least surprised that current
+[01:36:23] companies cannot very successfully use
+[01:36:26] AI. I mean, they do to a degree, but you
+[01:36:30] you have to do a big refactor first, you
+[01:36:32] know, like not just on your codebase,
+[01:36:34] but also on your company. I design even
+[01:36:37] on code bases I design the codebase not
+[01:36:38] so it's it's useful it's easy for me so
+[01:36:41] that it has to be easy for the agent I
+[01:36:43] optimize for different things not always
+[01:36:45] the things that I prefer but the things
+[01:36:47] I know work the best and and and have
+[01:36:49] the the least friction for those models
+[01:36:52] because I just want to move faster and
+[01:36:53] ultimately they have to deal with the
+[01:36:55] code not me I had I deal with the the
+[01:36:57] overall structure and architecture and I
+[01:36:58] can still do that in the way that I like
+[01:37:00] everything has to be resold you know
+[01:37:02] pull requests uh I see them more as
+[01:37:04] prompt requests Now, like I don't I I
+[01:37:08] somebody opens a pull request, I don't I
+[01:37:11] lot I do say thanks and I think about
+[01:37:13] the feature and then with my agent we
+[01:37:16] start off with the PR and then I'll
+[01:37:17] design the feature as I see fit. The
+[01:37:20] agent rarely reuses like maybe I reuse
+[01:37:23] some code but it's more like it gives
+[01:37:25] the agent a good understanding of what
+[01:37:27] the goal is and sometimes it's very
+[01:37:29] useful because it's it's tricky bucks,
+[01:37:31] right? But I I basically rewrite every
+[01:37:33] pull request and and and v it in also
+[01:37:36] also a lot of people let's just say the
+[01:37:38] overall code quality of of PRs went down
+[01:37:41] a lot because people vibe code and and
+[01:37:44] building a successful feature still
+[01:37:45] needs a lot of a lot of understanding of
+[01:37:48] your overall design and if you if you
+[01:37:51] cannot do that you will have a harder
+[01:37:52] time steering your agent and the output
+[01:37:54] will be bad.
+[01:37:55] &gt;&gt; Yeah. And if you don't have the feedback
+[01:37:56] loop to close it etc.
+[01:37:57] &gt;&gt; Yeah. Yeah. So, so I found it highly
+[01:37:59] effective. Like I know at my at at PSVDF
+[01:38:02] kit sometimes a pull request was like a
+[01:38:03] week in the work
+[01:38:05] &gt;&gt; and you comment on it and then somebody
+[01:38:06] has to context switch and you wait for
+[01:38:08] CI for 40 minutes. No, I have the
+[01:38:11] discussion. I see okay how would this
+[01:38:12] affect something like I I I let the
+[01:38:15] model review. They will already bring
+[01:38:16] something up. I have some some ideas as
+[01:38:17] well. We're going to reshape it into a
+[01:38:19] form that fits my vision and then
+[01:38:22] we weave in the code. It's literally
+[01:38:25] there's so many new words I use for like
+[01:38:26] writing code now with those models which
+[01:38:28] is so funny like weaving in code into an
+[01:38:30] existing structure. Um and sometimes you
+[01:38:33] have to like change the structure so it
+[01:38:34] would fit. Now imagine that you would
+[01:38:36] hire one or two people to make it a
+[01:38:38] small team. How do you think in this
+[01:38:40] world and you keep want to keep doing
+[01:38:42] what you're doing? How do you think
+[01:38:43] things like code review CI CD would
+[01:38:47] change?
+[01:38:47] &gt;&gt; I don't I don't I don't care much about
+[01:38:49] CI. I
+[01:38:50] &gt;&gt; Why why not? you used to care a lot like
+[01:38:53] a PSPDF kid. You used to care a lot,
+[01:38:55] right?
+[01:38:55] &gt;&gt; And and I still do this. There's value,
+[01:38:58] &gt;&gt; but I I have local CI. I'm I'm a little
+[01:39:02] bit I'm a little bit of DAH now that
+[01:39:05] &gt;&gt; because because the agent runs the test,
+[01:39:07] &gt;&gt; Yeah. And it's just way faster. I don't
+[01:39:09] I want to push on the on on the on the
+[01:39:12] back on the P and then wait for 10
+[01:39:13] minutes to wait for for CI
+[01:39:15] &gt;&gt; because you waited 10 minutes on the
+[01:39:16] agent already. I if if the tests pass
+[01:39:19] locally, we merge and then yes,
+[01:39:21] sometimes main slips a little bit, but
+[01:39:24] it's it's it's usually very close
+[01:39:25] because maybe sometimes I forget the and
+[01:39:28] the agents call it gate. I don't know
+[01:39:30] where that's coming from. Should I run
+[01:39:31] full gate? So now I call it gate with g
+[01:39:34] full gate is like linting and building
+[01:39:36] and and checking and running all the
+[01:39:38] tests. And I almost think it like
+[01:39:40] because it's a it's a wall, you know,
+[01:39:42] like it's like he calls the llinter and
+[01:39:43] like the builder and the tester. It's
+[01:39:44] almost like a gate before my code goes
+[01:39:47] out. So I know obviously like okay once
+[01:39:49] you're done like commit this run full
+[01:39:51] gate like I'm I'm slowly adopting their
+[01:39:53] language but but and if you hired like
+[01:39:56] one more person to work on this you
+[01:39:57] probably wouldn't do code reviews
+[01:39:59] either. That's what I'm sensing. You
+[01:40:01] would you'll probably trust this person
+[01:40:02] to run like like pick up your working
+[01:40:05] style, right?
+[01:40:06] &gt;&gt; Even in Discord, we don't we don't talk
+[01:40:08] code. We talk about architecture like
+[01:40:09] big decisions like you still need to
+[01:40:11] have style. Like there was like this one
+[01:40:14] pull request that adds voice calling. So
+[01:40:18] now like literally I can tell Claude,
+[01:40:20] hey, can you call this restaurant and
+[01:40:22] and and and reserve your seats and and
+[01:40:25] it it it can do that. But it it it's a
+[01:40:28] big it's quite a big new module that
+[01:40:30] like touches a lot of places. I'm like
+[01:40:32] you have to have this feeling is like
+[01:40:34] this like I got a little this is like I
+[01:40:37] want to merge this but oh this is
+[01:40:39] becoming bloatware. So I so I I had this
+[01:40:42] idea of like uh let's my typical way
+[01:40:45] let's make a CLI out of it and I already
+[01:40:47] had a project where I tried to solve
+[01:40:49] something like this but I'm finished. So
+[01:40:50] I opened up Codex and said, "Hey, look
+[01:40:52] at this PR. Look at this project. Could
+[01:40:53] we weave this feature in?" I again say
+[01:40:55] weave. I'm like, "So I'm
+[01:40:57] &gt;&gt; let's keep it.
+[01:40:58] &gt;&gt; Could we weave this feature into the
+[01:40:59] CLI? What are the up and downsides?" And
+[01:41:01] then would like tell me like, "Oh yeah,
+[01:41:03] I could do this and this and this." They
+[01:41:04] give me honest opinion. Would this to me
+[01:41:06] this sounds like it actually it would
+[01:41:08] fit into the project? I was like, and
+[01:41:10] was like, "Yeah, you would get this and
+[01:41:11] this benefits that we cannot do if the
+[01:41:13] next CLI." Okay, but I don't like this.
+[01:41:16] This is getting blowware. could we build
+[01:41:18] a plug-in architecture and then I will
+[01:41:21] and do you know like one of the the
+[01:41:22] secret hacks on on on
+[01:41:25] using effectively is you reference other
+[01:41:27] products like I constantly tell it look
+[01:41:30] into this folder because I solved it
+[01:41:31] there and I solved that there and all
+[01:41:33] the previous thinking I did to like
+[01:41:34] solve a problem well AI is so good at
+[01:41:37] this still to like read the code and
+[01:41:39] understand my ideas I don't have to like
+[01:41:41] explain it again uh or if I explained
+[01:41:44] again I might like make mistakes that
+[01:41:46] like wouldn't get across was exactly the
+[01:41:48] idea that I have in my head.
+[01:41:49] &gt;&gt; So in this case, I know that Mario who
+[01:41:51] does like shitty coding shitty coding
+[01:41:52] agent which is like a actually very much
+[01:41:55] not shitty coding agent. It's called Pi.
+[01:41:57] I know that he had this plug-in
+[01:41:58] architecture that would load
+[01:42:00] &gt;&gt; code via via GT and because it's all
+[01:42:03] TypeScript. So I was like, can you look
+[01:42:04] into this folder and this folder? And
+[01:42:07] then it just came up with this really
+[01:42:08] insanely good plug-in architecture again
+[01:42:10] by like being inspired by the people.
+[01:42:12] And then that's why, you know, I have
+[01:42:14] this feeling and then I I came up with
+[01:42:16] Yeah, that's what I built last night
+[01:42:17] basically. I mean, sounds like this is
+[01:42:19] going to be completely different like
+[01:42:21] you know PRs are are like in your
+[01:42:23] workflow, you're not using PRs that much
+[01:42:25] as CI is just different. It's it's tests
+[01:42:27] are still doing there's an more
+[01:42:29] important feedback loop. you're using
+[01:42:30] things more like weaving instead of
+[01:42:32] code. You're talking more about
+[01:42:34] architecture and taste. It sounds like a
+[01:42:36] pretty big shift to me. Now, in this
+[01:42:38] world, let's assume you get to the point
+[01:42:40] where you're going to you're hire the
+[01:42:42] next one and two and three developers on
+[01:42:44] this team. Let's imagine that this thing
+[01:42:45] gets a life of its own and you know,
+[01:42:47] maybe it's a business as well. What
+[01:42:49] skills would you look for? And what
+[01:42:51] would you advise a an experienced
+[01:42:54] engineer right now? Who would you be
+[01:42:56] excited to work with? kind of either
+[01:42:57] expertise
+[01:43:00] projects would you look for for someone
+[01:43:01] who sounds like who can work in this way
+[01:43:03] or can pick up this way of working?
+[01:43:05] &gt;&gt; Someone who's active on GitHub and does
+[01:43:07] open source and and someone where I have
+[01:43:10] the feeling that they they love the the
+[01:43:13] game. The way you learn in this new
+[01:43:16] world is by like trying stuff and it
+[01:43:20] very much feels like a game where you
+[01:43:22] improve your skills as you get better
+[01:43:24] like like a like a music instrument. you
+[01:43:26] have to like keep trying and I and I
+[01:43:29] that I'm now this efficient and this
+[01:43:30] fast and I don't know like I I think
+[01:43:33] like the other day I had like 600
+[01:43:34] commits in a single day. this is like
+[01:43:36] completely nuts and it works like it's
+[01:43:39] not it's not like there was there was a
+[01:43:41] somebody did a code review and said like
+[01:43:43] oh this is actually not slop and like
+[01:43:45] yeah uh
+[01:43:46] &gt;&gt; there's a lot of skill that went into
+[01:43:47] &gt;&gt; yeah it's it's it's it's a lot of hard
+[01:43:49] work but you need to play with the
+[01:43:53] technology and learn and then you will
+[01:43:55] get in the beginning it might be
+[01:43:57] frustrating I don't know kind of like
+[01:43:59] you you know you start going to the gym
+[01:44:00] it's going to suck it's going to be
+[01:44:02] painful
+[01:44:05] but very quickly you like you get better
+[01:44:07] and you and you feel that that your
+[01:44:09] workflow gets faster and then you feel
+[01:44:10] the improvements and then you slowly get
+[01:44:12] hooked. So So but yeah, play and and
+[01:44:17] yeah, also work hard.
+[01:44:19] &gt;&gt; Yeah, I I mean you're putting in more
+[01:44:21] hours into this thing.
+[01:44:22] &gt;&gt; I've never right now I've I've never I
+[01:44:25] never worked more even even when I had
+[01:44:28] my company. I I've never worked so hard
+[01:44:30] as I do now. Not because I have to, but
+[01:44:33] because it's so addictive and so much
+[01:44:34] fun, but also because right now I'm like
+[01:44:38] using the moment where where this has
+[01:44:40] traction and and there's a lot of people
+[01:44:41] who like are pushing me. Um, and I I
+[01:44:45] feel could it be cuz I think you have
+[01:44:47] pretty good business sense. Not not not
+[01:44:49] necessarily in the business business,
+[01:44:50] but seeing when there's an opportunity
+[01:44:51] there is an opening for to get traction,
+[01:44:54] right? Like what you said for people to
+[01:44:56] work in the open right now it seems
+[01:44:58] novel. You're telling me you don't think
+[01:45:00] you could, even if you wanted to hire,
+[01:45:02] you don't think you could hire people
+[01:45:03] cuz there's not many people working in
+[01:45:05] the open, clearly using these things.
+[01:45:08] Fast forward 2 or 3 years from now, once
+[01:45:10] a bunch of people start to do it and
+[01:45:11] everyone does it, it's kind of like moot
+[01:45:14] a little bit. So there there's also that
+[01:45:16] a group that a lot of lot of people are
+[01:45:18] worried about is the the new grads, the
+[01:45:20] the people with with no experience who
+[01:45:21] are either in school or about to
+[01:45:23] graduate because of course you've been
+[01:45:25] an experienced engineer by the time this
+[01:45:26] came around. you know, you have a lot of
+[01:45:28] things to build on. Putting that
+[01:45:30] yourself into shoes of of someone like
+[01:45:32] that and knowing what you know now, what
+[01:45:34] would you recommend of of activities
+[01:45:36] that they do, things that they build or
+[01:45:39] try and you know like do would you
+[01:45:41] recommend on focusing on the
+[01:45:43] fundamentals of software engineering on
+[01:45:45] this on the agents kind of mixing the
+[01:45:47] two?
+[01:45:48] &gt;&gt; I would I would recommend them to be
+[01:45:49] infinitely curious. Yes, it's going to
+[01:45:51] be harder to enter this market. It's
+[01:45:53] it's absolutely going to be harder and
+[01:45:56] you need to build things to like gain
+[01:45:58] experience. I don't think you need to
+[01:46:00] write a lot of code but you need to I
+[01:46:03] don't know you know there's a lot of
+[01:46:04] open source that is complex that you can
+[01:46:06] like check out and learn and you have an
+[01:46:08] infinitely patient machine that is able
+[01:46:10] to explain you all the things so you can
+[01:46:12] ask you can ask all questions why why
+[01:46:15] was it built this way to like gain
+[01:46:17] system understanding but it requires
+[01:46:19] real curiosity and I don't think
+[01:46:21] universities right now are set up to
+[01:46:23] teach you that in a in in a really good
+[01:46:24] way this is usually something you
+[01:46:26] discover through pain it's it's not
+[01:46:28] going to be easy for new people, but but
+[01:46:29] they have they have the benefit that
+[01:46:31] they are not tainted by all the
+[01:46:33] experience like they they they use
+[01:46:36] agents in ways that we don't even think
+[01:46:39] about again because they don't know that
+[01:46:41] it doesn't work and by then it probably
+[01:46:43] does
+[01:46:43] &gt;&gt; and also their friends use it all all
+[01:46:45] the time
+[01:46:45] &gt;&gt; especially like like the other day I I
+[01:46:48] have this little menu bar app for cost
+[01:46:50] tracking on on on on cursor and and and
+[01:46:53] cloud code and everything and it was a
+[01:46:55] bit slow. So I I was like, "Okay, let's
+[01:46:59] do let's do performance measurement."
+[01:47:00] And and my old way is like I open
+[01:47:02] instruments and click around. And it
+[01:47:04] would just call and do everything by the
+[01:47:06] terminal. It blew me away. I was like I
+[01:47:08] didn't even have to open instruments
+[01:47:09] anymore. And it just like made it
+[01:47:11] faster. And then did like some
+[01:47:13] recommendations. I'm like all of that
+[01:47:14] sounds good. Do it.
+[01:47:15] &gt;&gt; Yeah. I I think we might be
+[01:47:16] underestimating both like how
+[01:47:18] resourceful people entering tech have
+[01:47:21] been also how young people if I think
+[01:47:24] about some of the great companies
+[01:47:25] started they were very young and
+[01:47:27] obviously very inexperienced but had a
+[01:47:28] lot of passion so so that's there as
+[01:47:30] well yeah it's it's a big opportunity I
+[01:47:33] I'm especially taking in like it's I
+[01:47:35] have to take it in like but all the
+[01:47:37] things you mentioned about just your way
+[01:47:39] you know weaving code in not caring
+[01:47:41] about PR not caring about code reviews
+[01:47:43] it's a big change because these things
+[01:47:44] have been us with like again for like 15
+[01:47:47] plus years of your life they have been
+[01:47:49] in fact you know a lot of it has been
+[01:47:51] kind of you know solid building blocks
+[01:47:53] of PSPDF kit right yeah we need we need
+[01:47:55] a lot of new things even you know even
+[01:47:58] when I get a PR I'm actually more
+[01:48:00] interested in the prompts than in the
+[01:48:02] code I I ask people to please add the
+[01:48:06] prompts and some do and I I read the
+[01:48:09] prompts more than I read the code
+[01:48:11] because to me this is this is a way
+[01:48:13] higher signal of like how did you get to
+[01:48:15] the solution what did you actually ask
+[01:48:17] how much steering was involved then the
+[01:48:20] actual out to me this gives me more idea
+[01:48:22] about the output I don't have to read
+[01:48:23] the code or like if someone wants a
+[01:48:26] feature I ask for a prompt request like
+[01:48:28] write it up really well because then I
+[01:48:30] can just point my agent to the issue and
+[01:48:32] it will build it so because because the
+[01:48:34] the work is the thinking about how it
+[01:48:36] should work and what the details are and
+[01:48:38] if someone else does it for me I can
+[01:48:39] literally say build and it will work uh
+[01:48:42] and I and then yeah of course I think
+[01:48:44] about But it will will re really or if
+[01:48:47] someone sends me a PR that are just a
+[01:48:49] few fixes. I told people please don't do
+[01:48:51] that. It takes me 10 times more time to
+[01:48:53] to review that and just type in fix in
+[01:48:56] in in codex and wait a few minutes. So
+[01:48:59] there's there like all these insane
+[01:49:00] things that are like would have been
+[01:49:01] completely different
+[01:49:03] &gt;&gt; even even at the beginning. uh now we
+[01:49:05] have a oneliner but for the last two
+[01:49:08] weeks
+[01:49:09] like when it got really traction I told
+[01:49:11] people to just just point an agent at
+[01:49:13] the repository to configure it so so I
+[01:49:16] didn't had I didn't have an onboarding
+[01:49:17] but we had cloud codebased onboarding
+[01:49:20] where claude would like check out the G
+[01:49:21] repository read the things and write the
+[01:49:23] configuration for those people and set
+[01:49:24] everything up so it works like set up a
+[01:49:26] launch agent that didn't have the manual
+[01:49:28] setup because it was not a priority
+[01:49:29] anymore because because agents can now
+[01:49:32] do that for you and the and the and
+[01:49:33] since the the product was built by
+[01:49:35] agents. They structured it exactly the
+[01:49:37] way agents expect things to be named and
+[01:49:39] things. There's certain ways that are
+[01:49:42] encoded in in in the in the weights how
+[01:49:45] they expect things to be named and
+[01:49:47] everything exactly like how they expect.
+[01:49:50] So they are really good at navigating
+[01:49:52] their product. So it was not a priority
+[01:49:54] to work on onboarding as much. I mean
+[01:49:56] eventually I wanted this magical
+[01:49:57] experience but it was more important to
+[01:49:59] like make sure that your message arrives
+[01:50:01] and that things don't explode. So
+[01:50:02] onboarding was literally like type this
+[01:50:04] prompt into your agent. Um which is
+[01:50:08] would have been mind-blowing even a year
+[01:50:10] ago.
+[01:50:10] &gt;&gt; All right. So to to wrap up, we'll do
+[01:50:12] some rapid questions. So I'll just ask
+[01:50:14] and you tell me what's on your mind.
+[01:50:16] What's a tool that is not a CLI, not an
+[01:50:19] ID, it can be physical that you you use
+[01:50:22] you like you would recommend? I buy a
+[01:50:24] lot of gadgets and many of them dust
+[01:50:28] away. But there's this one kind of
+[01:50:32] crappy thing that was not expensive that
+[01:50:34] gives me almost unlimited amount of joy.
+[01:50:37] And it's like this Android powered photo
+[01:50:40] stand where I can upload pictures and
+[01:50:42] where like it has an email address and
+[01:50:43] friends can send pictures and it will
+[01:50:45] just show pictures. And I and I put a
+[01:50:48] few a few in in my house again. And I
+[01:50:51] mean even the animations are a little
+[01:50:52] croppy because it runs nward and it's
+[01:50:54] terrible from the technology but but it
+[01:50:56] gives me infinite number of joy because
+[01:50:57] it is low tech that just shows pictures
+[01:51:00] and reminds me of happy moments in my
+[01:51:02] life and it was like 200 bucks and I
+[01:51:05] don't know to be honest that gets me
+[01:51:07] more joy than the latest iPhone. I
+[01:51:09] bought the iPhone 17. I still haven't
+[01:51:11] unpacked it because I just in my head I
+[01:51:13] wanted it but then I couldn't get around
+[01:51:15] to it because it's just a hassle to like
+[01:51:16] move the Sims around and I said like
+[01:51:19] basically no no no no feelable benefit
+[01:51:22] but like this little this little device
+[01:51:24] gives me infinite joy.
+[01:51:25] &gt;&gt; What's something that helps you recharge
+[01:51:27] outside of tech like just or just moving
+[01:51:29] away from from tech and screens? What
+[01:51:32] keeps me sane, even if I work crazy
+[01:51:35] hours, is going to the gym, even better,
+[01:51:40] working with a a coach and leaving my
+[01:51:43] phone in the locker. And then I really
+[01:51:46] have like a good hour where
+[01:51:50] I just feel me and I and I'm like in the
+[01:51:54] moment and I'm not distracted by
+[01:51:58] notifications or tempted to like touch
+[01:52:02] my phone like we need more time for
+[01:52:04] this. Or even sometimes I I I go for a
+[01:52:07] walk and I I leave my phone at home and
+[01:52:10] it feels very scary. It's almost like a
+[01:52:12] it's almost like an organ now, you know?
+[01:52:14] It's like your your body knows where it
+[01:52:16] is and if you don't know where your
+[01:52:17] phone is, you freak out.
+[01:52:18] &gt;&gt; I I'm having I'm having a blast.
+[01:52:20] &gt;&gt; Love it. This is great, Pete. Thanks
+[01:52:22] very much. Well, this was a super
+[01:52:24] interesting conversation and it feels to
+[01:52:26] me that how one person teams built
+[01:52:27] software with AI is already completely
+[01:52:29] different to what we've been used to.
+[01:52:31] One thing that really caught my
+[01:52:33] attention is how Peter thinks in prompts
+[01:52:35] and not pull requests and how he weaves
+[01:52:38] in the code and no longer merges the
+[01:52:40] code. He doesn't find poll requests all
+[01:52:42] that useful and would rather get prompt
+[01:52:44] suggestions even on GitHub. I do think
+[01:52:46] we might have to rethink the importance
+[01:52:48] of prompts or at the very least sharing
+[01:52:50] of prompts in software development the
+[01:52:52] more we use AI and AI agents. Another
+[01:52:54] thing that struck with me was Peter's
+[01:52:56] emphasizing how important is to close
+[01:52:58] the loop. As Peter explained, the reason
+[01:52:59] AI is so good at coding but often
+[01:53:01] mediocre at writing is because you can
+[01:53:03] validate code. You can compile it, run
+[01:53:05] tests, check the output. So, the secret
+[01:53:07] to making AI system development work
+[01:53:09] well is to design your system to close
+[01:53:11] the loop and have the AI run the test.
+[01:53:13] Finally, I was wondering if Peter is in
+[01:53:15] the flow as much even when he's not
+[01:53:17] writing code. Turns out he is. He's in
+[01:53:19] the flow more than ever. And he told me
+[01:53:21] that it's mentally more exhausting to
+[01:53:22] juggle several AI agents in parallel
+[01:53:24] than it was just to write code. My
+[01:53:26] feeling is that someone who was a great
+[01:53:28] developer without AI can be an excellent
+[01:53:31] kind of code architecture or carding
+[01:53:33] person with AI. This is just a gut
+[01:53:35] feeling I've had so far, but Peter seems
+[01:53:37] to prove it. Finally, we should note
+[01:53:39] that Clawbot is more of a YOLO project
+[01:53:40] than most production apps. So, take the
+[01:53:43] approaches that we discussed with a
+[01:53:44] grain of salt. At the same time, I do
+[01:53:47] think that a lot of what Peter does
+[01:53:48] could well spread to building production
+[01:53:50] code, except review and validation will
+[01:53:52] become a much more important step in
+[01:53:54] those projects. If you enjoy this
+[01:53:55] podcast, please do subscribe on your
+[01:53:57] favorite podcast platform and on
+[01:53:58] YouTube. A special thank you if you also
+[01:54:00] leave a rating on the show. Thanks and
+[01:54:02] see you in the next one.

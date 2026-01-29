@@ -1,0 +1,722 @@
+[00:00:00] Yes, Peter. So, we were talking about
+[00:00:03] talking about you. You're talking about
+[00:00:05] how you work. Uh what is your product
+[00:00:07] productivity routine looks like? And um
+[00:00:10] how do you keep tweeting all day night
+[00:00:13] and I feel like you do not sleep at all,
+[00:00:15] right? Uh I know it would be like a
+[00:00:17] repetition for you to explain me
+[00:00:19] everything that we just talked about,
+[00:00:21] but uh since now the recording is on, so
+[00:00:24] let's go. Yeah, I really like you
+[00:00:27] already. I already started re-recording.
+[00:00:29] I I I brought anecdotes for like 15
+[00:00:31] minutes and then this guy tells me that
+[00:00:33] oh it's not recorded yet. The way to way
+[00:00:37] to get my time, you know, I could I
+[00:00:38] could prompt three agents right now. You
+[00:00:40] realize that there like none of them is
+[00:00:42] working. Do you think you miss from
+[00:00:45] nothing? App you missed a complete app
+[00:00:47] in these 15. No, I I'll work on I work
+[00:00:50] on three at the same time, you know. I
+[00:00:52] believe one app just like your last.
+[00:00:58] Um so I do sleep. Um
+[00:01:02] definitely not enough right now.
+[00:01:05] The like I I rarely actually sometimes I
+[00:01:09] call them agents but many times I just
+[00:01:10] call them slot machines because
+[00:01:14] I feel they are the ultimate drug for
+[00:01:16] for programmers or my friends call them
+[00:01:18] catnip for programmers. I see. It's
+[00:01:22] literal catnip because because
+[00:01:26] it's the most uh serotonin addictive
+[00:01:28] thing. You you type it in and like
+[00:01:30] something amazing could come out that
+[00:01:31] wows you or it could just go in a vision
+[00:01:34] quest, break everything and you get like
+[00:01:36] incredibly mad. It adds like it's a zero
+[00:01:39] one equation. Like last night I was I
+[00:01:42] was working on this keyboard and then at
+[00:01:45] some point I got a bit lazy um in the
+[00:01:48] prompting and it misunderstood me and
+[00:01:50] edited the keyboard to the login screen.
+[00:01:52] So then you had like you had like your
+[00:01:54] your your image, you had the password
+[00:01:56] and they had like the keyboard
+[00:01:57] underneath and I'm like you stupid like
+[00:02:00] like go like a ra thing
+[00:02:03] and the be the beauty thing is like
+[00:02:05] they're always nice, right? So they
+[00:02:07] Yeah. All all you get is like you you
+[00:02:08] can hear oh oh the youth is very upset.
+[00:02:12] I need to recognize this. The is sinking
+[00:02:15] and like and then like it's apologizing.
+[00:02:17] Um
+[00:02:19] you mentioned that you write a whole
+[00:02:21] page of prompt venom. Yeah. I think I
+[00:02:24] think this was what's what's up with
+[00:02:25] that. Yeah. I think that's what a lot of
+[00:02:27] people are missing. Um if you if you
+[00:02:30] just give them a tiny prompt sticks this
+[00:02:33] build me virtual keyboard [&nbsp;__&nbsp;] will come
+[00:02:36] out. Yeah. If you put [&nbsp;__&nbsp;] in, [&nbsp;__&nbsp;] will
+[00:02:37] come out. So So I'll I'll just I use
+[00:02:41] Whisper Flow because it's I mean I [&nbsp;__&nbsp;]
+[00:02:44] they should give me affiliates by now
+[00:02:45] because I I converted so many people. Um
+[00:02:48] it's by far the best it's by far the
+[00:02:51] best thing for
+[00:02:53] to like understand your voice. It it
+[00:02:55] comes from the point that you can
+[00:02:57] whisper to it.
+[00:02:59] But um really what it also does it it
+[00:03:02] parishes what I say. So if I say ah do
+[00:03:04] it this way. or no do it that way. It
+[00:03:06] will just write do it that way which is
+[00:03:09] extremely convenient because you want to
+[00:03:12] be like clear what you want to give to
+[00:03:14] the agent but you also want to like
+[00:03:17] explain it from different angles.
+[00:03:20] So if I talk about oh like we want to
+[00:03:21] make the layout better and the padding
+[00:03:23] then I just I say a few a few a few
+[00:03:25] samples. You you see like this button
+[00:03:27] here it's too far on the right side and
+[00:03:30] you know our goal is to have it right
+[00:03:31] aligned. So like you repeat yourself
+[00:03:34] from a few different angles and then
+[00:03:36] usually you will get your perfect
+[00:03:37] oneshot response. Do you also specify
+[00:03:39] the overall UI while prompting? Is it
+[00:03:42] like that? Everything everything's smart
+[00:03:45] here. Do do you think do you think do do
+[00:03:49] these loop whoop do these hands look
+[00:03:51] like they write code?
+[00:03:53] They they're only here for for bispoke
+[00:03:56] prompting. Uh
+[00:03:59] no that's not true. Sometimes sometimes
+[00:04:01] I I do like tiny fixes because it's
+[00:04:03] faster or like or like if you do like a
+[00:04:06] little UI change
+[00:04:08] sometimes faster. But if you like the
+[00:04:11] way I do it is like I I work on usually
+[00:04:15] two to four different things based on
+[00:04:17] how much they actually slept and how how
+[00:04:19] complex it is and just move on. I I
+[00:04:22] prompt one agent. Then they'll they'll
+[00:04:24] run off and work for 5 10 15 minutes and
+[00:04:28] I move to the next thing and prompt an
+[00:04:30] agent and then I move to the next thing
+[00:04:32] and probably agent. I don't use
+[00:04:35] work uh like different directories.
+[00:04:38] Everything goes into the same directory.
+[00:04:40] I just pick different different areas of
+[00:04:43] my products so that so they so the
+[00:04:46] chances that they interfere are low. And
+[00:04:48] then I I review everything in a in a in
+[00:04:50] tower like some some Git app that has a
+[00:04:54] good good uh gifing and either I revert
+[00:04:57] it.
+[00:04:59] That's also what people think like if if
+[00:05:01] they make [&nbsp;__&nbsp;] then just revert it
+[00:05:06] um and give them a context. Reverting
+[00:05:09] with claude is not that easy if you
+[00:05:11] compare it with cursor. Would you would
+[00:05:13] you agree to that? like uh if you are
+[00:05:16] constantly committing your changes then
+[00:05:17] that's a different case otherwise you
+[00:05:20] might end up with a mess that's what my
+[00:05:23] experience says so far I mean like you
+[00:05:26] have been using it quite heavily I I
+[00:05:28] know that looking at what are products
+[00:05:30] you have built so far u I I want to stop
+[00:05:33] using I I can stop using cursor I don't
+[00:05:37] I like the the cloud code workflow much
+[00:05:39] better where I have like in cursor even
+[00:05:43] Switching from one agent to another is
+[00:05:45] like a 3second operation and it's very
+[00:05:47] wonky and then cursor often just loses
+[00:05:49] connection or has issues. The agents and
+[00:05:52] cursor they are not very eager to fetch
+[00:05:54] in um they don't they don't fetch in a
+[00:05:58] lot of files. their their system prompt
+[00:06:00] is is built in a way where it's
+[00:06:02] optimized that you have to think what
+[00:06:04] they see and then yes they will fetch
+[00:06:07] but they'll they'll not fetch a lot and
+[00:06:10] I think ultimately this is part of the
+[00:06:12] way curs charges you money because they
+[00:06:14] charge per request and not per token so
+[00:06:16] they that every request doesn't eat too
+[00:06:19] many tokens so right if you if you pull
+[00:06:21] less into the context you have less
+[00:06:24] tokens so ultimately this is a is a
+[00:06:26] monetary interest and Entropic. An
+[00:06:29] entropic is just like om nom nom eating
+[00:06:32] tokens like crazy. That's also why they
+[00:06:34] are better. They they paper people.
+[00:06:38] So So I pick like different areas of my
+[00:06:41] project
+[00:06:43] and then I just give and and then I
+[00:06:46] commit like as soon I test it works. I
+[00:06:49] commit. Um I mean we're like we have
+[00:06:52] like five people here and we're
+[00:06:53] committing to master.
+[00:06:55] Kathy can you quickly take me through
+[00:06:58] your workflow how you use lord code
+[00:07:01] because we have like verbally talked
+[00:07:03] about writing a prompt which is a page
+[00:07:05] size but how does that prompt looks like
+[00:07:08] in the javascript front end when we
+[00:07:10] don't have authorization then we don't
+[00:07:11] show the authorization control
+[00:07:13] authorization control contains the
+[00:07:14] settings so in this case we run on no
+[00:07:16] authentication so just show settings
+[00:07:18] icon don't call it settings just use a
+[00:07:19] glyph that represents settings that's a
+[00:07:21] very simple prompt because it was just
+[00:07:23] one action to add a button.
+[00:07:27] Uh then not and this is this is like a
+[00:07:30] very small prompt but usually usually I
+[00:07:33] just use whisper slow and I I as I
+[00:07:35] review the page I'll talk and and
+[00:07:37] basically tell it what I don't like and
+[00:07:39] what it should change and then I if it's
+[00:07:41] like UI changes I'll cue it'll ceue
+[00:07:44] multiple things together and then I I
+[00:07:46] try to explain it from different angles.
+[00:07:50] Okay? Because
+[00:07:52] the more you talk, the less they'll be
+[00:07:54] able to hallucinate because they'll
+[00:07:56] understand better what you actually mean
+[00:07:58] and what your reasoning behind is. So
+[00:08:00] some I mean sometimes I say stupid stuff
+[00:08:02] like you do this because it looks like
+[00:08:03] [&nbsp;__&nbsp;] right? It it doesn't matter, but
+[00:08:06] like like I I like to swear. I think
+[00:08:08] people who swear like you're more honest
+[00:08:10] and more more happy people. So I'll just
+[00:08:12] I'll just say this looks like [&nbsp;__&nbsp;] Um
+[00:08:16] they're always nice. They can take it. I
+[00:08:19] I I I have seen people give you a lot of
+[00:08:22] heat if you talk along the lines of uh
+[00:08:27] software engineering is changing a lot
+[00:08:29] like it has been evolving with this AI
+[00:08:31] era and uh a lot of jobs will go away
+[00:08:35] once this comes in properly. This has
+[00:08:37] already you know this is already here.
+[00:08:39] It is not something which is futuristic.
+[00:08:40] Now what is your perspective on this?
+[00:08:43] How do you look at this particular thing
+[00:08:45] happening in the software engineering
+[00:08:46] space and where are we heading to? I
+[00:08:49] mean that's society ultimately right we
+[00:08:53] had we had a lot more farmer jobs 100
+[00:08:55] years ago we had a lot more industrial
+[00:08:56] jobs 50 years ago um you can't be mad at
+[00:09:01] at progress if you if you lose your job
+[00:09:04] or not is up to you like like suddenly
+[00:09:08] we have new tools that if you work them
+[00:09:11] and if you learn them you'll be no
+[00:09:13] exploration 20 times as productive if
+[00:09:15] you look at how much I'm able to build
+[00:09:18] like the insane thing is like like even
+[00:09:21] a year ago all these ideas you have to
+[00:09:24] be very picky what you actually build
+[00:09:26] because everything will take you weeks
+[00:09:27] or you you can't have five site projects
+[00:09:31] and now now like the other day I was
+[00:09:33] looking for a website that would uh
+[00:09:37] would store the sparkle update data so I
+[00:09:40] know who is on which like there's all
+[00:09:42] these you know there's all these hobbits
+[00:09:44] out there that gobble up all the user
+[00:09:46] data I don't like But I'm I I want the
+[00:09:49] absolute minimum privacy focused.
+[00:09:52] Um but I'm interested in like when can I
+[00:09:54] drop a Mac OS version for example. So
+[00:09:56] Sparkle is exactly built like this. They
+[00:09:58] sent updates once a week. But like all
+[00:10:00] the projects I found were [&nbsp;__&nbsp;] or like
+[00:10:03] old or not maintained anymore. So I'm
+[00:10:05] like no just build my own. And in just
+[00:10:07] like four hours I built a whole website
+[00:10:10] backed by backed by Postgress already
+[00:10:13] hosted and it's already working in
+[00:10:15] [&nbsp;__&nbsp;] four hours. like this would be
+[00:10:17] wow at le and I'm not that good with web
+[00:10:20] stuff even yet so this would have taken
+[00:10:22] me at least a few days uh back in the
+[00:10:25] day and I and I did it while working on
+[00:10:28] other things it's not like it was like
+[00:10:29] 100% of my mental capacity it was like a
+[00:10:32] thing on the side with 30%.
+[00:10:35] And I and I I built it in a way that
+[00:10:36] everybody can now use it. It is it
+[00:10:38] doesn't it doesn't even have a login.
+[00:10:40] It's just like one page analytics, but
+[00:10:43] it's updating your images, you know?
+[00:10:45] It's it's like it's it's it's it's
+[00:10:47] sophisticated stuff. It's not just HTML.
+[00:10:50] It has like a socket connection to the
+[00:10:52] database and and as data comes in, it
+[00:10:54] updates live. That alone in the old days
+[00:10:56] would have taken me multiple days. How
+[00:10:57] the [&nbsp;__&nbsp;] do you do that? So now I just I
+[00:11:00] just tell cloud to do it and it just
+[00:11:01] does it. What changed is now you have
+[00:11:04] like my my task is to like pick the
+[00:11:08] right technologies
+[00:11:10] like I use superbase. I know Superbase
+[00:11:11] has a real time sync. So how hard can it
+[00:11:13] be? It it it's around for a while. So
+[00:11:15] like there's enough world knowledge that
+[00:11:17] I don't even have to pull in uh any any
+[00:11:20] documentation. It will just know and
+[00:11:22] it'll and it'll build it. I I started
+[00:11:25] not from scratch but I used Vero like an
+[00:11:27] a no code system. Why? because they um
+[00:11:31] they're very opinionated. They use like
+[00:11:33] react vers
+[00:11:37] I it just started it built something.
+[00:11:40] It's not very good but it gave me the
+[00:11:42] structure that I that I wanted. So I was
+[00:11:44] to that I I don't have to like tell claw
+[00:11:46] to use that structure because it built
+[00:11:48] all of that structure and then and at
+[00:11:50] some point I reached the limit of that
+[00:11:52] agent because they use I don't actually
+[00:11:55] know what they use. I actually don't
+[00:11:56] care. Um, but then I just I just I just
+[00:11:59] went to GitHub and then used code to
+[00:12:01] take over. Like my first prompts were
+[00:12:05] here's some [&nbsp;__&nbsp;] that should be this
+[00:12:06] repair it
+[00:12:08] and then and then I started and I just
+[00:12:10] started to explain what I want and it
+[00:12:12] built it on the side. That's amazing.
+[00:12:15] But we haven't yet answered it that what
+[00:12:19] will happen to the existing software
+[00:12:20] engineers that are there in the
+[00:12:21] industry. Not everyone can be at the top
+[00:12:23] of it, right? If that makes sense. So
+[00:12:27] whatever is going to happen with like we
+[00:12:29] can see these tools uh like plot code
+[00:12:31] which is a CLI based tool. Now we are
+[00:12:33] also hearing news about uh Gemini coming
+[00:12:35] up with a CI tool CLI tool. Uh so is the
+[00:12:38] future heading towards CLI tools again
+[00:12:40] like uh since you know they are not
+[00:12:42] focusing on having a GUI at all and I
+[00:12:45] heard uh the one of the creators of plot
+[00:12:48] code talking about the same that uh uh
+[00:12:50] we they needed this tool because they
+[00:12:52] want to experiment they want to use it
+[00:12:53] at their space as anthropic I'm putting
+[00:12:55] my my Johnny eyes on there is beauty in
+[00:12:59] simplicity we took away everything we
+[00:13:01] could so there so all you have is a
+[00:13:04] prompt and a text window and you can
+[00:13:06] fully focus on what's most important to
+[00:13:08] you, the planning and the clear
+[00:13:10] thinking. Yeah, I I actually I actually
+[00:13:13] think the the constraints those tools
+[00:13:17] put you under are like a biggest plus
+[00:13:20] because it's just it's just the way to
+[00:13:22] enter text and to read text. Um
+[00:13:27] it I I think there's value in
+[00:13:30] having it in in VS Code from time to
+[00:13:32] time. So so you have like you can read
+[00:13:34] more of your files especially when you
+[00:13:37] reach the the limits of where what
+[00:13:39] agents can do. Um
+[00:13:42] so I have my IDE next to it where
+[00:13:44] sometimes I read off stuff but mostly
+[00:13:47] mostly I read the diffs and then I I'll
+[00:13:49] I'll pitch at my agents if I don't like
+[00:13:52] Um, but
+[00:13:55] they're not they're not magic
+[00:13:58] if you but if you know how to use them
+[00:14:00] like again with this keyboard thing it I
+[00:14:03] tried for like the first 20 minutes and
+[00:14:05] like nothing worked. So then I I did
+[00:14:08] like research okay but don't know about
+[00:14:11] that space.
+[00:14:12] Um anchoring anchoring views on virtual
+[00:14:16] keyboard always been very difficult very
+[00:14:18] hacky. We know that browsers made a lot
+[00:14:20] of improvements over the year. This is a
+[00:14:22] this is the problem many people faced.
+[00:14:24] So obviously
+[00:14:26] there will be APIs in newer browsers
+[00:14:28] that will make this easier. So I did
+[00:14:29] research on like what APIs we have. Of
+[00:14:31] course I found stuff. I found a document
+[00:14:34] a very long markdown that explains how
+[00:14:36] new API works. I just copied the URL
+[00:14:39] into clause read this and now build it
+[00:14:41] right and ultra sync. Not everybody can
+[00:14:47] spend so much time like me on this. I
+[00:14:49] totally get it. Like there's people who
+[00:14:50] have a life and have a family. I don't.
+[00:14:53] So, so I mean that's that's so hilarious
+[00:14:57] coming from you because you work like
+[00:14:59] almost 16 20 hours you mentioned and
+[00:15:02] you're making you're being so modest and
+[00:15:04] making fun of it itself. But but I mean
+[00:15:07] if you have to be at that, you know, if
+[00:15:09] you become the top 1% of any game, I
+[00:15:11] believe you have to put in those efforts
+[00:15:13] that you're already putting in. And I I
+[00:15:16] would not I would not have fun like
+[00:15:18] that. That's my drive. Like I I don't
+[00:15:20] just want to like be one of the best
+[00:15:22] people there. I also like want to want
+[00:15:23] to like help other people um get more
+[00:15:26] stuff done faster and like learn. So
+[00:15:29] whenever
+[00:15:30] whenever I see that like I inspire
+[00:15:32] someone, that's why I do it.
+[00:15:34] That's amazing. And I I believe that's
+[00:15:36] why you open source the projects as
+[00:15:38] well, right? Oh, I mean that's my mantra
+[00:15:40] like every everything I do is open
+[00:15:42] source. There's literally maybe some old
+[00:15:44] projects from from before my burnout. Uh
+[00:15:48] but now everything you can you can look
+[00:15:49] up everything on GitHub. That's so funny
+[00:15:52] when like when like there was like
+[00:15:54] someone who someone who someone who
+[00:15:56] blocked me on their new system for
+[00:15:58] startup slop and like I I guess I didn't
+[00:16:01] get the memo. Oh, there's like a there's
+[00:16:04] like something like Hacker News, but
+[00:16:05] they blocked my website for startup
+[00:16:07] slop. Okay. Um, and I I guess this is a
+[00:16:10] bigger discussion that that that might
+[00:16:12] need to happen. Um, because of course
+[00:16:15] there's I can do one prompt and say,
+[00:16:17] "Hey, write me a blog post about X." And
+[00:16:18] then like garbage will come out. Yes,
+[00:16:20] you have your slop. But if I work I I
+[00:16:23] usually I need about like three four
+[00:16:25] hours for each blog post. Uh so even if
+[00:16:28] I use agents to like do most of the
+[00:16:30] writing, I iterate so much on what I
+[00:16:32] want to say and then at some point my
+[00:16:35] blog post is always like 20 25 minutes
+[00:16:38] and then like the hard work is to
+[00:16:39] compress it into like 5 minutes. So you
+[00:16:41] actually you actually like you you got
+[00:16:45] what's the story? What's the message
+[00:16:47] about get across? Nobody's going to read
+[00:16:48] 20 minutes of my of my rambling. Um,
+[00:16:52] that's not I mean, yeah, sure, I can
+[00:16:54] like trim it down, but it won't be
+[00:16:56] interesting. It won't be good.
+[00:16:59] So, even even if I didn't write every
+[00:17:01] word myself, I'm putting so much love
+[00:17:02] and care into each blog post that uh
+[00:17:05] telling me this is the ice is like
+[00:17:09] really insulting.
+[00:17:11] Yeah, I did. But yeah, that's that's
+[00:17:12] that's a that's a separate discussion. I
+[00:17:14] got I also have a newsletter and that
+[00:17:16] one will get the biologic organic
+[00:17:18] handwritten handwritten words from from
+[00:17:22] my hands. It's not something you
+[00:17:24] generate from AI. Yeah. Cuz because my
+[00:17:28] my news outlet there gives is like a
+[00:17:30] different side of me like the more
+[00:17:31] personal side and there I want I want to
+[00:17:33] have
+[00:17:35] my like 100% my voice. some of the some
+[00:17:39] of the blog posts I don't care if like
+[00:17:41] some words are different because I want
+[00:17:42] to get the knowledge across. I want to
+[00:17:44] make it I want to make a good story.
+[00:17:45] story when I have it interesting. And
+[00:17:47] ultimately, I also document what I did
+[00:17:50] cuz you know I like a few weeks ago I
+[00:17:53] did like almost three days where I I I
+[00:17:56] built a really good set of scripts to
+[00:17:58] take over notoriization.
+[00:18:00] Um the whole release process for Mac
+[00:18:03] apps because there was nothing good out
+[00:18:04] there. There is fast lane but it's
+[00:18:06] basically unmaintained and you have to
+[00:18:09] deal with Ruby which you can I I
+[00:18:11] actually I like Ruby but it's yet
+[00:18:13] another language. Um, so I just build
+[00:18:16] everything in shell scripts,
+[00:18:18] but I would forget half of it if I don't
+[00:18:20] write it out because I do too much. So
+[00:18:23] like part of the motivation is also like
+[00:18:25] I document this for future me. And also
+[00:18:28] also I don't want anyone to go through
+[00:18:30] that pain. You can just copy my scripts.
+[00:18:32] Please do. Yeah. You know that's and
+[00:18:34] enjoy it. And on the line the sun. Yeah.
+[00:18:37] This like this literally was not it was
+[00:18:39] not pleasantly
+[00:18:43] although Yeah. Although it's also fun,
+[00:18:45] you know, there's work is fun if if it's
+[00:18:50] challenging, but you overcome those
+[00:18:52] challenges.
+[00:18:54] And now our theory is when you use
+[00:18:56] agents, there's literally nothing you
+[00:18:58] can do because
+[00:19:01] whenever you're stuck, they'll help you
+[00:19:03] out. When they are stuck, you can use
+[00:19:05] smarter agents. You can always ask those
+[00:19:07] three. Yeah. And and those things are
+[00:19:10] has like the knowledge of the world in
+[00:19:12] them. So, so now the motto is does it
+[00:19:15] defy the laws of gravity or physics? No.
+[00:19:18] Then it can be done. True. True. Uh and
+[00:19:22] I think software is is like feasible in
+[00:19:24] today's time. Yeah. And that's extremely
+[00:19:27] empowering like in the past, you know
+[00:19:30] how you sometimes get stuck and then you
+[00:19:32] have no one to ask and then you go in
+[00:19:33] Stack Overflow and you find this one
+[00:19:35] question from this one guy that posted
+[00:19:37] the same question eight years ago and
+[00:19:39] there's only one response and it's
+[00:19:40] wrong. Um But some I mean I mean [&nbsp;__&nbsp;] I
+[00:19:44] I had things where I Googled and then I
+[00:19:46] found like a blog post from like nine
+[00:19:48] years ago for myself and I'm like oh
+[00:19:50] yeah it didn't happen.
+[00:19:55] crazy time that was a crazy time. It
+[00:19:57] compared but now now literally I don't
+[00:20:01] get people that reject
+[00:20:04] this amazing technology. Yes it is it is
+[00:20:07] in a way scary. It will cost the jobs,
+[00:20:10] but ultimately it's up to you. Like, you
+[00:20:13] don't have to be you don't even have to
+[00:20:14] be the best. You just have to
+[00:20:17] know and use those tools and then you're
+[00:20:20] already you're already ahead. If if you
+[00:20:24] if you reject those things, then at some
+[00:20:28] point people will reject you at your
+[00:20:30] work because you'll be replaced by
+[00:20:32] someone who might not be as smart as
+[00:20:34] you, but who knows how to use a much
+[00:20:37] better hammer for his job and then like
+[00:20:40] people will pick that person because he
+[00:20:42] just he just wields a much better
+[00:20:43] hammer. Makes sense. Makes sense. Also
+[00:20:48] uh I read you a blog post on uh the app
+[00:20:50] that you recently built WI tunnel right
+[00:20:52] you have multiple apps now one of them
+[00:20:55] is wip tunnel other one is w meter right
+[00:20:58] uh I have tried w meter before I was
+[00:21:00] exploring w tunnel uh myself uh a two a
+[00:21:03] day or two ago and I figured that it is
+[00:21:05] a really powerful application and at the
+[00:21:08] same time I thought that how did this
+[00:21:10] idea came to your mind that's when I
+[00:21:12] ended up on your website and read that
+[00:21:14] blog that you have already written a
+[00:21:16] detailed blog work on the whole
+[00:21:17] hackathon that went on. So tell more
+[00:21:20] about that. Yeah.
+[00:21:22] Do you know the meme from Malcolm in the
+[00:21:24] Middle where he's trying to fix the
+[00:21:27] light bulb and then 4 hours later he's
+[00:21:29] like all dirty under the car and and his
+[00:21:32] wife comes in and says, "Hey, the lights
+[00:21:34] the light bulb is broken." He's like,
+[00:21:36] "What the [&nbsp;__&nbsp;] do you think I'm doing?"
+[00:21:40] I do remember that. So that that's kind
+[00:21:42] of like how I feel. I I I had this idea
+[00:21:44] of something I want to build which I
+[00:21:46] still want to build and I started
+[00:21:48] building it and then I noticed that the
+[00:21:50] build tools suck like so I started I
+[00:21:53] started to set that back then I was
+[00:21:56] still using cursor so I started building
+[00:21:58] like MTPs for cursor and then I noticed
+[00:22:01] that hey actually building MCPS sucks.
+[00:22:03] So I started building things so I could
+[00:22:05] that could that could build better MCPS
+[00:22:08] for the thing that I can I use to build
+[00:22:11] cursor and now I'm one way deeper now
+[00:22:14] I'm building I'm building something that
+[00:22:16] helps me use cloud code which helps me
+[00:22:18] build NCPs which helps me build this
+[00:22:20] which ultimately would help me build
+[00:22:21] this. So I think like you know like
+[00:22:23] inception I'm like in level four. I
+[00:22:25] don't know how many levels there are but
+[00:22:26] I think I'm I'm I'm quite deep now like
+[00:22:29] the the spinner is the zel anymore. Yes.
+[00:22:33] Um,
+[00:22:35] and I'm not I realize it's ridiculous,
+[00:22:37] but like
+[00:22:40] I don't I don't like I think the
+[00:22:44] my goal is to learn and to have fun. So,
+[00:22:47] it doesn't matter if I if I continue up
+[00:22:50] there, which also is something I I I'll
+[00:22:52] get back to eventually, or if I'm a few
+[00:22:54] layers down and I'm having traable fun
+[00:22:55] building something and learning
+[00:22:56] something. Um, so I just I just roll
+[00:23:00] with it and whatever wherever I look I
+[00:23:02] I'll there's things to learn. Uh,
+[00:23:07] and yeah, right now I'm like
+[00:23:10] extremely extremely excited about uh our
+[00:23:14] little Oh, couldn't you just use SSH
+[00:23:18] school?
+[00:23:20] So I I guess for people who don't know
+[00:23:22] um I I I talked to some of my friends
+[00:23:24] and we decided let's do a hackathon
+[00:23:26] because we all completely addicted to
+[00:23:27] our slot machine. So let's just and
+[00:23:29] we're not going to sleep anyhow. So
+[00:23:31] let's let's second night together and
+[00:23:32] hack something out. And then we we
+[00:23:35] thought, yeah, we always you always have
+[00:23:38] this issue that claude or agent in
+[00:23:40] general, they run 10 20 minutes, but
+[00:23:44] sometimes you want to like check up on
+[00:23:45] them because
+[00:23:47] they like to go on vision quests if you
+[00:23:49] don't steer them. Yeah. Or they or they
+[00:23:52] stop prematurely because something
+[00:23:53] happened. So, so I'm going up to the
+[00:23:56] kitchen and I know that it will probably
+[00:23:59] take 10 more minutes to complete, but it
+[00:24:01] would be nice to just make sure to that
+[00:24:03] it works because if if it stops 1 minute
+[00:24:06] in and then I come back 10 minutes
+[00:24:08] later, I'm going to be disappointed.
+[00:24:10] So, wouldn't it be nice if I could them
+[00:24:13] on my phone?
+[00:24:15] And I theoretically I could with like
+[00:24:18] screen sharing, but like I have a really
+[00:24:20] big screen here. Doing it on the phone
+[00:24:21] is like really fiddly. Um,
+[00:24:25] and then of course there's all these
+[00:24:26] systems where you could you could do
+[00:24:29] things in the cloud and then they make a
+[00:24:31] pull request, but first of all it
+[00:24:33] doesn't really work because they all run
+[00:24:35] on Linux and right now I'm building Mac
+[00:24:36] stuff. So you don't have access to Swift
+[00:24:38] and then the pull request workflow makes
+[00:24:41] sense for bigger teams. Doesn't make
+[00:24:42] sense for me because I if I work on
+[00:24:45] myself, why do I why should I use a
+[00:24:48] workflow that's built for bigger teams?
+[00:24:50] I just commit to main unless it's
+[00:24:51] something risky then I use a branch but
+[00:24:54] not for every little thing. True. So, so
+[00:24:58] we we okay let's build something where
+[00:24:59] we can see what cloud code does on our
+[00:25:03] phones. I see. And then maybe also get a
+[00:25:07] notification like a push notification
+[00:25:09] when it's done.
+[00:25:11] I see. Um can can you give me a live
+[00:25:14] demo of how it works? I mean that's not
+[00:25:17] for me. That's for the people who are
+[00:25:18] going to watch this that u just share.
+[00:25:22] Yeah, if you can just share the screen
+[00:25:23] and
+[00:25:25] give us a Okay, this is your prompt that
+[00:25:28] is going on and this is how you can
+[00:25:30] check the progress in your mobile app.
+[00:25:33] Yeah, this is the the mobile area that's
+[00:25:36] uh upcoming beta 4. And then here you
+[00:25:39] just see all your terminals
+[00:25:42] and these are most mostly agents.
+[00:25:47] and you can open your terminal and then
+[00:25:49] you can basically you see like a nicely
+[00:25:53] re like we changed the the the size so
+[00:25:56] it it fits. I broke the scrolling so
+[00:25:58] that's why it doesn't scroll right now.
+[00:26:00] Actually, no, it wasn't me. It was like
+[00:26:02] one of the agents.
+[00:26:03] Um, in your intern.
+[00:26:07] Yeah, but I'm going to I'm going have to
+[00:26:09] figure out how to how to unfuck that. Um
+[00:26:13] so so the idea is that instead of just
+[00:26:16] typing in claude on your on your
+[00:26:18] terminal you prefix it with VT uh the
+[00:26:22] the the the V tunnel V and then yeah and
+[00:26:25] then it'll just it'll just feel like
+[00:26:27] regular cloud. Okay. But you could also
+[00:26:30] you can also go on a website and you see
+[00:26:32] basically your terminal as a copy
+[00:26:36] because we we wanted to build something
+[00:26:37] that doesn't change the way you work but
+[00:26:40] then you can step out and you you just
+[00:26:42] can check up on all your instances
+[00:26:45] and the the coolest thing is you can
+[00:26:47] also press new new terminal and then you
+[00:26:51] get a new terminal on your phone but you
+[00:26:53] also get a new window on your computer.
+[00:26:55] The way I do it is I I open it. They're
+[00:26:59] closely synced in that way. Yes, that's
+[00:27:02] and nobody's building that because all
+[00:27:04] those companies they want their
+[00:27:05] cloud-based solution and like blah blah
+[00:27:07] blah. But that's not a workflow that
+[00:27:09] works for for like I think that's not
+[00:27:11] the optimal workflow for like small
+[00:27:13] developers because I I want to work on
+[00:27:15] my computer. I want to have my my
+[00:27:17] windows. I don't want to change. I don't
+[00:27:18] want to just be in the bed. So I have
+[00:27:19] much less control and those tools are
+[00:27:21] not as good. I want to have the same
+[00:27:23] workflow. So what what we do is actually
+[00:27:26] is we use Apple script to open a new
+[00:27:29] window and then I use accessibility with
+[00:27:31] Apple script to type in the command that
+[00:27:34] you that that you that you you trigger
+[00:27:37] from your phone and then our binary is
+[00:27:40] is injected and then we can take control
+[00:27:42] on the terminal level with like
+[00:27:44] something a little bit more efficient.
+[00:27:47] But it it was really cool to build
+[00:27:48] because you had to you have to use this
+[00:27:50] mix of really old and crafty technology
+[00:27:52] and then like you have like a cool a
+[00:27:55] cool Mac UI you have like front end that
+[00:27:58] uses actually really modern stuff right
+[00:28:00] and a lot a lot of creativity like okay
+[00:28:02] how can we do this actually cuz my some
+[00:28:06] one of my friends was like oh no it's
+[00:28:07] fine you just we'll just use the website
+[00:28:09] now like you maybe but like I I don't
+[00:28:12] want to change I I'm going to figure out
+[00:28:13] a way right um and Then well that's not
+[00:28:17] there yet but eventually we also detect
+[00:28:20] if CL's working. So if there's like
+[00:28:22] output then we know okay something's
+[00:28:24] happening there. So he's still he's
+[00:28:26] still looping good and this three
+[00:28:29] already stopped looping bad. Um so you
+[00:28:33] you easily see you can you can also stop
+[00:28:37] uh any particular response that is going
+[00:28:38] on. It's not just that you are observing
+[00:28:40] you can stop you can also give a new
+[00:28:42] prompt. You have the whole control over
+[00:28:45] your plot window, right? Yeah. It's not
+[00:28:48] it's not just plot. It's like literally
+[00:28:50] anything you can do in a terminal. So
+[00:28:52] why would you see this is like a can we
+[00:28:54] say this is like a super app to control
+[00:28:56] all the AI agents that uses CLI?
+[00:29:00] It controls everything that you can do
+[00:29:01] in your terminal. If you want to like
+[00:29:03] Okay, if you want to play Doom, you
+[00:29:06] could probably play Doom. Uh I mean we
+[00:29:09] have to check if you can actually play
+[00:29:10] Doom but I guess we have to
+[00:29:14] it should same as last work. How hard
+[00:29:16] can it be?
