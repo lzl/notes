@@ -1,3 +1,7 @@
-- build
-- taste
-- agency
+- formidable founder
+    - taste
+        - knowing what "great" looks like
+        - refusing to settle for anything less
+    - agency
+        - the relentless drive to solve problems
+        - make things happen
