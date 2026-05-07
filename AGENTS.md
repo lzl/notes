@@ -7,5 +7,6 @@
 - If a note fits an existing topic section, put it there instead of the default top-level list.
 - Use `caveman:caveman` style for notes: keep notes concise, preserve key facts, and make them easy to search and retrieve later.
 - Write notes in English.
+- For X Bookmarks import, use `Computer Use` with Chrome to open `https://x.com/i/bookmarks`; the in-app browser may block X.
 - Use Conventional Commits for code commits.
 - Keep commit messages concise but specific: include key changed subject and purpose, not generic summaries.
